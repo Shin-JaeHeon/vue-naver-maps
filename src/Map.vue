@@ -9,6 +9,7 @@
       width: Number,
       height: Number,
       mapOptions: {
+        type: Object,
         zoom: Number,
         lat: Number,
         lng: Number
@@ -24,13 +25,14 @@
     },
 
     mounted() {
-      document.getElementById('naver-map-load').onload = () => {
-        var map = new naver.maps.Map('vue-naver-maps', {
-          center: new naver.maps.LatLng(this.mapOptions.lat, this.mapOptions.lng),
-          zoom: this.mapOptions.zoom
-        });
-      };
-
+      if (this.mapOptions.lat && this.mapOptions.lng) {
+        document.getElementById('naver-map-load').onload = () => {
+          var map = new naver.maps.Map('vue-naver-maps', {
+            center: new naver.maps.LatLng(this.mapOptions.lat, this.mapOptions.lng),
+            zoom: this.mapOptions.zoom
+          });
+        };
+      } else throw new Error('mapOptions must be included lat and lng.');
     }
   }
 </script>

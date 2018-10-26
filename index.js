@@ -5,10 +5,7 @@ const vueNaverMaps = {
    *
    * @param {Vue} Vue
    * @param {
-   * {
-   * clientID:string
-   * subModules?:string
-   * }
+   * { clientID:string }
    * }options
    */
   install(Vue, options) {
@@ -25,7 +22,7 @@ const vueNaverMaps = {
       };
       document.head.appendChild(SCRIPT);
       Vue.isNaverMapLoaded = false;
-    } else throw new Error('options must includes clientID');
+    } else throw new Error('options must be included clientID');
     Vue.component('NaverMaps', Map);
 
   }
