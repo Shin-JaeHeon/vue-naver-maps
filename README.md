@@ -33,7 +33,7 @@ mapOptions으로 아래와 같은 데이터를 넣을 수 있습니다.
 단, lat(위도)과 lng(경도)는 필수 입니다. 
 ```
 mapOptions: {
-  zoom: Number,
+  zoom?: Number(기본값은 10),
   lat: Number,
   lng: Number
 }
