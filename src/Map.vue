@@ -27,7 +27,7 @@
     mounted() {
       if (this.mapOptions.lat && this.mapOptions.lng) {
         document.getElementById('naver-map-load').onload = () => {
-          var map = new naver.maps.Map('vue-naver-maps', {
+          const map = new naver.maps.Map('vue-naver-maps', {
             center: new naver.maps.LatLng(this.mapOptions.lat, this.mapOptions.lng),
             zoom: this.mapOptions.zoom ? this.mapOptions.zoom : 10,
           });
