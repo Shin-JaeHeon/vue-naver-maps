@@ -1,0 +1,26 @@
+{
+  "name": "vue-naver-maps",
+  "version": "0.0.1",
+  "description": "NAVER Maps component for vue.js",
+  "main": "./index.js",
+  "scripts": {
+    "dev": "webpack-dev-server --config build/webpack.dev.conf.js",
+    "build": "webpack --config build/webpack.prod.conf.js"
+  },
+  "author": {
+    "name": "Shin-JaeHeon",
+    "email": "shinjaeheon520614@gmail.com",
+    "url": "https://jaeheon.com/"
+  },
+  "bug": {
+    "url": "https://github.com/Shin-JaeHeon/vue-naver-maps/issues",
+    "email": "shinjaeheon520614@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Shin-JaeHeon/vue-naver-maps.git"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "vue": "latest"
+  }}
