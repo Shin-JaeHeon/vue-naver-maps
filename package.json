@@ -3,10 +3,6 @@
   "version": "0.4.0",
   "description": "NAVER Maps component for vue.js",
   "main": "./index.js",
-  "scripts": {
-    "dev": "webpack-dev-server --config build/webpack.dev.conf.js",
-    "build": "webpack --config build/webpack.prod.conf.js"
-  },
   "author": {
     "name": "Shin-JaeHeon",
     "email": "shinjaeheon520614@gmail.com",
@@ -23,4 +19,5 @@
   "license": "MIT",
   "dependencies": {
     "vue": "latest"
-  }}
+  }
+}
