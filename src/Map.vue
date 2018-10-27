@@ -42,7 +42,31 @@
        */
       setMapType(type) {
         map.setMapTypeId(naver.maps.Position[type]);
+      },
+      /**
+       * @param {number} level must be int
+       * @param {boolean} useEffect
+       */
+      setZoom(level, useEffect = false) {
+        this.map.setZoom(level, useEffect);
+      },
+
+      /**
+       * @param {number} lat
+       * @param {number} lng
+       */
+      setCenter(lat, lng) {
+        this.map.setCenter(new naver.maps.LatLng(lat, lng));
+      },
+
+      /**
+       * @param {number} lat
+       * @param {number} lng
+       */
+      fitBounds(lat, lng) {
+        this.map.fitBounds(new naver.maps.LatLng(lat, lng));
       }
+
     },
     mounted() {
       /**
