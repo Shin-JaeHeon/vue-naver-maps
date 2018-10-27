@@ -71,6 +71,7 @@ mapOptions: {
 * <a href="#panBy">panBy(x, y)</a>
 
 <a name="setOptions"></a>
+
 #### setOptions(options)
 
 | Param | Type |
@@ -78,6 +79,7 @@ mapOptions: {
 | options | `Object` |
 
 <a name="setMapType"></a>
+
 #### setMapType(type)
 
 | Param | Type | Description |
@@ -85,6 +87,7 @@ mapOptions: {
 | type | `string` | NORMAL, TERRAIN, SATELLITE, HYBRID |
 
 <a name="setZoom"></a>
+
 #### setZoom(level, useEffect)
 
 | Param | Type | Default | Description |
@@ -93,6 +96,7 @@ mapOptions: {
 | useEffect | `boolean` | `false` |  |
 
 <a name="setCenter"></a>
+
 #### setCenter(lat, lng)
 
 | Param | Type |
@@ -101,6 +105,7 @@ mapOptions: {
 | lng | `number` |
 
 <a name="fitBounds"></a>
+
 #### fitBounds(lat, lng)
 
 | Param | Type |
@@ -109,6 +114,7 @@ mapOptions: {
 | lng | `number` |
 
 <a name="panTo"></a>
+
 #### panTo(lat, lng)
 
 | Param | Type |
@@ -117,6 +123,7 @@ mapOptions: {
 | lng | `number` |
 
 <a name="panToBounds"></a>
+
 #### panToBounds(lat, lng)
 
 | Param | Type |
@@ -125,6 +132,7 @@ mapOptions: {
 | lng | `number` |
 
 <a name="panBy"></a>
+
 #### panBy(x, y)
 
 | Param | Type |
@@ -134,9 +142,129 @@ mapOptions: {
 
 ## Marker
 ```javascript
-  import Marker from 'vue-naver-maps/src/Marker';
-  onLoad(vue){
-    const marker = new Marker(vue.map, 37, 127);
-  }
+import Marker from 'vue-naver-maps/src/Marker';
+
+onLoad(vue){
+  const marker = new Marker(vue.map, 37, 127);
+  marker.marker // Naver Marker 클래스 
+}
 ```
-Marker 클래스입니다.
+다음과 같은 체이닝이 가능합니다.
+
+```javascript
+marker.setDraggable(true).setCursor('').setClickable(true);
+```
+
+### Functions
+* draw() => void;
+* getAnimation() => string;
+* getClickable() => boolean;
+* getCursor() => string;
+* getDraggable() => boolean;
+* getDrawingRect() => Bounds;
+* getIcon() => ImageIcon or SymbolIcon or HtmlIcon;
+* getOptions(key?: string) => MarkerOptions;
+* getPosition() => Coord;
+* getShape() => MarkerShape;
+* getTitle() => string;
+* getVisible() => boolean;
+* getZIndex() => number;
+* <a href="#setClickable">setClickable(clickable)</a> ⇒ `Marker`
+* <a href="#setCursor">setCursor(cursor)</a> ⇒ `Marker`
+* <a href="#setDraggable">setDraggable(draggable)</a> ⇒ `Marker`
+* <a href="#setAnimation">setAnimation(animation)</a> ⇒ `Marker`
+* <a href="#setIcon">setIcon(icon)</a> ⇒ `Marker`
+* <a href="#setOptions">setOptions(options)</a> ⇒ `Marker`
+* <a href="#setPosition">setPosition(position)</a> ⇒ `Marker`
+* <a href="#setShape">setShape(shape)</a> ⇒ `Marker`
+* <a href="#setTitle">setTitle(title)</a> ⇒ `Marker`
+* <a href="#setVisible">setVisible(visible)</a> ⇒ `Marker`
+* <a href="#setZIndex">setZIndex(zIndex)</a> ⇒ `Marker`
+
+<a name="setClickable"></a>
+
+## setClickable(clickable) ⇒ `Marker`
+
+| Param | Type |
+| --- | --- |
+| clickable | `boolean` |
+
+<a name="setCursor"></a>
+
+## setCursor(cursor) ⇒ `Marker`
+
+| Param | Type |
+| --- | --- |
+| cursor | `string` |
+
+<a name="setDraggable"></a>
+
+## setDraggable(draggable) ⇒ `Marker`
+
+| Param | Type |
+| --- | --- |
+| draggable | `boolean` |
+
+<a name="setAnimation"></a>
+
+## setAnimation(animation) ⇒ `Marker`
+
+| Param | Type |
+| --- | --- |
+| animation | `&#x27;BOUNCE&#x27;` \| `&#x27;DROP&#x27;` |
+
+<a name="setIcon"></a>
+
+## setIcon(icon) ⇒ `Marker`
+
+| Param | Type |
+| --- | --- |
+| icon | `string` \| `ImageIcon` \| `SymbolIcon` \| `HtmlIcon` |
+
+<a name="setOptions"></a>
+
+## setOptions(options) ⇒ `Marker`
+
+| Param | Type |
+| --- | --- |
+| options | `MarkerOptions` |
+
+<a name="setPosition"></a>
+
+## setPosition(position) ⇒ `Marker`
+
+| Param | Type |
+| --- | --- |
+| position | `Coord` \| `CoordLiteral` |
+
+<a name="setShape"></a>
+
+## setShape(shape) ⇒ `Marker`
+
+| Param | Type |
+| --- | --- |
+| shape | `MarkerShape` |
+
+<a name="setTitle"></a>
+
+## setTitle(title) ⇒ `Marker`
+
+| Param | Type |
+| --- | --- |
+| title | `string` |
+
+<a name="setVisible"></a>
+
+## setVisible(visible) ⇒ `Marker`
+
+| Param | Type |
+| --- | --- |
+| visible | `boolean` |
+
+<a name="setZIndex"></a>
+
+## setZIndex(zIndex) ⇒ `Marker`
+
+| Param | Type |
+| --- | --- |
+| zIndex | `number` |
