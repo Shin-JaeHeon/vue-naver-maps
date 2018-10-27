@@ -1,7 +1,5 @@
 <template>
-  <div id="vue-naver-maps" :style="mapStyle">
-    <!--<slot></slot>-->
-  </div>
+  <div id="vue-naver-maps" :style="mapStyle"></div>
 </template>
 
 <script>
