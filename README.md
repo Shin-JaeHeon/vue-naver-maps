@@ -132,4 +132,11 @@ mapOptions: {
 | x | `number` |
 | y | `number` |
 
-
+## Marker
+```javascript
+  import Marker from 'vue-naver-maps/src/Marker';
+  onLoad(vue){
+    const marker = new Marker(vue.map, 37, 127);
+  }
+```
+Marker 클래스입니다.
