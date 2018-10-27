@@ -1,5 +1,7 @@
 <template>
-  <div id="vue-naver-maps" :style="mapStyle"></div>
+  <div id="vue-naver-maps" :style="mapStyle">
+    <!--<slot></slot>-->
+  </div>
 </template>
 
 <script>
@@ -106,15 +108,13 @@
           this.map = new naver.maps.Map('vue-naver-maps', {
             center: new naver.maps.LatLng(this.mapOptions.lat, this.mapOptions.lng),
             zoom: this.mapOptions.zoom ? this.mapOptions.zoom : 10,
-            zoomControl: !!this.mapOptions.zoomControl,
-            zoomControlOptions: {
-              position: naver.maps.Position[this.zoomControlOptions.position ? this.zoomControlOptions.position : 'CENTER']
-            },
+            zoomControl: !!this.mapOptions.zoomControl
           });
+          if (this.zoomControlOptions && this.zoomControlOptions.position) this.setOptions({zoomControlOptions: {position: naver.maps.Position[this.zoomControlOptions.position]}});
           /**
            * call callback function
            */
-          this.onLoaded(this);
+          if (this.onLoaded) this.onLoaded(this);
         };
       } else throw new Error('mapOptions must be included lat and lng.');
     }
