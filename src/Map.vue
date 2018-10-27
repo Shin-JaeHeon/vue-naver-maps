@@ -65,7 +65,30 @@
        */
       fitBounds(lat, lng) {
         this.map.fitBounds(new naver.maps.LatLng(lat, lng));
-      }
+      },
+
+      /**
+       * @param {number} lat
+       * @param {number} lng
+       */
+      panTo(lat, lng) {
+        this.map.panTo(new naver.maps.LatLng(lat, lng));
+      },
+
+      /**
+       * @param {number} lat
+       * @param {number} lng
+       */
+      panToBounds(lat, lng) {
+        this.map.panToBounds(new naver.maps.LatLng(lat, lng));
+      },
+      /**
+       * @param {number} x
+       * @param {number} y
+       */
+      panBy(x, y) {
+        this.map.panToBounds(new naver.maps.Point(x, y));
+      },
 
     },
     mounted() {
