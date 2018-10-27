@@ -71,7 +71,6 @@ mapOptions: {
 
 <a name="setOptions"></a>
 #### setOptions(options)
-**Kind**: global function
 
 | Param | Type |
 | --- | --- |
@@ -79,7 +78,6 @@ mapOptions: {
 
 <a name="setMapType"></a>
 #### setMapType(type)
-**Kind**: global function
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -87,7 +85,6 @@ mapOptions: {
 
 <a name="setZoom"></a>
 #### setZoom(level, useEffect)
-**Kind**: global function
 
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
@@ -96,7 +93,6 @@ mapOptions: {
 
 <a name="setCenter"></a>
 #### setCenter(lat, lng)
-**Kind**: global function
 
 | Param | Type |
 | --- | --- |
@@ -105,7 +101,6 @@ mapOptions: {
 
 <a name="fitBounds"></a>
 #### fitBounds(lat, lng)
-**Kind**: global function
 
 | Param | Type |
 | --- | --- |
@@ -114,7 +109,6 @@ mapOptions: {
 
 <a name="panTo"></a>
 #### panTo(lat, lng)
-**Kind**: global function
 
 | Param | Type |
 | --- | --- |
@@ -123,7 +117,6 @@ mapOptions: {
 
 <a name="panToBounds"></a>
 #### panToBounds(lat, lng)
-**Kind**: global function
 
 | Param | Type |
 | --- | --- |
@@ -132,7 +125,6 @@ mapOptions: {
 
 <a name="panBy"></a>
 #### panBy(x, y)
-**Kind**: global function
 
 | Param | Type |
 | --- | --- |
