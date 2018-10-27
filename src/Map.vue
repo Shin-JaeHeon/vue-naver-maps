@@ -18,7 +18,8 @@
           type: Object,
           position: String
         }
-      }
+      },
+      onLoaded: Function,
     },
     data() {
       return {
@@ -87,9 +88,8 @@
        * @param {number} y
        */
       panBy(x, y) {
-        this.map.panToBounds(new naver.maps.Point(x, y));
+        this.map.panBy(new naver.maps.Point(x, y));
       },
-
     },
     mounted() {
       /**
@@ -111,6 +111,10 @@
               position: naver.maps.Position[this.zoomControlOptions.position ? this.zoomControlOptions.position : 'CENTER']
             },
           });
+          /**
+           * call callback function
+           */
+          this.onLoaded(this);
         };
       } else throw new Error('mapOptions must be included lat and lng.');
     }
