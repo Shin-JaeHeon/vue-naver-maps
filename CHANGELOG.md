@@ -11,3 +11,10 @@
 # 0.1.0
 * setOptions 추가
 * map zoomControl 관련 설정 추가
+# 0.2.0
+# 0.2.3
+인코딩 오류 해결
+# 0.2.4
+NCloud 지원 오류 해결
+#.0.2.5
+Readme 및 jsDoc 업데이트

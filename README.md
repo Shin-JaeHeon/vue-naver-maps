@@ -9,13 +9,14 @@ yarn 사용을 권장드립니다.
 * yarn : `yarn add vue-naver-maps`
 * npm : `npm install vue-naver-maps`
 
-네이버에서 발급된 지도 API키가 필요합니다.
+네이버에서 발급된 지도 API키가 필요합니다. <br>
+기본적으로 네이버 클라우드를 지원하며, 기존 오픈 API 사용시 useOpenAPI를 true로 바꿔줘야합니다.
 * main.js
   ```javascript
   import naver from 'vue-naver-maps';
-  
   Vue.use(naver, {
-    clientID: 'Q3terhW342KFsdfC1M'
+    clientID: 'Q3terhW342KFsdfC1M',
+    useOpenAPI: true //OpenAPI 사용
   });
   ```
 * `.vue`파일

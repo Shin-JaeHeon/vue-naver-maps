@@ -4,13 +4,13 @@ const vueNaverMaps = {
   /**
    * @param Vue
    * @param {
-   * { clientID:string }
+   * { clientID:string
+   *  useOpenAPI?:boolean}
    * } options
    */
   install(Vue, options) {
     if (options.clientID) {
-      const nCloud = 'ncpC';
-      const URL = `https://openapi.map.naver.com/openapi/v3/maps.js?${options.useNCloud ? nCloud : 'c'}lientId=${options.clientID}${options.subModules ? `&submodules=${options.subModules}` : ''}`;
+      const URL = `https://openapi.map.naver.com/openapi/v3/maps.js?${options.useOpenAPI ? 'c' : 'ncpC'}lientId=${options.clientID}${options.subModules ? `&submodules=${options.subModules}` : ''}`;
       const SCRIPT = document.createElement('script');
       if (SCRIPT)
         SCRIPT.setAttribute('src', URL);
