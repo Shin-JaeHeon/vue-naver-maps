@@ -90,6 +90,18 @@
       panBy(x, y) {
         this.map.panBy(new naver.maps.Point(x, y));
       },
+      /**
+       * the center coordinates of a map
+       */
+      getCenter() {
+        return this.map.getCenterPoint();
+      },
+      /**
+       * The result of converting the map's center coordinates to the world coordinates.
+       */
+      getCenterPoint() {
+        return this.map.getCenterPoint();
+      }
     },
     mounted() {
       /**

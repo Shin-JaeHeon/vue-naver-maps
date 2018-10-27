@@ -18,3 +18,6 @@
 NCloud 지원 오류 해결
 #.0.2.5
 Readme 및 jsDoc 업데이트
+#.0.2.6
+* getCenter()
+* getCenterPosition()
