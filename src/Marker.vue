@@ -11,7 +11,8 @@
       onLoaded: Function,
       otherOptions: Object,
       lat: Number,
-      lng: Number
+      lng: Number,
+      onClick: Function
     },
     data() {
       return {
@@ -200,6 +201,7 @@
           position: new naver.maps.LatLng(this.lat, this.lng),
           map: map,
         }, this.otherOptions));
+        naver.maps.Event.addListener(this.marker, 'click', this.onClick);
         if (this.onLoaded) this.onLoaded(this);
       });
     }
