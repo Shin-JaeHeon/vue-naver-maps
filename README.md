@@ -5,7 +5,12 @@
 
 네이버의 지도 API를 Vue로 간편하게 사용할 수 있게하는 라이브러리입니다. 
 
-이 라이브러의 목표는 사용자가 직접 지도 클래스를 다루지 않고도 자바스크립트 기본 타입만으로 다룰 수 있도록 하는 것입니다.    
+이 라이브러의 목표는 사용자가 직접 지도 클래스를 다루지 않고도 자바스크립트 기본 타입만으로 다룰 수 있도록 하는 것입니다.
+
+현재 지원하는 컴포넌트
+* `naver-maps` 네이버 지도
+* `naver-marker` 마커 컴포넌트
+* `naver-info-window` InfoWindow 컴포넌트
 
 ## 시작하기
 ### 설치 방법
@@ -144,19 +149,28 @@ mapOptions: {
 | x | `number` |
 | y | `number` |
 
-## Marker
-```javascript
-import Marker from 'vue-naver-maps/src/Marker';
-
-onLoad(vue){
-  const marker = new Marker(vue.map, 37, 127);
-  marker.marker // Naver Marker 클래스 
+## naver-marker
+```vue
+<naver-maps :width="600" :height="400"  :mapOptions="mapOptions">
+    <naver-marker :lat="37" :lng="127" :onClick="onMarkerClicked" :onLoaded="onMarkerLoaded"></naver-marker>
+</naver-maps>
+<script>
+export default {
+  data(){
+    return {};
+  },
+  methods:{
+    // 다음과 같은 체이닝이 가능합니다.
+    onMarkerLoaded(vue){
+      vue.marker.setDraggable(true).setCursor('').setClickable(true);
+    },
+    onMarkerClicked(event){
+      console.log(event); // 네이버 event 객체
+    }
+  }
 }
-```
-다음과 같은 체이닝이 가능합니다.
+</script>
 
-```javascript
-marker.setDraggable(true).setCursor('').setClickable(true);
 ```
 
 ### Methods
@@ -274,9 +288,9 @@ marker.setDraggable(true).setCursor('').setClickable(true);
 | zIndex | `number` |
 ## naver-info-window
 ```html
-<naver-maps :width="600" :height="400"  :mapOptions="mapOptions">
-  <naver-info-window :onLoaded="callback"><h1>This is Info window</h1></naver-info-window>
-</naver-maps>
+<naver-info-window :onLoaded="onWindowLoad" :isOpen="info" :marker="marker">
+  <h1>Hello, World!</h1>
+</naver-info-window>
 ```
 
 ###OnLoaded
@@ -284,3 +298,39 @@ marker.setDraggable(true).setCursor('').setClickable(true);
 지도가 로딩되면 호출됩니다. 또한 인자로는 naver-info-window 컴포넌트의 `this`를 넘겨줍니다. 
 * `this.infoWindow`으로 네이버 InfoWindow 객체에 접근이 가능합니다. 
 * `this.map`으로 네이버 Map 객체에 접근이 가능합니다. 
+
+## Example
+```vue
+<template>
+  <naver-maps :height="400" :width="600" :mapOptions="{lat:37,lng:127,zoom:10}" :onLoaded="onLoad">
+    <naver-marker :lat="37" :lng="127" :onClick="onMarkerClicked" :onLoaded="onMarkerLoaded"></naver-marker>
+    <naver-info-window :onLoaded="onWindowLoad" :isOpen="info" :marker="marker"><h1>Hello, World!</h1></naver-info-window>
+  </naver-maps>
+</template>
+
+<script>
+
+  export default {
+    name: 'HelloWorld',
+    data() {
+      return {
+        info: false,
+        marker: null,
+      }
+    }, methods: {
+      onLoad(vue) {
+
+      },
+      onWindowLoad(vue) {
+
+      },
+      onMarkerClicked() {
+        this.info = !this.info;
+      },
+      onMarkerLoaded(vue) {
+        this.marker = vue.marker;
+      }
+    }
+  }
+</script>
+```

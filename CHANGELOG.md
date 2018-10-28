@@ -1,4 +1,8 @@
 # 체인지 로그
+# 0.6.2
+Readme.md 업데이트 
+# 0.6.1
+naver-marker 컴포넌트 추가
 # 0.6.0
 naver-info-window 컴포넌트 추가
 # 0.5.0
