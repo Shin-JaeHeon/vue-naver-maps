@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <slot ref="content"></slot>
+  <div  ref="content">
+    <slot></slot>
   </div>
 </template>
 
@@ -33,7 +33,7 @@
          * {naver.maps.Map} map
          */
         this.map = map;
-        this.infoWindow = new naver.maps.InfoWindow({content: this.$refs.content});
+        this.infoWindow = new naver.maps.InfoWindow({content: this.$refs.content.innerHTML});
         if (this.onLoaded) this.onLoaded(this);
       });
     }
