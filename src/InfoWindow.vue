@@ -5,10 +5,20 @@
 </template>
 
 <script>
+  import {Marker} from 'Marker';
+
   export default {
-    name: "InfoWindow",
+    name: 'InfoWindow',
     props: {
-      onLoaded: Function
+      onLoaded: Function,
+      marker: Marker,
+      isOpen: Boolean,
+    },
+    watch: {
+      isOpen(newValue) {
+        if (newValue) this.infoWindow.open();
+        else this.infoWindow.close();
+      }
     },
     data() {
       return {
