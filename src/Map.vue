@@ -1,5 +1,8 @@
 <template>
-  <div id="vue-naver-maps" :style="mapStyle"></div>
+  <div id="vue-naver-maps" :style="mapStyle">
+    <slot>
+    </slot>
+  </div>
 </template>
 
 <script>
@@ -124,6 +127,8 @@
           /**
            * call callback function
            */
+          window.$naverMapsCallback.forEach(v => v(this.map));
+          this.$root.$emit('map-loaded', this.map);
           if (this.onLoaded) this.onLoaded(this);
         };
       } else throw new Error('mapOptions must be included lat and lng.');

@@ -11,6 +11,7 @@ const vueNaverMaps = {
    */
   install(Vue, options) {
     if (options.clientID) {
+      window.$naverMapsCallback = [];
       const URL = `https://openapi.map.naver.com/openapi/v3/maps.js?${options.useOpenAPI ? 'c' : 'ncpC'}lientId=${options.clientID}${options.subModules ? `&submodules=${options.subModules}` : ''}`;
       const SCRIPT = document.createElement('script');
       if (SCRIPT)
@@ -21,7 +22,7 @@ const vueNaverMaps = {
       document.head.appendChild(SCRIPT);
     } else throw new Error('options must be included clientID');
     Vue.component('naver-maps', Map);
-    Vue.component('naver-nfo-window', InfoWindow);
+    Vue.component('naver-info-window', InfoWindow);
 
   }
 };

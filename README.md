@@ -187,7 +187,7 @@ marker.setDraggable(true).setCursor('').setClickable(true);
 
 <a name="setClickable"></a>
 
-## setClickable(clickable) ⇒ `Marker`
+#### setClickable(clickable) ⇒ `Marker`
 
 | Param | Type |
 | --- | --- |
@@ -195,7 +195,7 @@ marker.setDraggable(true).setCursor('').setClickable(true);
 
 <a name="setCursor"></a>
 
-## setCursor(cursor) ⇒ `Marker`
+#### setCursor(cursor) ⇒ `Marker`
 
 | Param | Type |
 | --- | --- |
@@ -203,7 +203,7 @@ marker.setDraggable(true).setCursor('').setClickable(true);
 
 <a name="setDraggable"></a>
 
-## setDraggable(draggable) ⇒ `Marker`
+#### setDraggable(draggable) ⇒ `Marker`
 
 | Param | Type |
 | --- | --- |
@@ -211,7 +211,7 @@ marker.setDraggable(true).setCursor('').setClickable(true);
 
 <a name="setAnimation"></a>
 
-## setAnimation(animation) ⇒ `Marker`
+#### setAnimation(animation) ⇒ `Marker`
 
 | Param | Type |
 | --- | --- |
@@ -219,7 +219,7 @@ marker.setDraggable(true).setCursor('').setClickable(true);
 
 <a name="setIcon"></a>
 
-## setIcon(icon) ⇒ `Marker`
+#### setIcon(icon) ⇒ `Marker`
 
 | Param | Type |
 | --- | --- |
@@ -227,7 +227,7 @@ marker.setDraggable(true).setCursor('').setClickable(true);
 
 <a name="setOptions"></a>
 
-## setOptions(options) ⇒ `Marker`
+#### setOptions(options) ⇒ `Marker`
 
 | Param | Type |
 | --- | --- |
@@ -235,7 +235,7 @@ marker.setDraggable(true).setCursor('').setClickable(true);
 
 <a name="setPosition"></a>
 
-## setPosition(position) ⇒ `Marker`
+#### setPosition(position) ⇒ `Marker`
 
 | Param | Type |
 | --- | --- |
@@ -243,7 +243,7 @@ marker.setDraggable(true).setCursor('').setClickable(true);
 
 <a name="setShape"></a>
 
-## setShape(shape) ⇒ `Marker`
+#### setShape(shape) ⇒ `Marker`
 
 | Param | Type |
 | --- | --- |
@@ -251,7 +251,7 @@ marker.setDraggable(true).setCursor('').setClickable(true);
 
 <a name="setTitle"></a>
 
-## setTitle(title) ⇒ `Marker`
+#### setTitle(title) ⇒ `Marker`
 
 | Param | Type |
 | --- | --- |
@@ -259,7 +259,7 @@ marker.setDraggable(true).setCursor('').setClickable(true);
 
 <a name="setVisible"></a>
 
-## setVisible(visible) ⇒ `Marker`
+#### setVisible(visible) ⇒ `Marker`
 
 | Param | Type |
 | --- | --- |
@@ -267,8 +267,20 @@ marker.setDraggable(true).setCursor('').setClickable(true);
 
 <a name="setZIndex"></a>
 
-## setZIndex(zIndex) ⇒ `Marker`
+#### setZIndex(zIndex) ⇒ `Marker`
 
 | Param | Type |
 | --- | --- |
 | zIndex | `number` |
+## naver-info-window
+```html
+<naver-maps :width="600" :height="400"  :mapOptions="mapOptions">
+  <naver-info-window :onLoaded="callback"><h1>This is Info window</h1></naver-info-window>
+</naver-maps>
+```
+
+###OnLoaded
+
+지도가 로딩되면 호출됩니다. 또한 인자로는 naver-info-window 컴포넌트의 `this`를 넘겨줍니다. 
+* `this.infoWindow`으로 네이버 InfoWindow 객체에 접근이 가능합니다. 
+* `this.map`으로 네이버 Map 객체에 접근이 가능합니다. 
