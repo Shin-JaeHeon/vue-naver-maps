@@ -1,5 +1,6 @@
 import Map from './src/Map';
 import InfoWindow from './src/InfoWindow';
+import Marker from "./src/Marker";
 
 const vueNaverMaps = {
   /**
@@ -23,6 +24,7 @@ const vueNaverMaps = {
     } else throw new Error('options must be included clientID');
     Vue.component('naver-maps', Map);
     Vue.component('naver-info-window', InfoWindow);
+    Vue.component('naver-maker', Marker);
 
   }
 };
