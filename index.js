@@ -1,4 +1,5 @@
 import Map from './src/Map';
+import InfoWindow from './src/InfoWindow';
 
 const vueNaverMaps = {
   /**
@@ -19,7 +20,8 @@ const vueNaverMaps = {
       SCRIPT.setAttribute('defer', '');
       document.head.appendChild(SCRIPT);
     } else throw new Error('options must be included clientID');
-    Vue.component('NaverMaps', Map);
+    Vue.component('naver-maps', Map);
+    Vue.component('naver-nfo-window', InfoWindow);
 
   }
 };

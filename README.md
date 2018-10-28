@@ -25,13 +25,13 @@ yarn 사용을 권장드립니다.
   ```
 * `.vue`파일
   ```html
-  <NaverMaps :width="600" :height="400"></NaverMaps>
+  <naver-maps :width="600" :height="400"></naver-maps>
   ```
  이제, 600x400 사이즈의 지도가 뜨게됩니다.
  
 ### 기본 맵 옵션
 ```html
-<NaverMaps :width="600" :height="400"  :mapOptions="mapOptions"></NaverMaps>
+<naver-maps :width="600" :height="400"  :mapOptions="mapOptions"></naver-maps>
 ```
 mapOptions으로 아래와 같은 데이터를 넣을 수 있습니다.
 
@@ -54,16 +54,16 @@ mapOptions: {
 ### onLoaded(this)
 지도를 효과적으로 컨트롤 하기 위해 `onLoaded(this)` callback 함수를 사용할 수 있습니다.
 ```html
-<NaverMaps :width="600" :height="400" :mapOptions="mapOptions" :onLoaded="callback"></NaverMaps>
+<naver-maps :width="600" :height="400" :mapOptions="mapOptions" :onLoaded="callback"></naver-maps>
 ```
-지도가 로딩되면 호출됩니다. 또한 인자로는 NaverMaps 컴포넌트의 `this`를 넘겨줍니다. 
+지도가 로딩되면 호출됩니다. 또한 인자로는 naver-maps 컴포넌트의 `this`를 넘겨줍니다. 
 `this.map`으로 네이버 Map 객체에 접근이 가능합니다. 
 
-## NaverMaps
-`NaverMaps`컴포넌트에는 기존의 js 라이브러리가 사용했던 메소드들이 있습니다. 예를 들면 기존에는 `setCenter` 함수를 ` map.setCenter(new naver.maps.LatLng(lat, lng));` 으로 수행해야 합니다.
-하지만 NaverMaps 컴포넌트에서는 `this.setCenter(lat,lng)`으로 사용할 수 있습니다.
+## naver-maps
+`naver-maps`컴포넌트에는 기존의 js 라이브러리가 사용했던 메소드들이 있습니다. 예를 들면 기존에는 `setCenter` 함수를 ` map.setCenter(new naver.maps.LatLng(lat, lng));` 으로 수행해야 합니다.
+하지만 naver-maps 컴포넌트에서는 `this.setCenter(lat,lng)`으로 사용할 수 있습니다.
 
-> 현재는 개발 버전이라 `NaverMaps` 컴포넌트에 사용가능한 모든 메소드가 포함되어 있지 않습니다.  이 경우에는 `this.map`으로 직접 접근해야합니다.
+> 현재는 개발 버전이라 `naver-maps` 컴포넌트에 사용가능한 모든 메소드가 포함되어 있지 않습니다.  이 경우에는 `this.map`으로 직접 접근해야합니다.
 ### Methods
 * <a href="#setOptions">setOptions(options)</a>
 * <a href="#setMapType">setMapType(type)</a>
