@@ -1,6 +1,10 @@
 # 체인지 로그
-#0.6.4
-Marker에서 naver Event의 Vue Event 지원, :click 대신 @click
+# 0.6.5
+* event 객체 반환되지 않는 오류 수정
+* naver-marker 오류 수정
+* Readme.md 수정 
+# 0.6.4
+Marker에서 naver Event의 Vue Event 지원, 즉, :click 대신 @click을 사용
 # 0.6.3
 Readme.md 업데이트 
 # 0.6.2

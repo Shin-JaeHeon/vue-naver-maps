@@ -150,9 +150,12 @@ mapOptions: {
 | y | `number` |
 
 ## naver-marker
+지도에 마커를 표시해줍니다.
+
+네이버의 이벤트는 @name 으로 접근 가능합니다. 예) @click, @dbclick 등 
 ```vue
 <naver-maps :width="600" :height="400"  :mapOptions="mapOptions">
-    <naver-marker :lat="37" :lng="127" :onClick="onMarkerClicked" :onLoaded="onMarkerLoaded"></naver-marker>
+    <naver-marker :lat="37" :lng="127" @click="onMarkerClicked" :onLoaded="onMarkerLoaded"></naver-marker>
 </naver-maps>
 <script>
 export default {
@@ -160,7 +163,7 @@ export default {
     return {};
   },
   methods:{
-    // 다음과 같은 체이닝이 가능합니다.
+    // naver-marker는 다음과 같은 체이닝이 가능합니다.
     onMarkerLoaded(vue){
       vue.marker.setDraggable(true).setCursor('').setClickable(true);
     },
@@ -303,7 +306,7 @@ export default {
 ```vue
 <template>
   <naver-maps :height="400" :width="600" :mapOptions="{lat:37,lng:127,zoom:10}" :onLoaded="onLoad">
-    <naver-marker :lat="37" :lng="127" :onClick="onMarkerClicked" :onLoaded="onMarkerLoaded"></naver-marker>
+    <naver-marker :lat="37" :lng="127" @click="onMarkerClicked" :onLoaded="onMarkerLoaded"></naver-marker>
     <naver-info-window :onLoaded="onWindowLoad" :isOpen="info" :marker="marker"><h1>Hello, World!</h1></naver-info-window>
   </naver-maps>
 </template>
