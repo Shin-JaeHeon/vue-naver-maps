@@ -1,4 +1,6 @@
 # 체인지 로그
+#0.6.4
+Marker에서 naver Event의 Vue Event 지원, :click 대신 @click
 # 0.6.3
 Readme.md 업데이트 
 # 0.6.2

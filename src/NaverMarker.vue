@@ -5,8 +5,10 @@
 </template>
 
 <script>
+  import * as _ from 'lib/index';
+
   export default {
-    name: "Marker",
+    name: "NaverMarker",
     props: {
       onLoaded: Function,
       otherOptions: Object,
@@ -202,7 +204,9 @@
           position: new naver.maps.LatLng(this.lat, this.lng),
           map: map,
         }, this.otherOptions, this.icon ? {icon: this.icon} : {}));
-        naver.maps.Event.addListener(this.marker, 'click', this.onClick);
+        ['mousedown', 'mouseup', 'click', 'dblclick', 'rightclick', 'mouseover', 'mouseout', 'mousemove', 'dragstart', 'drag', 'dragend',
+          'touchstart', 'touchmove', 'touchend', 'pinchstart', 'pinch', 'pinchend', 'tap', 'longtap', 'twofingertap', 'doubletap']
+          .forEach(name => _.addEvent(this, this.marker, name));
         if (this.onLoaded) this.onLoaded(this);
       });
     }
