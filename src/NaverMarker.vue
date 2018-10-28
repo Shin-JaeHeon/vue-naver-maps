@@ -12,7 +12,8 @@
       otherOptions: Object,
       lat: Number,
       lng: Number,
-      onClick: Function
+      onClick: Function,
+      icon: String
     },
     data() {
       return {
@@ -200,7 +201,7 @@
         this.marker = new naver.maps.Marker(Object.assign({
           position: new naver.maps.LatLng(this.lat, this.lng),
           map: map,
-        }, this.otherOptions));
+        }, this.otherOptions, this.icon ? {icon: this.icon} : {}));
         naver.maps.Event.addListener(this.marker, 'click', this.onClick);
         if (this.onLoaded) this.onLoaded(this);
       });
