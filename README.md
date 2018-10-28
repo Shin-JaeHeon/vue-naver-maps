@@ -1,4 +1,8 @@
 # vue-naver-maps
+[![npm](https://img.shields.io/npm/v/vue-naver-maps.svg?style=flat-square)](https://www.npmjs.com/package/vue-naver-maps)
+[![npm](https://img.shields.io/npm/dt/vue-naver-maps.svg?style=flat-square)](https://www.npmjs.com/package/vue-naver-maps)
+[![npm](https://img.shields.io/npm/l/vue-naver-maps.svg?registry_uri=https%3A%2F%2Fregistry.npmjs.com&style=flat-square)](https://opensource.org/licenses/MIT)
+
 네이버의 지도 API를 Vue로 간편하게 사용할 수 있게하는 라이브러리입니다. 
 
 이 라이브러의 목표는 사용자가 직접 지도 클래스를 다루지 않고도 자바스크립트 기본 타입만으로 다룰 수 있도록 하는 것입니다.    
@@ -155,7 +159,7 @@ onLoad(vue){
 marker.setDraggable(true).setCursor('').setClickable(true);
 ```
 
-### Functions
+### Methods
 * draw() => void;
 * getAnimation() => string;
 * getClickable() => boolean;
