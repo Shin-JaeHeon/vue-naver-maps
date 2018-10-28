@@ -5,7 +5,7 @@
 </template>
 
 <script>
-  import {Marker} from 'Marker';
+  import Marker from './Marker.vue';
 
   export default {
     name: 'InfoWindow',
@@ -16,7 +16,7 @@
     },
     watch: {
       isOpen(newValue) {
-        if (newValue) this.infoWindow.open();
+        if (newValue) this.infoWindow.open(this.map, this.marker);
         else this.infoWindow.close();
       }
     },
