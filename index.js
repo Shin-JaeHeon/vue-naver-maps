@@ -24,7 +24,7 @@ const vueNaverMaps = {
     } else throw new Error('options must be included clientID');
     Vue.component('naver-maps', Map);
     Vue.component('naver-info-window', InfoWindow);
-    Vue.component('naver-maker', Marker);
+    Vue.component('naver-marker', Marker);
 
   }
 };
