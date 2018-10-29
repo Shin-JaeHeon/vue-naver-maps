@@ -11,6 +11,7 @@
 * `naver-maps` 네이버 지도
 * `naver-marker` 마커 컴포넌트
 * `naver-info-window` InfoWindow 컴포넌트
+* `naver-circle` 도형(원) 컴포넌트
 
 ## 시작하기
 ### 설치 방법
@@ -83,7 +84,7 @@ mapOptions: {
 
 #### setOptions(options)
 
-| Param | Type |
+| 파라미터 | 타입 |
 | --- | --- |
 | options | `Object` |
 
@@ -91,7 +92,7 @@ mapOptions: {
 
 #### setMapType(type)
 
-| Param | Type | Description |
+| 파라미터 | 타입 | Description |
 | --- | --- | --- |
 | type | `string` | NORMAL, TERRAIN, SATELLITE, HYBRID |
 
@@ -99,7 +100,7 @@ mapOptions: {
 
 #### setZoom(level, useEffect)
 
-| Param | Type | Default | Description |
+| 파라미터 | 타입 | Default | Description |
 | --- | --- | --- | --- |
 | level | `number` |  | must be int |
 | useEffect | `boolean` | `false` |  |
@@ -108,7 +109,7 @@ mapOptions: {
 
 #### setCenter(lat, lng)
 
-| Param | Type |
+| 파라미터 | 타입 |
 | --- | --- |
 | lat | `number` |
 | lng | `number` |
@@ -117,7 +118,7 @@ mapOptions: {
 
 #### fitBounds(lat, lng)
 
-| Param | Type |
+| 파라미터 | 타입 |
 | --- | --- |
 | lat | `number` |
 | lng | `number` |
@@ -126,7 +127,7 @@ mapOptions: {
 
 #### panTo(lat, lng)
 
-| Param | Type |
+| 파라미터 | 타입 |
 | --- | --- |
 | lat | `number` |
 | lng | `number` |
@@ -135,7 +136,7 @@ mapOptions: {
 
 #### panToBounds(lat, lng)
 
-| Param | Type |
+| 파라미터 | 타입 |
 | --- | --- |
 | lat | `number` |
 | lng | `number` |
@@ -144,7 +145,7 @@ mapOptions: {
 
 #### panBy(x, y)
 
-| Param | Type |
+| 파라미터 | 타입 |
 | --- | --- |
 | x | `number` |
 | y | `number` |
@@ -214,7 +215,7 @@ export default {
 
 #### setClickable(clickable) ⇒ `Marker`
 
-| Param | Type |
+| 파라미터 | 타입 |
 | --- | --- |
 | clickable | `boolean` |
 
@@ -222,7 +223,7 @@ export default {
 
 #### setCursor(cursor) ⇒ `Marker`
 
-| Param | Type |
+| 파라미터 | 타입 |
 | --- | --- |
 | cursor | `string` |
 
@@ -230,7 +231,7 @@ export default {
 
 #### setDraggable(draggable) ⇒ `Marker`
 
-| Param | Type |
+| 파라미터 | 타입 |
 | --- | --- |
 | draggable | `boolean` |
 
@@ -238,7 +239,7 @@ export default {
 
 #### setAnimation(animation) ⇒ `Marker`
 
-| Param | Type |
+| 파라미터 | 타입 |
 | --- | --- |
 | animation | `&#x27;BOUNCE&#x27;` \| `&#x27;DROP&#x27;` |
 
@@ -246,7 +247,7 @@ export default {
 
 #### setIcon(icon) ⇒ `Marker`
 
-| Param | Type |
+| 파라미터 | 타입 |
 | --- | --- |
 | icon | `string` \| `ImageIcon` \| `SymbolIcon` \| `HtmlIcon` |
 
@@ -254,7 +255,7 @@ export default {
 
 #### setOptions(options) ⇒ `Marker`
 
-| Param | Type |
+| 파라미터 | 타입 |
 | --- | --- |
 | options | `MarkerOptions` |
 
@@ -262,7 +263,7 @@ export default {
 
 #### setPosition(position) ⇒ `Marker`
 
-| Param | Type |
+| 파라미터 | 타입 |
 | --- | --- |
 | position | `Coord` \| `CoordLiteral` |
 
@@ -270,7 +271,7 @@ export default {
 
 #### setShape(shape) ⇒ `Marker`
 
-| Param | Type |
+| 파라미터 | 타입 |
 | --- | --- |
 | shape | `MarkerShape` |
 
@@ -278,7 +279,7 @@ export default {
 
 #### setTitle(title) ⇒ `Marker`
 
-| Param | Type |
+| 파라미터 | 타입 |
 | --- | --- |
 | title | `string` |
 
@@ -286,7 +287,7 @@ export default {
 
 #### setVisible(visible) ⇒ `Marker`
 
-| Param | Type |
+| 파라미터 | 타입 |
 | --- | --- |
 | visible | `boolean` |
 
@@ -294,7 +295,7 @@ export default {
 
 #### setZIndex(zIndex) ⇒ `Marker`
 
-| Param | Type |
+| 파라미터 | 타입 |
 | --- | --- |
 | zIndex | `number` |
 ## naver-info-window
@@ -310,12 +311,175 @@ export default {
 * `this.infoWindow`으로 네이버 InfoWindow 객체에 접근이 가능합니다. 
 * `this.map`으로 네이버 Map 객체에 접근이 가능합니다. 
 
+## NaverCircle
+원을 생성합니다.
+```vue
+<naver-circle :lat="37" :lng="127" :radius="1000" :moreOptions="{}"></naver-circle>
+```
+### More Options
+* strokeWeight : Number
+* strokeOpacity : Number
+* strokeColor : String
+* strokeStyle : naver.maps.strokeStyleType
+* strokeLineCap : naver.maps.strokeLineCapType
+* strokeLineJoin : naver.maps.strokeLineJoinType
+* fillColor : String
+* fillOpacity : Number
+* clickable : Boolean
+* visible : Boolean
+* zIndex : Number
+### Methods
+* <a href="#getAreaSize">getAreaSize()</a> ⇒ <code>number</code>
+* <a href="#getBounds">getBounds()</a> ⇒ <code>naver.maps.Bounds</code>
+* <a href="#getCenter">getCenter()</a> ⇒ <code>naver.maps.Coord</code>
+* <a href="#getClickable">getClickable()</a> ⇒ <code>boolean</code>
+* <a href="#getDrawingRect">getDrawingRect()</a> ⇒ <code>naver.maps.Bounds</code>
+* <a href="#getOptions">getOptions(key)</a> ⇒ <code>naver.CircleOptions</code></dt>
+* <a href="#getRadius">getRadius()</a> ⇒ <code>number</code>
+* <a href="#getStyles">getStyles(key)</a> ⇒ <code>naver.maps.CircleOptions</code>
+* <a href="#getVisible">getVisible()</a> ⇒ <code>boolean</code>
+* <a href="#getZIndex">getZIndex()</a> ⇒ <code>number</code>
+* <a href="#setCenter">setCenter(lat, lng)</a> ⇒ <code>this</code>
+* <a href="#setCenterPoint">setCenterPoint(x, y)</a> ⇒ <code>this</code>
+* <a href="#setClickable">setClickable(clickable)</a> ⇒ <code>this</code>
+* <a href="#setOptions">setOptions(options)</a> ⇒ <code>this</code>
+* <a href="#setRadius">setRadius(radius)</a> ⇒ <code>this</code>
+* <a href="#setStyles">setStyles(options)</a> ⇒ <code>this</code>
+* <a href="#setVisible">setVisible(visible)</a> ⇒ <code>this</code>
+* <a href="#setZIndex">setZIndex(zIndex)</a> ⇒ <code>this</code>
+
+<a name="getAreaSize"></a>
+
+#### getAreaSize() ⇒ <code>number</code>
+
+<a name="getBounds"></a>
+
+#### getBounds() ⇒ <code>naver.maps.Bounds</code>
+
+<a name="getCenter"></a>
+
+#### getCenter() ⇒ <code>naver.maps.Coord</code>
+
+<a name="getClickable"></a>
+
+#### getClickable() ⇒ <code>boolean</code>
+
+<a name="getDrawingRect"></a>
+
+#### getDrawingRect() ⇒ <code>naver.maps.Bounds</code>
+
+<a name="getOptions"></a>
+
+#### getOptions(key) ⇒ <code>naver.maps.CircleOptions</code>
+
+
+| 파라미터 |
+타입- |
+| key |
+
+<a name="getRadius"></a>
+
+#### getRadius() ⇒ <code>number</code>
+
+<a name="getStyles"></a>
+
+#### getStyles(key) ⇒ <code>naver.maps.CircleOptions</code>
+
+
+| 파라미터 |
+타입- |
+| key |
+
+<a name="getVisible"></a>
+
+#### getVisible() ⇒ <code>boolean</code>
+
+<a name="getZIndex"></a>
+
+#### getZIndex() ⇒ <code>number</code>
+
+<a name="setCenter"></a>
+
+#### setCenter(lat, lng) ⇒ <code>this</code>
+
+
+| 파라미터 |
+타입- |
+| lat |
+| lng |
+
+<a name="setCenterPoint"></a>
+
+#### setCenterPoint(x, y) ⇒ <code>this</code>
+
+
+| 파라미터 |
+타입- |
+| x |
+| y |
+
+<a name="setClickable"></a>
+
+#### setClickable(clickable) ⇒ <code>this</code>
+
+
+| 파라미터 |
+타입- |
+| clickable |
+
+<a name="setOptions"></a>
+
+#### setOptions(options) ⇒ <code>this</code>
+
+
+| 파라미터 |
+타입- |
+| options |
+
+<a name="setRadius"></a>
+
+#### setRadius(radius) ⇒ <code>this</code>
+
+
+| 파라미터 |
+타입- |
+| radius |
+
+<a name="setStyles"></a>
+
+#### setStyles(options) ⇒ <code>this</code>
+
+
+| 파라미터 |
+타입- |
+| options |
+
+<a name="setVisible"></a>
+
+#### setVisible(visible) ⇒ <code>this</code>
+
+
+| 파라미터 |
+타입- |
+| visible |
+
+<a name="setZIndex"></a>
+
+#### setZIndex(zIndex) ⇒ <code>this</code>
+
+
+| 파라미터 |
+타입- |
+| zIndex |
+
+
 ## Example
 ```vue
 <template>
   <naver-maps :height="400" :width="600" :mapOptions="{lat:37,lng:127,zoom:10}" @load="onLoad">
     <naver-marker :lat="37" :lng="127" @click="onMarkerClicked" @load="onMarkerLoaded"></naver-marker>
     <naver-info-window @load="onWindowLoad" :isOpen="info" :marker="marker"><h1>Hello, World!</h1></naver-info-window>
+    <naver-circle :lat="37" :lng="127" :radius="1000" :moreOptions="{}"></naver-circle>
   </naver-maps>
 </template>
 

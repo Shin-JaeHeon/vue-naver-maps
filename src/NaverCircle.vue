@@ -22,7 +22,6 @@
         visible: Boolean,
         zIndex: Number
       },
-
     },
     data() {
       return {
