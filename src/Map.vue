@@ -104,6 +104,21 @@
        */
       getCenterPoint() {
         return this.map.getCenterPoint();
+      }, $render() {
+        /**
+         * Creating maps.
+         */
+        this.map = new naver.maps.Map('vue-naver-maps', {
+          center: new naver.maps.LatLng(this.mapOptions.lat, this.mapOptions.lng),
+          zoom: this.mapOptions.zoom ? this.mapOptions.zoom : 10,
+          zoomControl: !!this.mapOptions.zoomControl
+        });
+        if (this.zoomControlOptions && this.zoomControlOptions.position) this.setOptions({zoomControlOptions: {position: naver.maps.Position[this.zoomControlOptions.position]}});
+        /**
+         * call callback function
+         */
+        window.$naverMapsCallback.forEach(v => v(this.map));
+        this.$emit('load');
       }
     },
     mounted() {
@@ -112,25 +127,15 @@
        */
       if (this.mapOptions.lat && this.mapOptions.lng) {
         /**
-         * When the script loaded.
+         * When the script already loaded.
          */
-        document.getElementById('naver-map-load').onload = () => {
+        if (naver) this.$render();
+        else {
           /**
-           * Creating maps.
+           * When the script loaded.
            */
-          this.map = new naver.maps.Map('vue-naver-maps', {
-            center: new naver.maps.LatLng(this.mapOptions.lat, this.mapOptions.lng),
-            zoom: this.mapOptions.zoom ? this.mapOptions.zoom : 10,
-            zoomControl: !!this.mapOptions.zoomControl
-          });
-          if (this.zoomControlOptions && this.zoomControlOptions.position) this.setOptions({zoomControlOptions: {position: naver.maps.Position[this.zoomControlOptions.position]}});
-          /**
-           * call callback function
-           */
-          window.$naverMapsCallback.forEach(v => v(this.map));
-          this.$root.$emit('map-loaded', this.map);
-          if (this.onLoaded) this.onLoaded(this);
-        };
+          document.getElementById('naver-map-load').onload = () => this.$render();
+        }
       } else throw new Error('mapOptions must be included lat and lng.');
     }
   }
