@@ -1,5 +1,5 @@
 <template>
-  <div  ref="content">
+  <div ref="content">
     <slot></slot>
   </div>
 </template>
@@ -10,7 +10,6 @@
   export default {
     name: 'InfoWindow',
     props: {
-      onLoaded: Function,
       marker: Marker,
       isOpen: Boolean,
     },
@@ -18,6 +17,7 @@
       isOpen(newValue) {
         if (newValue) this.infoWindow.open(this.map, this.marker);
         else this.infoWindow.close();
+        this.$emit(newValue ? 'open' : 'close', this);
       }
     },
     data() {
@@ -34,7 +34,7 @@
          */
         this.map = map;
         this.infoWindow = new naver.maps.InfoWindow({content: this.$refs.content.innerHTML});
-        if (this.onLoaded) this.onLoaded(this);
+        this.$emit('load', this);
       });
     }
   }
