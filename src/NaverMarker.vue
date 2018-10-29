@@ -10,11 +10,9 @@
   export default {
     name: "NaverMarker",
     props: {
-      onLoaded: Function,
       otherOptions: Object,
       lat: Number,
       lng: Number,
-      onClick: Function,
       icon: String
     },
     data() {
@@ -207,7 +205,7 @@
         ['mousedown', 'mouseup', 'click', 'dblclick', 'rightclick', 'mouseover', 'mouseout', 'mousemove', 'dragstart', 'drag', 'dragend',
           'touchstart', 'touchmove', 'touchend', 'pinchstart', 'pinch', 'pinchend', 'tap', 'longtap', 'twofingertap', 'doubletap']
           .forEach(name => _.addEvent(this, this.marker, name));
-        if (this.onLoaded) this.onLoaded(this);
+        this.$emit('load', this);
       });
     }
   }
