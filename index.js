@@ -1,6 +1,7 @@
 import Map from './src/Map';
 import InfoWindow from './src/InfoWindow';
-import Marker from "./src/NaverMarker";
+import Marker from './src/NaverMarker';
+import NaverCircle from './src/NaverCircle';
 
 const vueNaverMaps = {
   /**
@@ -27,7 +28,7 @@ const vueNaverMaps = {
     Vue.component('naver-maps', Map);
     Vue.component('naver-info-window', InfoWindow);
     Vue.component('naver-marker', Marker);
-
+    Vue.component('naver-circle', NaverCircle);
   }
 };
 
