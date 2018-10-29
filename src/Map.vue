@@ -118,6 +118,7 @@
          * call callback function
          */
         window.$naverMapsCallback.forEach(v => v(this.map));
+        window.$naverMapsCallback = [];
         this.$emit('load');
       }
     },
