@@ -56,10 +56,10 @@ mapOptions: {
 ### 추가 옵션 설정하기
 기존 js 라이브러리와 마찬가지로, map 객체에 `setOptions(options)`를 사용할 수 있습니다. 단, 맵이 로딩 된 후에만 사용이 가능합니다.
 
-### onLoaded(this)
-지도를 효과적으로 컨트롤 하기 위해 `onLoaded(this)` callback 함수를 사용할 수 있습니다.
+### @load(this)
+지도를 효과적으로 컨트롤 하기 위해 `@load` 이벤트를 사용할 수 있습니다.
 ```html
-<naver-maps :width="600" :height="400" :mapOptions="mapOptions" :onLoaded="callback"></naver-maps>
+<naver-maps :width="600" :height="400" :mapOptions="mapOptions" @load="callback"></naver-maps>
 ```
 지도가 로딩되면 호출됩니다. 또한 인자로는 naver-maps 컴포넌트의 `this`를 넘겨줍니다. 
 `this.map`으로 네이버 Map 객체에 접근이 가능합니다. 
@@ -149,13 +149,21 @@ mapOptions: {
 | x | `number` |
 | y | `number` |
 
+## 전역 컴포넌트
+### @load(this)
+네이버 지도 라이브러리 또는 지도가 로딩됐을 때, 각각의 컴포넌트에서는 `load` 이벤트를 호출합니다.  
+```html
+<naver-maps :width="600" :height="400" :mapOptions="mapOptions" @load="callback"></naver-maps>
+```
+또한 인자로는 컴포넌트의 `this`를 넘겨줍니다. 
+
 ## naver-marker
 지도에 마커를 표시해줍니다.
 
 네이버의 이벤트는 @name 으로 접근 가능합니다. 예) @click, @dbclick 등 
 ```vue
 <naver-maps :width="600" :height="400"  :mapOptions="mapOptions">
-    <naver-marker :lat="37" :lng="127" @click="onMarkerClicked" :onLoaded="onMarkerLoaded"></naver-marker>
+    <naver-marker :lat="37" :lng="127" @click="onMarkerClicked" @load="onMarkerLoaded"></naver-marker>
 </naver-maps>
 <script>
 export default {
@@ -291,7 +299,7 @@ export default {
 | zIndex | `number` |
 ## naver-info-window
 ```html
-<naver-info-window :onLoaded="onWindowLoad" :isOpen="info" :marker="marker">
+<naver-info-window @load="onWindowLoad" :isOpen="info" :marker="marker">
   <h1>Hello, World!</h1>
 </naver-info-window>
 ```
@@ -305,9 +313,9 @@ export default {
 ## Example
 ```vue
 <template>
-  <naver-maps :height="400" :width="600" :mapOptions="{lat:37,lng:127,zoom:10}" :onLoaded="onLoad">
-    <naver-marker :lat="37" :lng="127" @click="onMarkerClicked" :onLoaded="onMarkerLoaded"></naver-marker>
-    <naver-info-window :onLoaded="onWindowLoad" :isOpen="info" :marker="marker"><h1>Hello, World!</h1></naver-info-window>
+  <naver-maps :height="400" :width="600" :mapOptions="{lat:37,lng:127,zoom:10}" @load="onLoad">
+    <naver-marker :lat="37" :lng="127" @click="onMarkerClicked" @load="onMarkerLoaded"></naver-marker>
+    <naver-info-window @load="onWindowLoad" :isOpen="info" :marker="marker"><h1>Hello, World!</h1></naver-info-window>
   </naver-maps>
 </template>
 
