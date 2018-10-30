@@ -130,7 +130,7 @@
         /**
          * When the script already loaded.
          */
-        if (naver) this.$render();
+        if (window.naver) this.$render();
         else {
           /**
            * When the script loaded.

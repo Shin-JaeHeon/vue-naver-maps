@@ -1,4 +1,6 @@
 # 체인지 로그
+# 0.7.2
+naver-maps `ReferenceError: naver is not defined` 오류 수정 
 # 0.7.1
 * vue-naver-circle 에러 수정
 # 0.7.0
