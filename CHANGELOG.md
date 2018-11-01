@@ -1,4 +1,7 @@
 # 체인지 로그
+# 0.7.3
+index.js 오류 수정
+
 # 0.7.2
 naver-maps `ReferenceError: naver is not defined` 오류 수정 
 # 0.7.1
