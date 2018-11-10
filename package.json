@@ -1,12 +1,15 @@
 {
   "name": "vue-naver-maps",
-  "version": "0.7.5",
+  "version": "0.7.6",
   "description": "NAVER Maps component for vue.js",
-  "main": "./index.js",
+  "main": "dist/vue-naver-maps.js",
   "author": {
     "name": "Shin-JaeHeon",
     "email": "shinjaeheon520614@gmail.com",
     "url": "https://jaeheon.com/"
+  },
+  "scripts": {
+    "build": "webpack-cli --config webpack.config.js"
   },
   "bug": {
     "url": "https://github.com/Shin-JaeHeon/vue-naver-maps/issues",
@@ -19,5 +22,20 @@
   "license": "MIT",
   "dependencies": {
     "vue": "latest"
+  },
+  "devDependencies": {
+    "babel-cli": "latest",
+    "babel-core": "latest",
+    "babel-loader": "latest",
+    "babel-plugin-minify-dead-code-elimination": "latest",
+    "babel-plugin-transform-inline-environment-variables": "latest",
+    "babel-plugin-transform-object-rest-spread": "latest",
+    "babel-preset-env": "latest",
+    "babel-preset-es2015": "latest",
+    "babel-preset-stage-2": "latest",
+    "vue-loader": "latest",
+    "vue-template-compiler": "^2.5.17",
+    "webpack": "^4.25.1",
+    "webpack-cli": "latest"
   }
 }
