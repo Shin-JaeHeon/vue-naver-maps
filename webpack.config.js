@@ -11,6 +11,7 @@ const baseConfig = {
       {
         test: /\.vue$/,
         loader: 'vue-loader',
+        options: {target: 'node'}
       },
       {
         test: /\.js$/,
