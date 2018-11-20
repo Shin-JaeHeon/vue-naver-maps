@@ -62,7 +62,7 @@ export default {
 
 | 파라미터 | 타입 |
 | --- | --- |
-| animation | `&#x27;BOUNCE&#x27;` \| `&#x27;DROP&#x27;` |
+| animation | `BOUNCE` \| `DROP` |
 
 ### setIcon(icon) ⇒ `Marker`
 
