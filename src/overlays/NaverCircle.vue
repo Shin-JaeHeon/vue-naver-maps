@@ -3,7 +3,7 @@
 
 <script>
   export default {
-    name: 'this',
+    name: 'NaverCircle',
     props: {
       lat: Number,
       lng: Number,
