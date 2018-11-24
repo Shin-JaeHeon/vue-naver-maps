@@ -159,11 +159,11 @@ mapOptions: {
 ```
 또한 인자로는 컴포넌트의 `this`를 넘겨줍니다. 
 ## naver-marker
-[`docs/naver-marker.md`](https://github.com/Shin-JaeHeon/vue-naver-maps/blob/master/docs/naver-marker.md)
+[`docs/kr/naver-marker.md`](https://github.com/Shin-JaeHeon/vue-naver-maps/blob/master/docs/kr/naver-marker.md)
 ## naver-info-window
-[`docs/naver-info-window.md`](https://github.com/Shin-JaeHeon/vue-naver-maps/blob/master/docs/naver-info-window.md)
+[`docs/kr/naver-info-window.md`](https://github.com/Shin-JaeHeon/vue-naver-maps/blob/master/docs/kr/naver-info-window.md)
 ## NaverCircle
-[`docs/naver-circle.md`](https://github.com/Shin-JaeHeon/vue-naver-maps/blob/master/docs/naver-circle.md)
+[`docs/kr/naver-circle.md`](https://github.com/Shin-JaeHeon/vue-naver-maps/blob/master/docs/kr/naver-circle.md)
 ## Example
 ```vue
 <template>
