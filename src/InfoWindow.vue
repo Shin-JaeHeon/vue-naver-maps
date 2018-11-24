@@ -5,7 +5,7 @@
 </template>
 
 <script>
-  import Marker from './NaverMarker.vue';
+  import Marker from './overlays/NaverMarker.vue';
 
   export default {
     name: 'InfoWindow',

@@ -5,7 +5,7 @@
 </template>
 
 <script>
-  import * as _ from '../lib/index';
+  import * as _ from '../../lib';
 
   export default {
     name: "NaverMarker",

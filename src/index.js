@@ -1,7 +1,7 @@
 import Map from './Map.vue';
 import InfoWindow from './InfoWindow.vue';
-import Marker from './NaverMarker.vue';
-import NaverCircle from './NaverCircle.vue';
+import Marker from './overlays/NaverMarker.vue';
+import NaverCircle from './overlays/NaverCircle.vue';
 import Vue from 'vue';
 
 const vueNaverMaps = {
