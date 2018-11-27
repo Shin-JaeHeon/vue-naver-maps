@@ -126,17 +126,6 @@
         else this.ellipse.setOptions(options);
         return this;
       },
-
-      /**
-       *
-       * @param radius
-       * @returns {this}
-       */
-      setRadius(radius) {
-        this.ellipse.setRadius(radius);
-        return this;
-      },
-
       /**
        *
        * @param options
