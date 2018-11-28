@@ -1,26 +1,37 @@
 # 체인지 로그
+# 0.9.0
+* Naver-Rectangle 컴포넌트 추가
+* Naver-GroundOverlay 컴포넌트 추가
+* 이벤트 오류 수정
+* 잘못된 JSDoc 수정
+
+# 0.8.0
+* Naver-Ellipse 컴포넌트 추가
+
 # 0.7.8
-브라우저가 아니면 오류를 내놓도록 바꿈
+* 브라우저가 아니면 오류를 반환하도록 변경
 
 # 0.7.7
-window 관련 오류 제거
+* window 관련 오류 해결
 
 # 0.7.6
-webpack 사용
+* webpack 사용
 
 # 0.7.5
-Map 로드 이벤트에 컴포넌트 객체가 넘어가지 않은 오류 수정
+* Map 로드 이벤트에 컴포넌트 객체가 넘어가지 않은 오류 수정
 
 # 0.7.4
-index.js UTF-8 BOM오류 수정
+* index.js UTF-8 BOM오류 수정
 
 # 0.7.3
-index.js 오류 수정
+* index.js 오류 수정
 
 # 0.7.2
-naver-maps `ReferenceError: naver is not defined` 오류 수정 
+* naver-maps `ReferenceError: naver is not defined` 오류 수정
+ 
 # 0.7.1
 * vue-naver-circle 에러 수정
+
 # 0.7.0
 * vue-naver-circle 추가
 
