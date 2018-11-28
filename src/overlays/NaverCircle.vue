@@ -2,6 +2,8 @@
 </template>
 
 <script>
+  import * as _ from '../../lib';
+
   export default {
     name: 'NaverCircle',
     props: {
@@ -207,6 +209,9 @@
           center: new naver.maps.LatLng(this.lat, this.lng),
           radius: this.radius
         }, this.moreOptions));
+
+        ['mousedown', 'mouseup', 'click', 'dblclick', 'mouseover', 'mouseout', 'mousemove', 'visible_changed', 'zIndex_changed', 'radius_changed']
+          .forEach(name => _.addEvent(this, this.marker, name));
         this.$emit('load', this);
       });
     }

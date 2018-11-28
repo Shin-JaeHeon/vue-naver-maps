@@ -2,6 +2,7 @@
 </template>
 
 <script>
+  import * as _ from '../../lib';
   export default {
     name: 'NaverEllipse',
     props: {
@@ -165,6 +166,9 @@
          */
         this.map = map;
         this.ellipse = new naver.maps.Ellipse(Object.assign({bounds: this.bounds}, this.moreOptions));
+
+        ['mousedown', 'mouseup', 'click', 'dblclick', 'mouseover', 'mouseout', 'mousemove', 'visible_changed', 'zIndex_changed']
+          .forEach(name => _.addEvent(this, this.marker, name));
         this.$emit('load', this);
       });
     }
