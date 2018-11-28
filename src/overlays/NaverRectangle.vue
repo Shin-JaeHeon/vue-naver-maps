@@ -26,7 +26,7 @@
     data() {
       return {
         /**
-         * {naver.maps.Ellipse} rectangle
+         * {naver.maps.Rectangle} rectangle
          */
         rectangle: null,
         /**
