@@ -4,6 +4,8 @@ import Marker from './overlays/NaverMarker.vue';
 import NaverCircle from './overlays/NaverCircle.vue';
 import NaverRectangle from "./overlays/NaverRectangle.vue";
 import NaverEllipse from "./overlays/NaverEllipse.vue";
+import NaverGroundOverlay from "./overlays/NaverGroundOverlay.vue";
+
 import Vue from 'vue';
 
 const vueNaverMaps = {
@@ -35,6 +37,7 @@ const vueNaverMaps = {
       Vue.component('naver-circle', NaverCircle);
       Vue.component('naver-ellipse', NaverEllipse);
       Vue.component('naver-rectangle', NaverRectangle);
+      Vue.component('naver-ground-overlay', NaverGroundOverlay);
     } else throw new Error('Sorry, this plugin is only available in browsers at now. If you are using Nuxt.js, turn off ssr for this plugin.');
   }
 };

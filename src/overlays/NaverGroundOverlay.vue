@@ -1,0 +1,75 @@
+<template>
+</template>
+
+<script>
+  import * as _ from '../../lib';
+
+  export default {
+    name: 'NaverGroundOverlay',
+    props: {
+      bounds: Object,
+      clickable: Boolean,
+      opacity: Number
+    },
+    data() {
+      return {
+        /**
+         * {naver.maps.GroundOverlay} groundOverlay
+         */
+        groundOverlay: null,
+        /**
+         * {naver.maps.Map} map
+         */
+        map: null,
+      };
+    },
+    methods: {
+      /**
+       * @returns {naver.maps.Bounds}
+       */
+      getBounds() {
+        return this.groundOverlay.getBounds();
+      },
+      /**
+       * @returns {number}
+       */
+      getOpacity() {
+        return this.groundOverlay.getOpacity();
+      },
+      /**
+       * returns image url of this ground overlay.
+       * @returns {string}
+       */
+      getUrl() {
+        return this.groundOverlay.getUrl();
+      },
+      /**
+       * sets the opacity of this ground overlay.
+       * @params {number} opacity
+       * @returns {this}
+       */
+      setOpacity(opacity) {
+        this.groundOverlay.setOpacity(opacity);
+        return this;
+      }
+    },
+    mounted() {
+      window.$naverMapsCallback.push((map) => {
+        /**
+         * {naver.maps.Map} map
+         */
+        this.map = map;
+        const options = {};
+        if (this.clickable) options['clickable'] = this.clickable;
+        if (this.opacity) options['opacity'] = this.opacity;
+        this.groundOverlay = new naver.maps.GroundOverlay(this.map, this.bounds, options);
+        ['click', 'dblclick'].forEach(name => _.addEvent(this, this.marker, name));
+        this.$emit('load', this);
+      });
+    }
+  }
+</script>
+
+<style scoped>
+
+</style>
