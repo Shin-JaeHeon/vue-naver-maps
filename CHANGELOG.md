@@ -1,4 +1,6 @@
 # 체인지 로그
+# 0.9.1
+Readme 및 문서 수정
 # 0.9.0
 * Naver-Rectangle 컴포넌트 추가
 * Naver-GroundOverlay 컴포넌트 추가

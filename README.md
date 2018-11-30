@@ -164,6 +164,12 @@ mapOptions: {
 [`docs/kr/naver-info-window.md`](https://github.com/Shin-JaeHeon/vue-naver-maps/blob/master/docs/kr/naver-info-window.md)
 ## NaverCircle
 [`docs/kr/naver-circle.md`](https://github.com/Shin-JaeHeon/vue-naver-maps/blob/master/docs/kr/naver-circle.md)
+## NaverEllipse
+[`docs/kr/naver-ellipse.md`](https://github.com/Shin-JaeHeon/vue-naver-maps/blob/master/docs/kr/naver-ellipse.md
+## NaverRectangle
+[`docs/kr/naver-rectangle.md`](https://github.com/Shin-JaeHeon/vue-naver-maps/blob/master/docs/kr/naver-rectangle.md
+## NaverGroundOverlay
+[`docs/kr/naver-ground-overlay.md`](https://github.com/Shin-JaeHeon/vue-naver-maps/blob/master/docs/kr/naver-ground-overlay.md
 ## Example
 ```vue
 <template>
