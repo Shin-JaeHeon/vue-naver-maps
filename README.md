@@ -12,6 +12,10 @@
 * `naver-marker` 마커 컴포넌트
 * `naver-info-window` InfoWindow 컴포넌트
 * `naver-circle` 도형(원) 컴포넌트
+*
+*
+*
+*
 > #### 주의
 > Nuxt.js에서는 ssr 옵션을 꺼주십시오.
 ## 시작하기
@@ -165,11 +169,11 @@ mapOptions: {
 ## NaverCircle
 [`docs/kr/naver-circle.md`](https://github.com/Shin-JaeHeon/vue-naver-maps/blob/master/docs/kr/naver-circle.md)
 ## NaverEllipse
-[`docs/kr/naver-ellipse.md`](https://github.com/Shin-JaeHeon/vue-naver-maps/blob/master/docs/kr/naver-ellipse.md
+[`docs/kr/naver-ellipse.md`](https://github.com/Shin-JaeHeon/vue-naver-maps/blob/master/docs/kr/naver-ellipse.md)
 ## NaverRectangle
-[`docs/kr/naver-rectangle.md`](https://github.com/Shin-JaeHeon/vue-naver-maps/blob/master/docs/kr/naver-rectangle.md
+[`docs/kr/naver-rectangle.md`](https://github.com/Shin-JaeHeon/vue-naver-maps/blob/master/docs/kr/naver-rectangle.md)
 ## NaverGroundOverlay
-[`docs/kr/naver-ground-overlay.md`](https://github.com/Shin-JaeHeon/vue-naver-maps/blob/master/docs/kr/naver-ground-overlay.md
+[`docs/kr/naver-ground-overlay.md`](https://github.com/Shin-JaeHeon/vue-naver-maps/blob/master/docs/kr/naver-ground-overlay.md)
 ## Example
 ```vue
 <template>
