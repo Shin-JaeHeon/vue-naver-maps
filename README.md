@@ -12,10 +12,9 @@
 * `naver-marker` 마커 컴포넌트
 * `naver-info-window` InfoWindow 컴포넌트
 * `naver-circle` 도형(원) 컴포넌트
-*
-*
-*
-*
+* `naver-ellipse` 도형(타원) 컴포넌트
+* `naver-rectangle` 도형(사각형) 컴포넌트
+* `naver-ground-overlay` 그라운드 오버레이 컴포넌트
 > #### 주의
 > Nuxt.js에서는 ssr 옵션을 꺼주십시오.
 ## 시작하기
