@@ -1,13 +1,13 @@
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory(require("Vue"));
+		module.exports = factory();
 	else if(typeof define === 'function' && define.amd)
-		define(["Vue"], factory);
+		define([], factory);
 	else if(typeof exports === 'object')
-		exports["VueNaverMaps"] = factory(require("Vue"));
+		exports["VueNaverMaps"] = factory();
 	else
-		root["VueNaverMaps"] = factory(root["Vue"]);
-})(window, function(__WEBPACK_EXTERNAL_MODULE_vue__) {
+		root["VueNaverMaps"] = factory();
+})(window, function() {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -180,6 +180,18 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _lib
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js!./node_modules/vue-loader/lib/index.js?!./src/overlays/NaverPolygon.vue?vue&type=script&lang=js&":
+/*!**************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib!./node_modules/vue-loader/lib??vue-loader-options!./src/overlays/NaverPolygon.vue?vue&type=script&lang=js& ***!
+  \**************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _lib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../lib */ \"./lib/index.js\");\n//\n//\n//\n\n/* harmony default export */ __webpack_exports__[\"default\"] = ({\n  name: 'NaverPolygon',\n  props: {\n    options: {\n      type: Object,\n      paths: Object,\n      strokeWeight: Number,\n      strokeOpacity: Number,\n      strokeColor: String,\n      strokeStyle: Object,\n      strokeLineCap: Object,\n      strokeLineJoin: Object,\n      fillColor: String,\n      fillOpacity: Number,\n      clickable: Boolean,\n      visible: Boolean,\n      zIndex: Number\n    }\n  },\n\n  data() {\n    return {\n      /**\n       * {naver.maps.Polygon} polygon\n       */\n      polygon: null,\n\n      /**\n       * {naver.maps.Map} map\n       */\n      map: null\n    };\n  },\n\n  methods: {\n    /**\n     *\n     * @returns {number}\n     */\n    getAreaSize() {\n      return this.polygon.getAreaSize();\n    },\n\n    /**\n     *\n     * @returns {naver.maps.Bounds}\n     */\n    getBounds() {\n      return this.polygon.getBounds();\n    },\n\n    /**\n     *\n     * @returns {boolean}\n     */\n    getClickable() {\n      return this.polygon.getClickable();\n    },\n\n    /**\n     *\n     * @returns {naver.maps.Bounds}\n     */\n    getDrawingRect() {\n      return this.polygon.getDrawingRect();\n    },\n\n    /**\n     *\n     * @param key\n     * @returns {naver.maps.CircleOptions}\n     */\n    getOptions(key) {\n      return this.polygon.getOptions(key);\n    },\n\n    /**\n     * @returns {naver.maps.ArrayOfCoords | naver.maps.KVOArrayOfCoords}\n     */\n    getPath() {},\n\n    /**\n     * @returns {Array<naver.maps.ArrayOfCoords> | naver.maps.KVOArray<naver.maps.KVOArrayOfCoords>}\n     */\n    getPaths() {},\n\n    /**\n     *\n     * @param key\n     * @returns {naver.maps.CircleOptions}\n     */\n    getStyles(key) {\n      return this.polygon.getStyles(key);\n    },\n\n    /**\n     *\n     * @returns {boolean}\n     */\n    getVisible() {\n      return this.polygon.getVisible();\n    },\n\n    /**\n     *\n     * @returns {number}\n     */\n    getZIndex() {\n      return this.polygon.getZIndex();\n    },\n\n    /**\n     * @param bounds {naver.maps.Bounds}\n     * @returns {this}\n     */\n    setBounds(bounds) {\n      this.polygon.setBounds(bounds);\n      return this;\n    },\n\n    /**\n     *\n     * @param clickable\n     * @returns {this}\n     */\n    setClickable(clickable) {\n      this.polygon.setClickable(clickable);\n      return this;\n    },\n\n    /**\n     *\n     * @param options\n     * @returns {this}\n     */\n    setOptions(options) {\n      if (arguments[1]) this.polygon.setOptions(options, arguments[1]);else this.polygon.setOptions(options);\n      return this;\n    },\n\n    /**\n     * @params {naver.maps.ArrayOfCoords | naver.maps.KVOArrayOfCoords | naver.maps.ArrayOfCoordsLiteral} path\n     */\n    setPath(path) {\n      this.polygon.setPath(path);\n    },\n\n    /**\n     * @params {Array<naver.maps.ArrayOfCoords | naver.maps.KVOArray<naver.maps.KVOArrayOfCoords> | Array<naver.maps.ArrayOfCoordsLiteral} paths\n     */\n    setPaths(paths) {\n      this.polygon.setPaths(paths);\n    },\n\n    /**\n     *\n     * @param options\n     * @returns {this}\n     */\n    setStyles(options) {\n      if (arguments[1]) this.polygon.setStyles(options, arguments[1]);else this.polygon.setStyles(options);\n      return this;\n    },\n\n    /**\n     *\n     * @param visible\n     * @returns {this}\n     */\n    setVisible(visible) {\n      this.polygon.setVisible(visible);\n      return this;\n    },\n\n    /**\n     * @param zIndex\n     * @returns {this}\n     */\n    setZIndex(zIndex) {\n      this.polygon.setZIndex(zIndex);\n      return this;\n    }\n\n  },\n\n  mounted() {\n    window.$naverMapsCallback.push(map => {\n      /**\n       * {naver.maps.Map} map\n       */\n      this.map = map;\n      this.polygon = new naver.maps.Polygon(this.options);\n      ['mousedown', 'mouseup', 'click', 'dblclick', 'mouseover', 'mouseout', 'mousemove', 'visible_changed', 'zIndex_changed', 'clickable_changed'].forEach(name => _lib__WEBPACK_IMPORTED_MODULE_0__[\"addEvent\"](this, this.marker, name));\n      this.$emit('load', this);\n    });\n  }\n\n});\n\n//# sourceURL=webpack://VueNaverMaps/./src/overlays/NaverPolygon.vue?./node_modules/babel-loader/lib!./node_modules/vue-loader/lib??vue-loader-options");
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js!./node_modules/vue-loader/lib/index.js?!./src/overlays/NaverRectangle.vue?vue&type=script&lang=js&":
 /*!****************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib!./node_modules/vue-loader/lib??vue-loader-options!./src/overlays/NaverRectangle.vue?vue&type=script&lang=js& ***!
@@ -269,6 +281,17 @@ eval("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/index.js?!./src/overlays/NaverPolygon.vue?vue&type=style&index=0&id=8088d4e6&scoped=true&lang=css&":
+/*!**************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib??vue-loader-options!./src/overlays/NaverPolygon.vue?vue&type=style&index=0&id=8088d4e6&scoped=true&lang=css& ***!
+  \**************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n//# sourceURL=webpack://VueNaverMaps/./src/overlays/NaverPolygon.vue?./node_modules/vue-loader/lib??vue-loader-options");
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/index.js?!./src/overlays/NaverRectangle.vue?vue&type=style&index=0&id=62be0882&scoped=true&lang=css&":
 /*!****************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib??vue-loader-options!./src/overlays/NaverRectangle.vue?vue&type=style&index=0&id=62be0882&scoped=true&lang=css& ***!
@@ -349,6 +372,18 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 
 "use strict";
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"render\", function() { return render; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"staticRenderFns\", function() { return staticRenderFns; });\nvar render = function() {\n  var _vm = this\n  var _h = _vm.$createElement\n  var _c = _vm._self._c || _h\n  return _c(\"div\", [_vm._t(\"default\")], 2)\n}\nvar staticRenderFns = []\nrender._withStripped = true\n\n\n\n//# sourceURL=webpack://VueNaverMaps/./src/overlays/NaverMarker.vue?./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options");
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./src/overlays/NaverPolygon.vue?vue&type=template&id=8088d4e6&scoped=true&":
+/*!****************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./src/overlays/NaverPolygon.vue?vue&type=template&id=8088d4e6&scoped=true& ***!
+  \****************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"render\", function() { return render; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"staticRenderFns\", function() { return staticRenderFns; });\nvar render = function() {\n  var _vm = this\n  var _h = _vm.$createElement\n  var _c = _vm._self._c || _h\n  return _c(\"div\")\n}\nvar staticRenderFns = []\nrender._withStripped = true\n\n\n\n//# sourceURL=webpack://VueNaverMaps/./src/overlays/NaverPolygon.vue?./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options");
 
 /***/ }),
 
@@ -480,7 +515,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _nod
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* WEBPACK VAR INJECTION */(function(process) {/* harmony import */ var _Map_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Map.vue */ \"./src/Map.vue\");\n/* harmony import */ var _InfoWindow_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./InfoWindow.vue */ \"./src/InfoWindow.vue\");\n/* harmony import */ var _overlays_NaverMarker_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./overlays/NaverMarker.vue */ \"./src/overlays/NaverMarker.vue\");\n/* harmony import */ var _overlays_NaverCircle_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./overlays/NaverCircle.vue */ \"./src/overlays/NaverCircle.vue\");\n/* harmony import */ var _overlays_NaverRectangle_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./overlays/NaverRectangle.vue */ \"./src/overlays/NaverRectangle.vue\");\n/* harmony import */ var _overlays_NaverEllipse_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./overlays/NaverEllipse.vue */ \"./src/overlays/NaverEllipse.vue\");\n/* harmony import */ var _overlays_NaverGroundOverlay_vue__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./overlays/NaverGroundOverlay.vue */ \"./src/overlays/NaverGroundOverlay.vue\");\n/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! vue */ \"vue\");\n/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_7__);\n\n\n\n\n\n\n\n\nconst vueNaverMaps = {\n  /**\n   * @param Vue\n   * @param {\n   * { clientID:string\n   *  useOpenAPI?:boolean\n   *  subModules:string}\n   * } options\n   */\n  install(Vue, options) {\n    if (process.browser) {\n      if (options.clientID) {\n        window.$naverMapsCallback = [];\n        const URL = `https://openapi.map.naver.com/openapi/v3/maps.js?${options.useOpenAPI ? 'c' : 'ncpC'}lientId=${options.clientID}${options.subModules ? `&submodules=${options.subModules}` : ''}`;\n        const SCRIPT = document.createElement('script');\n\n        if (SCRIPT) {\n          SCRIPT.setAttribute('src', URL);\n          SCRIPT.id = 'naver-map-load';\n          SCRIPT.setAttribute('async', '');\n          SCRIPT.setAttribute('defer', '');\n          document.head.appendChild(SCRIPT);\n        } else throw new Error('api can\\'t loaded');\n      } else throw new Error('options must be included clientID');\n\n      Vue.component('naver-maps', _Map_vue__WEBPACK_IMPORTED_MODULE_0__[\"default\"]);\n      Vue.component('naver-info-window', _InfoWindow_vue__WEBPACK_IMPORTED_MODULE_1__[\"default\"]);\n      Vue.component('naver-marker', _overlays_NaverMarker_vue__WEBPACK_IMPORTED_MODULE_2__[\"default\"]);\n      Vue.component('naver-circle', _overlays_NaverCircle_vue__WEBPACK_IMPORTED_MODULE_3__[\"default\"]);\n      Vue.component('naver-ellipse', _overlays_NaverEllipse_vue__WEBPACK_IMPORTED_MODULE_5__[\"default\"]);\n      Vue.component('naver-rectangle', _overlays_NaverRectangle_vue__WEBPACK_IMPORTED_MODULE_4__[\"default\"]);\n      Vue.component('naver-ground-overlay', _overlays_NaverGroundOverlay_vue__WEBPACK_IMPORTED_MODULE_6__[\"default\"]);\n    } else throw new Error('Sorry, this plugin is only available in browsers at now. If you are using Nuxt.js, turn off ssr for this plugin.');\n  }\n\n};\n/* harmony default export */ __webpack_exports__[\"default\"] = (vueNaverMaps);\n/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../node_modules/process/browser.js */ \"./node_modules/process/browser.js\")))\n\n//# sourceURL=webpack://VueNaverMaps/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* WEBPACK VAR INJECTION */(function(process) {/* harmony import */ var _Map_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Map.vue */ \"./src/Map.vue\");\n/* harmony import */ var _InfoWindow_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./InfoWindow.vue */ \"./src/InfoWindow.vue\");\n/* harmony import */ var _overlays_NaverMarker_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./overlays/NaverMarker.vue */ \"./src/overlays/NaverMarker.vue\");\n/* harmony import */ var _overlays_NaverCircle_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./overlays/NaverCircle.vue */ \"./src/overlays/NaverCircle.vue\");\n/* harmony import */ var _overlays_NaverRectangle_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./overlays/NaverRectangle.vue */ \"./src/overlays/NaverRectangle.vue\");\n/* harmony import */ var _overlays_NaverEllipse_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./overlays/NaverEllipse.vue */ \"./src/overlays/NaverEllipse.vue\");\n/* harmony import */ var _overlays_NaverGroundOverlay_vue__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./overlays/NaverGroundOverlay.vue */ \"./src/overlays/NaverGroundOverlay.vue\");\n/* harmony import */ var _overlays_NaverPolygon_vue__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./overlays/NaverPolygon.vue */ \"./src/overlays/NaverPolygon.vue\");\n\n\n\n\n\n\n\n\nconst vueNaverMaps = {\n  /**\n   * @param Vue\n   * @param {\n   * { clientID:string\n   *  useOpenAPI?:boolean\n   *  subModules:string}\n   * } options\n   */\n  install(Vue, options) {\n    if (process.browser) {\n      if (options.clientID) {\n        window.$naverMapsCallback = [];\n        const URL = `https://openapi.map.naver.com/openapi/v3/maps.js?${options.useOpenAPI ? 'c' : 'ncpC'}lientId=${options.clientID}${options.subModules ? `&submodules=${options.subModules}` : ''}`;\n        const SCRIPT = document.createElement('script');\n\n        if (SCRIPT) {\n          SCRIPT.setAttribute('src', URL);\n          SCRIPT.id = 'naver-map-load';\n          SCRIPT.setAttribute('async', '');\n          SCRIPT.setAttribute('defer', '');\n          document.head.appendChild(SCRIPT);\n        } else throw new Error('api can\\'t loaded');\n      } else throw new Error('options must be included clientID');\n\n      Vue.component('naver-maps', _Map_vue__WEBPACK_IMPORTED_MODULE_0__[\"default\"]);\n      Vue.component('naver-info-window', _InfoWindow_vue__WEBPACK_IMPORTED_MODULE_1__[\"default\"]);\n      Vue.component('naver-marker', _overlays_NaverMarker_vue__WEBPACK_IMPORTED_MODULE_2__[\"default\"]);\n      Vue.component('naver-circle', _overlays_NaverCircle_vue__WEBPACK_IMPORTED_MODULE_3__[\"default\"]);\n      Vue.component('naver-ellipse', _overlays_NaverEllipse_vue__WEBPACK_IMPORTED_MODULE_5__[\"default\"]);\n      Vue.component('naver-rectangle', _overlays_NaverRectangle_vue__WEBPACK_IMPORTED_MODULE_4__[\"default\"]);\n      Vue.component('naver-ground-overlay', _overlays_NaverGroundOverlay_vue__WEBPACK_IMPORTED_MODULE_6__[\"default\"]);\n      Vue.component('naver-polygon', _overlays_NaverPolygon_vue__WEBPACK_IMPORTED_MODULE_7__[\"default\"]);\n    } else throw new Error('Sorry, this plugin is only available in browsers at now. If you are using Nuxt.js, turn off ssr for this plugin.');\n  }\n\n};\n/* harmony default export */ __webpack_exports__[\"default\"] = (vueNaverMaps);\n/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../node_modules/process/browser.js */ \"./node_modules/process/browser.js\")))\n\n//# sourceURL=webpack://VueNaverMaps/./src/index.js?");
 
 /***/ }),
 
@@ -676,6 +711,54 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _nod
 
 /***/ }),
 
+/***/ "./src/overlays/NaverPolygon.vue":
+/*!***************************************!*\
+  !*** ./src/overlays/NaverPolygon.vue ***!
+  \***************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _NaverPolygon_vue_vue_type_template_id_8088d4e6_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./NaverPolygon.vue?vue&type=template&id=8088d4e6&scoped=true& */ \"./src/overlays/NaverPolygon.vue?vue&type=template&id=8088d4e6&scoped=true&\");\n/* harmony import */ var _NaverPolygon_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./NaverPolygon.vue?vue&type=script&lang=js& */ \"./src/overlays/NaverPolygon.vue?vue&type=script&lang=js&\");\n/* empty/unused harmony star reexport *//* harmony import */ var _NaverPolygon_vue_vue_type_style_index_0_id_8088d4e6_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./NaverPolygon.vue?vue&type=style&index=0&id=8088d4e6&scoped=true&lang=css& */ \"./src/overlays/NaverPolygon.vue?vue&type=style&index=0&id=8088d4e6&scoped=true&lang=css&\");\n/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ \"./node_modules/vue-loader/lib/runtime/componentNormalizer.js\");\n\n\n\n\n\n\n/* normalize component */\n\nvar component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__[\"default\"])(\n  _NaverPolygon_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[\"default\"],\n  _NaverPolygon_vue_vue_type_template_id_8088d4e6_scoped_true___WEBPACK_IMPORTED_MODULE_0__[\"render\"],\n  _NaverPolygon_vue_vue_type_template_id_8088d4e6_scoped_true___WEBPACK_IMPORTED_MODULE_0__[\"staticRenderFns\"],\n  false,\n  null,\n  \"8088d4e6\",\n  null\n  \n)\n\n/* hot reload */\nif (false) { var api; }\ncomponent.options.__file = \"src/overlays/NaverPolygon.vue\"\n/* harmony default export */ __webpack_exports__[\"default\"] = (component.exports);\n\n//# sourceURL=webpack://VueNaverMaps/./src/overlays/NaverPolygon.vue?");
+
+/***/ }),
+
+/***/ "./src/overlays/NaverPolygon.vue?vue&type=script&lang=js&":
+/*!****************************************************************!*\
+  !*** ./src/overlays/NaverPolygon.vue?vue&type=script&lang=js& ***!
+  \****************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _node_modules_babel_loader_lib_index_js_node_modules_vue_loader_lib_index_js_vue_loader_options_NaverPolygon_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../node_modules/babel-loader/lib!../../node_modules/vue-loader/lib??vue-loader-options!./NaverPolygon.vue?vue&type=script&lang=js& */ \"./node_modules/babel-loader/lib/index.js!./node_modules/vue-loader/lib/index.js?!./src/overlays/NaverPolygon.vue?vue&type=script&lang=js&\");\n/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__[\"default\"] = (_node_modules_babel_loader_lib_index_js_node_modules_vue_loader_lib_index_js_vue_loader_options_NaverPolygon_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__[\"default\"]); \n\n//# sourceURL=webpack://VueNaverMaps/./src/overlays/NaverPolygon.vue?");
+
+/***/ }),
+
+/***/ "./src/overlays/NaverPolygon.vue?vue&type=style&index=0&id=8088d4e6&scoped=true&lang=css&":
+/*!************************************************************************************************!*\
+  !*** ./src/overlays/NaverPolygon.vue?vue&type=style&index=0&id=8088d4e6&scoped=true&lang=css& ***!
+  \************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _node_modules_vue_loader_lib_index_js_vue_loader_options_NaverPolygon_vue_vue_type_style_index_0_id_8088d4e6_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../node_modules/vue-loader/lib??vue-loader-options!./NaverPolygon.vue?vue&type=style&index=0&id=8088d4e6&scoped=true&lang=css& */ \"./node_modules/vue-loader/lib/index.js?!./src/overlays/NaverPolygon.vue?vue&type=style&index=0&id=8088d4e6&scoped=true&lang=css&\");\n/* harmony import */ var _node_modules_vue_loader_lib_index_js_vue_loader_options_NaverPolygon_vue_vue_type_style_index_0_id_8088d4e6_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_loader_lib_index_js_vue_loader_options_NaverPolygon_vue_vue_type_style_index_0_id_8088d4e6_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__);\n/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_vue_loader_lib_index_js_vue_loader_options_NaverPolygon_vue_vue_type_style_index_0_id_8088d4e6_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_vue_loader_lib_index_js_vue_loader_options_NaverPolygon_vue_vue_type_style_index_0_id_8088d4e6_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));\n /* harmony default export */ __webpack_exports__[\"default\"] = (_node_modules_vue_loader_lib_index_js_vue_loader_options_NaverPolygon_vue_vue_type_style_index_0_id_8088d4e6_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default.a); \n\n//# sourceURL=webpack://VueNaverMaps/./src/overlays/NaverPolygon.vue?");
+
+/***/ }),
+
+/***/ "./src/overlays/NaverPolygon.vue?vue&type=template&id=8088d4e6&scoped=true&":
+/*!**********************************************************************************!*\
+  !*** ./src/overlays/NaverPolygon.vue?vue&type=template&id=8088d4e6&scoped=true& ***!
+  \**********************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_NaverPolygon_vue_vue_type_template_id_8088d4e6_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../node_modules/vue-loader/lib??vue-loader-options!./NaverPolygon.vue?vue&type=template&id=8088d4e6&scoped=true& */ \"./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./src/overlays/NaverPolygon.vue?vue&type=template&id=8088d4e6&scoped=true&\");\n/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, \"render\", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_NaverPolygon_vue_vue_type_template_id_8088d4e6_scoped_true___WEBPACK_IMPORTED_MODULE_0__[\"render\"]; });\n\n/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, \"staticRenderFns\", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_NaverPolygon_vue_vue_type_template_id_8088d4e6_scoped_true___WEBPACK_IMPORTED_MODULE_0__[\"staticRenderFns\"]; });\n\n\n\n//# sourceURL=webpack://VueNaverMaps/./src/overlays/NaverPolygon.vue?");
+
+/***/ }),
+
 /***/ "./src/overlays/NaverRectangle.vue":
 /*!*****************************************!*\
   !*** ./src/overlays/NaverRectangle.vue ***!
@@ -732,17 +815,6 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _nod
 /***/ (function(module, exports, __webpack_require__) {
 
 eval("module.exports = __webpack_require__(/*! C:\\Project\\vue-naver-maps\\src\\index.js */\"./src/index.js\");\n\n\n//# sourceURL=webpack://VueNaverMaps/multi_./src/index.js?");
-
-/***/ }),
-
-/***/ "vue":
-/*!**********************!*\
-  !*** external "Vue" ***!
-  \**********************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-eval("module.exports = __WEBPACK_EXTERNAL_MODULE_vue__;\n\n//# sourceURL=webpack://VueNaverMaps/external_%22Vue%22?");
 
 /***/ })
 
