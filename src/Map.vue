@@ -64,26 +64,27 @@
       },
 
       /**
-       * @param {number} lat
-       * @param {number} lng
+       * @param {naver.maps.Bounds | naver.maps.BoundsLiteral | naver.maps.ArrayOfCoords | naver.maps.ArrayOfCoordsLiteral} bounds
+       * @param {number} margin
        */
-      fitBounds(lat, lng) {
-        this.map.fitBounds(new naver.maps.LatLng(lat, lng));
+      fitBounds(bounds, margin) {
+        this.map.fitBounds(new naver.maps.LatLng(bounds, margin));
       },
 
       /**
-       * @param {number} lat
-       * @param {number} lng
+       * @param {naver.maps.Coord | naver.maps.CoordLiteral} coord
+       * @param {naver.maps.TransitionOptions} transitionOptions
        */
-      panTo(lat, lng) {
+      panTo(coord, transitionOptions) {
         this.map.panTo(new naver.maps.LatLng(lat, lng));
       },
 
       /**
-       * @param {number} lat
-       * @param {number} lng
+       * @param {naver.maps.Bounds | naver.maps.BoundsLiteral} bounds
+       * @param {naver.maps.TransitionOptions} transitionOptions
+       * @param {number} margin
        */
-      panToBounds(lat, lng) {
+      panToBounds(bounds, transitionOptions, margin) {
         this.map.panToBounds(new naver.maps.LatLng(lat, lng));
       },
       /**
