@@ -15,6 +15,7 @@
 * `naver-ellipse` 도형(타원) 컴포넌트
 * `naver-rectangle` 도형(사각형) 컴포넌트
 * `naver-ground-overlay` 그라운드 오버레이 컴포넌트
+* `naver-polygon` 폴리곤 컴포넌트
 > #### 주의
 > Nuxt.js에서는 ssr 옵션을 꺼주십시오.
 ## 시작하기
@@ -74,86 +75,7 @@ mapOptions: {
 하지만 naver-maps 컴포넌트에서는 `this.setCenter(lat,lng)`으로 사용할 수 있습니다.
 
 > 현재는 개발 버전이라 `naver-maps` 컴포넌트에 사용가능한 모든 메소드가 포함되어 있지 않습니다.  이 경우에는 `this.map`으로 직접 접근해야합니다.
-### Methods
-* <a href="#setOptions">setOptions(options)</a>
-* <a href="#setMapType">setMapType(type)</a>
-* <a href="#setZoom">setZoom(level, useEffect)</a>
-* <a href="#setCenter">setCenter(lat, lng)</a>
-* <a href="#fitBounds">fitBounds(lat, lng)</a>
-* <a href="#panTo">panTo(lat, lng)</a>
-* <a href="#panToBounds">panToBounds(lat, lng)</a>
-* <a href="#panBy">panBy(x, y)</a>
-
-<a name="setOptions"></a>
-
-#### setOptions(options)
-
-| 파라미터 | 타입 |
-| --- | --- |
-| options | `Object` |
-
-<a name="setMapType"></a>
-
-#### setMapType(type)
-
-| 파라미터 | 타입 | Description |
-| --- | --- | --- |
-| type | `string` | NORMAL, TERRAIN, SATELLITE, HYBRID |
-
-<a name="setZoom"></a>
-
-#### setZoom(level, useEffect)
-
-| 파라미터 | 타입 | Default | Description |
-| --- | --- | --- | --- |
-| level | `number` |  | must be int |
-| useEffect | `boolean` | `false` |  |
-
-<a name="setCenter"></a>
-
-#### setCenter(lat, lng)
-
-| 파라미터 | 타입 |
-| --- | --- |
-| lat | `number` |
-| lng | `number` |
-
-<a name="fitBounds"></a>
-
-#### fitBounds(lat, lng)
-
-| 파라미터 | 타입 |
-| --- | --- |
-| lat | `number` |
-| lng | `number` |
-
-<a name="panTo"></a>
-
-#### panTo(lat, lng)
-
-| 파라미터 | 타입 |
-| --- | --- |
-| lat | `number` |
-| lng | `number` |
-
-<a name="panToBounds"></a>
-
-#### panToBounds(lat, lng)
-
-| 파라미터 | 타입 |
-| --- | --- |
-| lat | `number` |
-| lng | `number` |
-
-<a name="panBy"></a>
-
-#### panBy(x, y)
-
-| 파라미터 | 타입 |
-| --- | --- |
-| x | `number` |
-| y | `number` |
-
+[`docs/kr/naver-maps.md`]()
 ## 전역 컴포넌트
 ### @load(this)
 네이버 지도 라이브러리 또는 지도가 로딩됐을 때, 각각의 컴포넌트에서는 `load` 이벤트를 호출합니다.  
@@ -173,6 +95,8 @@ mapOptions: {
 [`docs/kr/naver-rectangle.md`](https://github.com/Shin-JaeHeon/vue-naver-maps/blob/master/docs/kr/naver-rectangle.md)
 ## NaverGroundOverlay
 [`docs/kr/naver-ground-overlay.md`](https://github.com/Shin-JaeHeon/vue-naver-maps/blob/master/docs/kr/naver-ground-overlay.md)
+## NaverPolygon
+[`docs/kr/naver-polygon.md`](https://github.com/Shin-JaeHeon/vue-naver-maps/blob/master/docs/kr/naver-polygon.md)
 ## Example
 ```vue
 <template>
