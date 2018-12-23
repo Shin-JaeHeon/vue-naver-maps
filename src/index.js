@@ -6,6 +6,7 @@ import NaverRectangle from "./overlays/NaverRectangle.vue";
 import NaverEllipse from "./overlays/NaverEllipse.vue";
 import NaverGroundOverlay from "./overlays/NaverGroundOverlay.vue";
 import NaverPolygon from "./overlays/NaverPolygon.vue";
+import NaverPolyline from "./overlays/NaverPolyline.vue";
 
 const vueNaverMaps = {
   /**
@@ -38,6 +39,7 @@ const vueNaverMaps = {
       Vue.component('naver-rectangle', NaverRectangle);
       Vue.component('naver-ground-overlay', NaverGroundOverlay);
       Vue.component('naver-polygon', NaverPolygon);
+      Vue.component('naver-polyline', NaverPolyline);
     } else throw new Error('Sorry, this plugin is only available in browsers at now. If you are using Nuxt.js, turn off ssr for this plugin.');
   }
 };
