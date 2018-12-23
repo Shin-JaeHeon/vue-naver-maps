@@ -79,12 +79,13 @@
        * @returns {naver.maps.ArrayOfCoords | naver.maps.KVOArrayOfCoords}
        */
       getPath() {
+        return this.polygon.getPath();
       },
       /**
        * @returns {Array<naver.maps.ArrayOfCoords> | naver.maps.KVOArray<naver.maps.KVOArrayOfCoords>}
        */
       getPaths() {
-
+        return this.polygon.getPaths();
       },
       /**
        *
