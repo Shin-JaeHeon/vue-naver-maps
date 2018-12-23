@@ -1,15 +1,19 @@
 # 체인지 로그
+# 0.10.0
+* naver-polygon 컴포넌트 추가
+* naver-polyline 컴포넌트 추가
+* CHANGELOG.md 수정
 # 0.9.4
-Build 오류 수정
+* Build 오류 수정
 
 # 0.9.3
-Readme 수정
+* Readme 수정
 
 # 0.9.2
-Readme 링크 오류 수정
+* Readme 링크 오류 수정
 
 # 0.9.1
-Readme 및 문서 수정
+* Readme 및 문서 수정
 # 0.9.0
 * Naver-Rectangle 컴포넌트 추가
 * Naver-GroundOverlay 컴포넌트 추가

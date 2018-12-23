@@ -16,6 +16,7 @@
 * `naver-rectangle` 도형(사각형) 컴포넌트
 * `naver-ground-overlay` 그라운드 오버레이 컴포넌트
 * `naver-polygon` 폴리곤 컴포넌트
+* `naver-polyline` 폴리라인 컴포넌트
 > #### 주의
 > Nuxt.js에서는 ssr 옵션을 꺼주십시오.
 ## 시작하기
@@ -97,6 +98,8 @@ mapOptions: {
 [`docs/kr/naver-ground-overlay.md`](https://github.com/Shin-JaeHeon/vue-naver-maps/blob/master/docs/kr/naver-ground-overlay.md)
 ## NaverPolygon
 [`docs/kr/naver-polygon.md`](https://github.com/Shin-JaeHeon/vue-naver-maps/blob/master/docs/kr/naver-polygon.md)
+## NaverPolyline
+[`docs/kr/naver-polyline.md`](https://github.com/Shin-JaeHeon/vue-naver-maps/blob/master/docs/kr/naver-polyline.md)
 ## Example
 ```vue
 <template>
