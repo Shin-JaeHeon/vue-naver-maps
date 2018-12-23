@@ -79,7 +79,6 @@
        * @returns {naver.maps.ArrayOfCoords | naver.maps.KVOArrayOfCoords}
        */
       getPath() {
-
       },
       /**
        * @returns {Array<naver.maps.ArrayOfCoords> | naver.maps.KVOArray<naver.maps.KVOArrayOfCoords>}
@@ -145,12 +144,14 @@
        */
       setPath(path) {
         this.polygon.setPath(path);
+        return this;
       },
       /**
        * @params {Array<naver.maps.ArrayOfCoords | naver.maps.KVOArray<naver.maps.KVOArrayOfCoords> | Array<naver.maps.ArrayOfCoordsLiteral} paths
        */
       setPaths(paths) {
         this.polygon.setPaths(paths);
+        return this;
       },
       /**
        *
