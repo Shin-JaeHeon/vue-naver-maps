@@ -1,4 +1,4 @@
-# naver-ground-overlay
+# naver-polygon
 ```vue
 <naver-polyogon :moreOptions="{}"></naver-polyogon>
 ```
