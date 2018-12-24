@@ -1,4 +1,7 @@
 # 체인지 로그
+# 0.10.5
+* naver-rectangle에서 LatLngBounds 대신 NSEW 사용
+ 
 # 0.10.4
 * 도형 오브젝트 생성시 map을 추가하지 않아 발생한 오류 수정
 

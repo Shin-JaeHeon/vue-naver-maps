@@ -7,7 +7,10 @@
   export default {
     name: 'NaverRectangle',
     props: {
-      bounds: Object,
+      south: Number,
+      north: Number,
+      west: Number,
+      east: Number,
       moreOptions: {
         type: Object,
         strokeWeight: Number,
@@ -165,7 +168,10 @@
          * {naver.maps.Map} map
          */
         this.map = map;
-        this.rectangle = new naver.maps.Rectangle(Object.assign({map: map, bounds: this.bounds}, this.moreOptions));
+        this.rectangle = new naver.maps.Rectangle(Object.assign({
+          map: map, bounds:
+            new naver.maps.LatLngBounds(new naver.maps.LatLng(this.south, this.west), new naver.maps.LatLng(this.north, this.east))
+        }, this.moreOptions));
         ['bounds_changed', 'click', 'clickable_changed', 'dblclick', 'mousedown', 'mouseout', 'mouseover', 'mouseup', 'visible_changed', 'zIndex_changed']
           .forEach(name => _.addEvent(this, this.rectangle, name));
         this.$emit('load', this);
