@@ -1,4 +1,7 @@
 # 체인지 로그
+# 0.10.7
+* naver-polygon의 paths 타입 변경(`Object`→`Array`)
+
 # 0.10.6
 * naver-polygon에서 잘못된 props 제거 및 paths를 options 오브젝트 하위에서 루트로 변경
 

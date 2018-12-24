@@ -7,7 +7,7 @@
   export default {
     name: 'NaverPolygon',
     props: {
-      paths: Object,
+      paths: Array,
       options: {
         strokeWeight: Number,
         strokeOpacity: Number,
