@@ -166,7 +166,7 @@
          */
         this.map = map;
         this.rectangle = new naver.maps.Rectangle(Object.assign({bounds: this.bounds}, this.moreOptions));
-        ['mousedown', 'mouseup', 'click', 'dblclick', 'mouseover', 'mouseout', 'mousemove', 'visible_changed', 'zIndex_changed']
+        ['bounds_changed', 'click', 'clickable_changed', 'dblclick', 'mousedown', 'mouseout', 'mouseover', 'mouseup', 'visible_changed', 'zIndex_changed']
           .forEach(name => _.addEvent(this, this.marker, name));
         this.$emit('load', this);
       });
