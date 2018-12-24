@@ -1,5 +1,5 @@
 <template>
-  <div ref="content">
+  <div ref="content" :style="{display:isOpen?'block':'none'}">
     <slot></slot>
   </div>
 </template>
