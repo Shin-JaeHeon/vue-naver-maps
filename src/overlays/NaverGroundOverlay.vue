@@ -63,7 +63,7 @@
         if (this.clickable) options['clickable'] = this.clickable;
         if (this.opacity) options['opacity'] = this.opacity;
         this.groundOverlay = new naver.maps.GroundOverlay(this.map, this.bounds, options);
-        ['click', 'dblclick'].forEach(name => _.addEvent(this, this.marker, name));
+        ['click', 'dblclick'].forEach(name => _.addEvent(this, this.groundOverlay, name));
         this.$emit('load', this);
       });
     }

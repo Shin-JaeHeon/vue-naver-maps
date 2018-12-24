@@ -171,7 +171,7 @@
         this.map = map;
         this.polyline = new naver.maps.Polyline(this.options);
         ['click', 'dblclick', 'mousedown', 'mouseout', 'mouseover', 'mouseup', 'visible_changed', 'zIndex_changed']
-          .forEach(name => _.addEvent(this, this.marker, name));
+          .forEach(name => _.addEvent(this, this.polyline, name));
         this.$emit('load', this);
       });
     }

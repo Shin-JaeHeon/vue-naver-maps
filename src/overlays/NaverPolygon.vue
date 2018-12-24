@@ -193,7 +193,7 @@
         this.map = map;
         this.polygon = new naver.maps.Polygon(this.options);
         ['click', 'clickable_changed', 'dblclick', 'mousedown', 'mouseout', 'mouseover', 'mouseup', 'visible_changed', 'zIndex_changed']
-          .forEach(name => _.addEvent(this, this.marker, name));
+          .forEach(name => _.addEvent(this, this.polygon, name));
         this.$emit('load', this);
       });
     }
