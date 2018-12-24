@@ -211,7 +211,7 @@
         }, this.moreOptions));
 
         ['center_changed', 'click', 'clickable_changed', 'dblclick', 'mousedown', 'mouseout', 'mouseover', 'mouseup', 'radius_changed', 'visible_changed', 'zIndex_changed']
-          .forEach(name => _.addEvent(this, this.marker, name));
+          .forEach(name => _.addEvent(this, this.circle, name));
         this.$emit('load', this);
       });
     }
