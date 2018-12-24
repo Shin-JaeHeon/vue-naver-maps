@@ -1,4 +1,7 @@
 # 체인지 로그
+# 0.10.1
+* event binding 관련 오류 수정 및 업데이트
+
 # 0.10.0
 * naver-polygon 컴포넌트 추가
 * naver-polyline 컴포넌트 추가
