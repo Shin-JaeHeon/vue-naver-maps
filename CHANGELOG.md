@@ -1,4 +1,7 @@
 # 체인지 로그
+# 0.10.6
+* naver-polygon에서 잘못된 props 제거 및 paths를 options 오브젝트 하위에서 루트로 변경
+
 # 0.10.5
 * naver-rectangle에서 LatLngBounds 대신 NSEW 사용
  
