@@ -169,7 +169,9 @@
          * {naver.maps.Map} map
          */
         this.map = map;
-        this.polyline = new naver.maps.Polyline(this.options);
+        this.polyline = new naver.maps.Polyline(Object.assign({
+          map: map, options: this.options
+        }));
         ['click', 'dblclick', 'mousedown', 'mouseout', 'mouseover', 'mouseup', 'visible_changed', 'zIndex_changed']
           .forEach(name => _.addEvent(this, this.polyline, name));
         this.$emit('load', this);

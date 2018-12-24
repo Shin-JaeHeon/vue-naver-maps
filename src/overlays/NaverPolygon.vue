@@ -191,7 +191,9 @@
          * {naver.maps.Map} map
          */
         this.map = map;
-        this.polygon = new naver.maps.Polygon(this.options);
+        this.polygon = new naver.maps.Polygon(Object.assign({
+          map: map, options: this.options
+        }));
         ['click', 'clickable_changed', 'dblclick', 'mousedown', 'mouseout', 'mouseover', 'mouseup', 'visible_changed', 'zIndex_changed']
           .forEach(name => _.addEvent(this, this.polygon, name));
         this.$emit('load', this);

@@ -206,6 +206,7 @@
          */
         this.map = map;
         this.circle = new naver.maps.Circle(Object.assign({
+          map: map,
           center: new naver.maps.LatLng(this.lat, this.lng),
           radius: this.radius
         }, this.moreOptions));
