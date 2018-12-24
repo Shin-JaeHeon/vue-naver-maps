@@ -210,7 +210,7 @@
           radius: this.radius
         }, this.moreOptions));
 
-        ['mousedown', 'mouseup', 'click', 'dblclick', 'mouseover', 'mouseout', 'mousemove', 'visible_changed', 'zIndex_changed', 'radius_changed']
+        ['center_changed', 'click', 'clickable_changed', 'dblclick', 'mousedown', 'mouseout', 'mouseover', 'mouseup', 'radius_changed', 'visible_changed', 'zIndex_changed']
           .forEach(name => _.addEvent(this, this.marker, name));
         this.$emit('load', this);
       });
