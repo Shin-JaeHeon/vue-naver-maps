@@ -1,7 +1,11 @@
 # 체인지 로그
+# 0.10.3
+* naver-info-window 데이터 바인딩 오류 수정
+
 # 0.10.2
 * naver-info-window 동작 개선
 * 이벤트 관련 오류 수정
+
 # 0.10.1
 * event binding 관련 오류 수정 및 업데이트
 
@@ -9,6 +13,7 @@
 * naver-polygon 컴포넌트 추가
 * naver-polyline 컴포넌트 추가
 * CHANGELOG.md 수정
+
 # 0.9.4
 * Build 오류 수정
 
@@ -20,6 +25,7 @@
 
 # 0.9.1
 * Readme 및 문서 수정
+
 # 0.9.0
 * Naver-Rectangle 컴포넌트 추가
 * Naver-GroundOverlay 컴포넌트 추가
@@ -109,7 +115,7 @@
 * map zoomControl 관련 설정 추가
 
 # 0.0.3 
-* README.md 및 CAHNGELOG.md 추가 
+* README.md 및 CHANGELOG.md 추가 
 * 오류 문구 변경 및 Lat, Lng 체크
 
 # 0.0.2

@@ -1,6 +1,8 @@
 <template>
-  <div ref="content" :style="{display:isOpen?'block':'none'}">
-    <slot></slot>
+  <div style="display:none">
+    <div ref="content">
+      <slot></slot>
+    </div>
   </div>
 </template>
 
@@ -33,7 +35,7 @@
          * {naver.maps.Map} map
          */
         this.map = map;
-        this.infoWindow = new naver.maps.InfoWindow({content: this.$refs.content.innerHTML});
+        this.infoWindow = new naver.maps.InfoWindow({content: this.$refs.content});
         this.$emit('load', this);
       });
     }

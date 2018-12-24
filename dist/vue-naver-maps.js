@@ -116,7 +116,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _overlays_NaverMarker_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./overlays/NaverMarker.vue */ \"./src/overlays/NaverMarker.vue\");\n//\n//\n//\n//\n//\n//\n\n/* harmony default export */ __webpack_exports__[\"default\"] = ({\n  name: 'InfoWindow',\n  props: {\n    marker: _overlays_NaverMarker_vue__WEBPACK_IMPORTED_MODULE_0__[\"default\"],\n    isOpen: Boolean\n  },\n  watch: {\n    isOpen(newValue) {\n      if (newValue) this.infoWindow.open(this.map, this.marker);else this.infoWindow.close();\n      this.$emit(newValue ? 'open' : 'close', this);\n    }\n\n  },\n\n  data() {\n    return {\n      infoWindow: null,\n      map: null\n    };\n  },\n\n  methods: {},\n\n  mounted() {\n    window.$naverMapsCallback.push(map => {\n      /**\n       * {naver.maps.Map} map\n       */\n      this.map = map;\n      this.infoWindow = new naver.maps.InfoWindow({\n        content: this.$refs.content.innerHTML\n      });\n      this.$emit('load', this);\n    });\n  }\n\n});\n\n//# sourceURL=webpack://VueNaverMaps/./src/InfoWindow.vue?./node_modules/babel-loader/lib!./node_modules/vue-loader/lib??vue-loader-options");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _overlays_NaverMarker_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./overlays/NaverMarker.vue */ \"./src/overlays/NaverMarker.vue\");\n//\n//\n//\n//\n//\n//\n//\n//\n\n/* harmony default export */ __webpack_exports__[\"default\"] = ({\n  name: 'InfoWindow',\n  props: {\n    marker: _overlays_NaverMarker_vue__WEBPACK_IMPORTED_MODULE_0__[\"default\"],\n    isOpen: Boolean\n  },\n  watch: {\n    isOpen(newValue) {\n      if (newValue) this.infoWindow.open(this.map, this.marker);else this.infoWindow.close();\n      this.$emit(newValue ? 'open' : 'close', this);\n    }\n\n  },\n\n  data() {\n    return {\n      infoWindow: null,\n      map: null\n    };\n  },\n\n  methods: {},\n\n  mounted() {\n    window.$naverMapsCallback.push(map => {\n      /**\n       * {naver.maps.Map} map\n       */\n      this.map = map;\n      this.infoWindow = new naver.maps.InfoWindow({\n        content: this.$refs.content\n      });\n      this.$emit('load', this);\n    });\n  }\n\n});\n\n//# sourceURL=webpack://VueNaverMaps/./src/InfoWindow.vue?./node_modules/babel-loader/lib!./node_modules/vue-loader/lib??vue-loader-options");
 
 /***/ }),
 
@@ -234,7 +234,7 @@ eval("// shim for using process in browser\nvar process = module.exports = {};\n
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n//# sourceURL=webpack://VueNaverMaps/./src/InfoWindow.vue?./node_modules/vue-loader/lib??vue-loader-options");
+eval("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n//# sourceURL=webpack://VueNaverMaps/./src/InfoWindow.vue?./node_modules/vue-loader/lib??vue-loader-options");
 
 /***/ }),
 
@@ -334,7 +334,7 @@ eval("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"render\", function() { return render; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"staticRenderFns\", function() { return staticRenderFns; });\nvar render = function() {\n  var _vm = this\n  var _h = _vm.$createElement\n  var _c = _vm._self._c || _h\n  return _c(\n    \"div\",\n    { ref: \"content\", style: { display: _vm.isOpen ? \"block\" : \"none\" } },\n    [_vm._t(\"default\")],\n    2\n  )\n}\nvar staticRenderFns = []\nrender._withStripped = true\n\n\n\n//# sourceURL=webpack://VueNaverMaps/./src/InfoWindow.vue?./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"render\", function() { return render; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"staticRenderFns\", function() { return staticRenderFns; });\nvar render = function() {\n  var _vm = this\n  var _h = _vm.$createElement\n  var _c = _vm._self._c || _h\n  return _c(\"div\", { staticStyle: { display: \"none\" } }, [\n    _c(\"div\", { ref: \"content\" }, [_vm._t(\"default\")], 2)\n  ])\n}\nvar staticRenderFns = []\nrender._withStripped = true\n\n\n\n//# sourceURL=webpack://VueNaverMaps/./src/InfoWindow.vue?./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options");
 
 /***/ }),
 
