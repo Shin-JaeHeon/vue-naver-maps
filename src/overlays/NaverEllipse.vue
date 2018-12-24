@@ -169,7 +169,7 @@
         this.ellipse = new naver.maps.Ellipse(Object.assign({bounds: this.bounds}, this.moreOptions));
 
         ['bounds_changed', 'click', 'clickable_changed', 'dblclick', 'mousedown', 'mouseout', 'mouseover', 'mouseup', 'visible_changed', 'zIndex_changed']
-          .forEach(name => _.addEvent(this, this.marker, name));
+          .forEach(name => _.addEvent(this, this.ellipse, name));
         this.$emit('load', this);
       });
     }
