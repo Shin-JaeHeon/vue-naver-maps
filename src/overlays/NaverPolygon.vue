@@ -186,13 +186,13 @@
     },
     mounted() {
       window.$naverMapsCallback.push((map) => {
-        /**
+        /**K
          * {naver.maps.Map} map
          */
         this.map = map;
         this.polygon = new naver.maps.Polygon(Object.assign({
-          map: map, options: Object.assign(this.paths, this.options)
-        }));
+          map: map, paths: this.paths.map(latlng => new naver.maps.LatLng(latlng.lat, latlng.lng))
+        }, this.options));
         ['click', 'clickable_changed', 'dblclick', 'mousedown', 'mouseout', 'mouseover', 'mouseup', 'visible_changed', 'zIndex_changed']
           .forEach(name => _.addEvent(this, this.polygon, name));
         this.$emit('load', this);
