@@ -7,6 +7,7 @@
   export default {
     name: 'NaverGroundOverlay',
     props: {
+      url: String,
       bounds: Object,
       clickable: Boolean,
       opacity: Number
@@ -62,7 +63,7 @@
         const options = {};
         if (this.clickable) options['clickable'] = this.clickable;
         if (this.opacity) options['opacity'] = this.opacity;
-        this.groundOverlay = new naver.maps.GroundOverlay(this.map, this.bounds, options);
+        this.groundOverlay = new naver.maps.GroundOverlay(this.url, this.bounds, Object.assign({map: this.map}, options));
         ['click', 'dblclick'].forEach(name => _.addEvent(this, this.groundOverlay, name));
         this.$emit('load', this);
       });

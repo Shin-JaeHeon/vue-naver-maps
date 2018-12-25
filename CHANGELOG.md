@@ -1,6 +1,9 @@
 # 체인지 로그
 
-# 0.10.10
+# 0.10.12
+* naver-ground-overlay 오류 수정
+
+# 0.10.11
 * naver-polyline의 props 관련 오류 수정
 * naver-polygon의 props 관련 동작 수정
 
