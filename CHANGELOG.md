@@ -1,5 +1,8 @@
 # 체인지 로그
 
+# 0.10.10
+* naver-polyline에서 paths 관련 업데이트(v0.10.5 ~ v0.10.7, v0.10.9의 업데이트 내용과 유사) 
+
 # 0.10.9
 * naver-polygon에서 paths 오류 해결
 
@@ -10,7 +13,7 @@
 * naver-polygon의 paths 타입 변경(`Object`→`Array`)
 
 # 0.10.6
-* naver-polygon에서 잘못된 props 제거 및 paths를 options 오브젝트 하위에서 루트로 변경
+* naver-polygon에서 잘못된 props 제거 및 paths를 options 오브젝트 하위에서 루트로 변경k
 
 # 0.10.5
 * naver-rectangle에서 LatLngBounds 대신 NSEW 사용

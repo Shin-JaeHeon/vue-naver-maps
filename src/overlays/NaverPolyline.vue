@@ -7,8 +7,8 @@
   export default {
     name: 'NaverPolyline',
     props: {
+      type: Array,
       options: {
-        type: Object,
         paths: Object,
         strokeWeight: Number,
         strokeOpacity: Number,
@@ -170,7 +170,7 @@
          */
         this.map = map;
         this.polyline = new naver.maps.Polyline(Object.assign({
-          map: map, options: this.options
+          map: map, path: this.path.map(latLng => new naver.maps.LatLng(latLng.lat, latLng.lng)), options: this.options
         }));
         ['click', 'dblclick', 'mousedown', 'mouseout', 'mouseover', 'mouseup', 'visible_changed', 'zIndex_changed']
           .forEach(name => _.addEvent(this, this.polyline, name));
