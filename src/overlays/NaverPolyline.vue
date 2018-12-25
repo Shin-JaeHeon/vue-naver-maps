@@ -71,7 +71,7 @@
        * @returns {naver.maps.ArrayOfCoords | naver.maps.KVOArrayOfCoords}
        */
       getPath() {
-        -``
+        return this.polyline.getPath();
       },
       /**
        *
