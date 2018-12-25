@@ -7,7 +7,7 @@
   export default {
     name: 'NaverPolygon',
     props: {
-      paths: Array,
+      paths: Array[Array],
       options: {
         strokeWeight: Number,
         strokeOpacity: Number,
@@ -191,7 +191,7 @@
          */
         this.map = map;
         this.polygon = new naver.maps.Polygon(Object.assign({
-          map: map, paths: this.paths.map(latlng => new naver.maps.LatLng(latlng.lat, latlng.lng))
+          map: map, paths: this.paths.map(path => path.map(latlng => new naver.maps.LatLng(latlng.lat, latlng.lng)))
         }, this.options));
         ['click', 'clickable_changed', 'dblclick', 'mousedown', 'mouseout', 'mouseover', 'mouseup', 'visible_changed', 'zIndex_changed']
           .forEach(name => _.addEvent(this, this.polygon, name));

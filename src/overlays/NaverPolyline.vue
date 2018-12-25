@@ -8,8 +8,8 @@
     name: 'NaverPolyline',
     props: {
       type: Array,
+      path: Array,
       options: {
-        paths: Object,
         strokeWeight: Number,
         strokeOpacity: Number,
         strokeColor: String,
