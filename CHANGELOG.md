@@ -1,4 +1,8 @@
 # 체인지 로그
+
+# 0.10.8
+* dist파일 누락 해결
+
 # 0.10.7
 * naver-polygon의 paths 타입 변경(`Object`→`Array`)
 
