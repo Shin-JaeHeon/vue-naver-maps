@@ -1,7 +1,13 @@
 # naver-info-window
 ```html
-<naver-info-window @load="onWindowLoad" :isOpen="info" :marker="marker">
-  <h1>Hello, World!</h1>
+<naver-info-window
+        class="info-window"
+        @load="onWindowLoad"
+        :isOpen="info"
+        :marker="marker">
+        <div class="info-window-container">
+          <h1>{{hello}}</h1>
+        </div>
 </naver-info-window>
 ```
 

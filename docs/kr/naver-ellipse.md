@@ -1,19 +1,19 @@
 # naver-ellipse
 ```vue
-<naver-ellipse :bounds="{north:37,south:36,west:127,east:128}" :moreOptions="{}"></naver-ellipse>
+<naver-ellipse :bounds="{south:36,north:38,west:126,east:128}"/>
 ```
-## More Options
-* strokeWeight : Number
-* strokeOpacity : Number
-* strokeColor : String
-* strokeStyle : naver.maps.strokeStyleType
-* strokeLineCap : naver.maps.strokeLineCapType
-* strokeLineJoin : naver.maps.strokeLineJoinType
-* fillColor : String
-* fillOpacity : Number
-* clickable : Boolean
-* visible : Boolean
-* zIndex : Number
+### More Options
+* strokeWeight : `Number`
+* strokeOpacity : `Number`
+* strokeColor : `String`
+* strokeStyle : `naver.maps.strokeStyleType`
+* strokeLineCap : `naver.maps.strokeLineCapType`
+* strokeLineJoin : `naver.maps.strokeLineJoinType`
+* fillColor : `String`
+* fillOpacity : `Number`
+* clickable : `Boolean`
+* visible : `Boolean`
+* zIndex : `Number`
 ### Methods
 ### getAreaSize() ⇒ <code>number</code>
 ### getBounds() ⇒ <code>naver.maps.Bounds</code>

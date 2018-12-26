@@ -1,19 +1,25 @@
 # naver-rectangle
 ```vue
-<naver-rectangle :bounds="{north:37,south:36,west:127,east:128}" :moreOptions="{}"></naver-rectangle>
+<naver-rectangle :south="36" :north="38" :west="126" :east="128"/>
 ```
-## More Options
-* strokeWeight : Number
-* strokeOpacity : Number
-* strokeColor : String
-* strokeStyle : naver.maps.strokeStyleType
-* strokeLineCap : naver.maps.strokeLineCapType
-* strokeLineJoin : naver.maps.strokeLineJoinType
-* fillColor : String
-* fillOpacity : Number
-* clickable : Boolean
-* visible : Boolean
-* zIndex : Number
+## Props
+### bounds
+* north : `Number`
+* south : `Number`
+* west : `Number`
+* east : `Number`
+### More Options
+* strokeWeight : `Number`
+* strokeOpacity : `Number`
+* strokeColor : `String`
+* strokeStyle : `naver.maps.strokeStyleType`
+* strokeLineCap : `naver.maps.strokeLineCapType`
+* strokeLineJoin : `naver.maps.strokeLineJoinType`
+* fillColor : `String`
+* fillOpacity : `Number`
+* clickable : `Boolean`
+* visible : `Boolean`
+* zIndex : `Number`
 ### Methods
 ### getAreaSize() ⇒ <code>number</code>
 ### getBounds() ⇒ <code>naver.maps.Bounds</code>

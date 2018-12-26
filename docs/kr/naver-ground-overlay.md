@@ -1,6 +1,8 @@
 # naver-ground-overlay
 ```vue
-<naver-ground-overlay :bounds="{north:37,south:36,west:127,east:128}" :clickable="true" :opacity="1"></naver-ground-overlay>
+<naver-ground-overlay
+        :url="'//logoproject.naver.com/img/img_about.gif'"
+        :bounds="{south:36.7,north:36.9,west:126.5,east:127.5}"/>
 ```
 ## Methods
 ### getBounds() ⇒ <code>naver.maps.Bounds</code>

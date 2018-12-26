@@ -1,21 +1,21 @@
 # naver-polygon
 ```vue
-<naver-polyogon :moreOptions="{}"></naver-polyogon>
+<naver-polygon :paths="[[{lat:37,lng:127},{lat:38,lng:127},{lat:38,lng:129},{lat:37,lng:128}]]"/>
 ```
-## More Options
-* type: Object
-* paths: Object
-* strokeWeight : Number
-* strokeOpacity : Number
-* strokeColor : String
-* strokeStyle : naver.maps.strokeStyleType
-* strokeLineCap : naver.maps.strokeLineCapType
-* strokeLineJoin : naver.maps.strokeLineJoinType
-* fillColor : String
-* fillOpacity : Number
-* clickable : Boolean
-* visible : Boolean
-* zIndex : Number
+## Props
+* paths: `Array\<Array\>`
+### More Options
+* strokeWeight : `Number`
+* strokeOpacity : `Number`
+* strokeColor : `String`
+* strokeStyle : `naver.maps.strokeStyleType`
+* strokeLineCap : `naver.maps.strokeLineCapType`
+* strokeLineJoin : `naver.maps.strokeLineJoinType`
+* fillColor : `String`
+* fillOpacity : `Number`
+* clickable : `Boolean`
+* visible : `Boolean`
+* zIndex : `Number`
 ## Methods
 
 ### Methods

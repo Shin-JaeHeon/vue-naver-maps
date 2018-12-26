@@ -1,19 +1,23 @@
 # naver-circle
 ```vue
-<naver-circle :lat="37" :lng="127" :radius="1000" :moreOptions="{}"></naver-circle>
+ <naver-circle :lat="37" :lng="127" :radius="88600"/>
 ```
-## More Options
-* strokeWeight : Number
-* strokeOpacity : Number
-* strokeColor : String
-* strokeStyle : naver.maps.strokeStyleType
-* strokeLineCap : naver.maps.strokeLineCapType
-* strokeLineJoin : naver.maps.strokeLineJoinType
-* fillColor : String
-* fillOpacity : Number
-* clickable : Boolean
-* visible : Boolean
-* zIndex : Number
+## Props
+* lat : `Number`
+* lng : `Number`
+* radius : `Number`
+### More Options
+* strokeWeight : `Number`
+* strokeOpacity : `Number`
+* strokeColor : `String`
+* strokeStyle : `naver.maps.strokeStyleType`
+* strokeLineCap : `naver.maps.strokeLineCapType`
+* strokeLineJoin : `naver.maps.strokeLineJoinType`
+* fillColor : `String`
+* fillOpacity : `Number`
+* clickable : `Boolean`
+* visible : `Boolean`
+* zIndex : `Number`
 ### Methods
 ### getAreaSize() ⇒ <code>number</code>
 ### getBounds() ⇒ <code>naver.maps.Bounds</code>
