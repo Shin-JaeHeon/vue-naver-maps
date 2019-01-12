@@ -44,7 +44,7 @@ path: `Array`,
 
 ### getPath
 * Type : `Function`
-* Return : `naver.maps.ArrayOfCoords` |`naver.maps.KVOArrayOfCoords`
+* Return : `naver.maps.ArrayOfCoords` | `naver.maps.KVOArrayOfCoords`
 
 ### getStyles
 * Type : `Function`
