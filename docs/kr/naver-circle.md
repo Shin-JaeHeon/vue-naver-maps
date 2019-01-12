@@ -18,63 +18,106 @@
 * clickable : `Boolean`
 * visible : `Boolean`
 * zIndex : `Number`
-### Methods
-### getAreaSize() ⇒ <code>number</code>
-### getBounds() ⇒ <code>naver.maps.Bounds</code>
-### getCenter() ⇒ <code>naver.maps.Coord</code>
-### getClickable() ⇒ <code>boolean</code>
-### getDrawingRect() ⇒ <code>naver.maps.Bounds</code>
-### getOptions(key) ⇒ <code>naver.maps.CircleOptions</code>
-| 파라미터 | 타입 |
-| --- | --- |
-| key | string |
-### getRadius() ⇒ <code>number</code>
-### getStyles(key) ⇒ <code>naver.maps.CircleOptions</code>
-| 파라미터 | 타입 |
-| --- | --- |
-| key | string | 
-### getVisible() ⇒ <code>boolean</code>
-### getZIndex() ⇒ <code>number</code>
-### setCenter(lat, lng) ⇒ <code>this</code>
+## Getter Methods
 
-| 파라미터 | 타입 |
-| --- | --- |
-| lat | number |
-| lng | number |
-### setCenterPoint(x, y) ⇒ <code>this</code>
+### getAreaSize
+* Type : `Function`
+* Return : `number`
 
-| 파라미터 | 타입 |
-| --- | --- |
-| x | number |
-| y | number | 
-### setClickable(clickable) ⇒ <code>this</code>
+### getBounds
+* Type : `Function`
+* Return : `naver.maps.Bounds`
 
-| 파라미터 | 타입 |
-| --- | --- |
-| clickable | boolean | 
-### setOptions(options) ⇒ <code>this</code>
+### getClickable
+* Type : `Function`
+* Return : `boolean`
 
-| 파라미터 | 타입 |
-| --- | --- |
-| options | Object |
-### setRadius(radius) ⇒ <code>this</code>
+### getCenter
+* Type : `Function`
+* Return : `naver.maps.Point | naver.maps.LatLng`
 
-| 파라미터 | 타입 |
-| --- | --- |
-| radius | number | 
-### setStyles(options) ⇒ <code>this</code>
+### getDrawingRect
+* Type : `Function`
+* Return : `naver.maps.Bounds`
 
-| 파라미터 | 타입 |
-| --- | --- |
-| options | Object | 
-### setVisible(visible) ⇒ <code>this</code>
+### getRadius
+* Type : `Function`
+* Return : `number`
+### getOptions
+* Type : `Function`
+* Return : `naver.maps.CircleOptions`
+* Parameter
+ * key : `string`  
 
-| 파라미터 | 타입 |
-| --- | --- |
-| visible | boolean |
-### setZIndex(zIndex) ⇒ <code>this</code>
+### getStyles
+* Type :Fucntion
+* Return : `naver.maps.CircleOptions`
+* Parameter
+ * key : `string` 
 
-| 파라미터 | 타입 |
-| --- | --- |
-| zIndex | number | 
+### getVisible
+* Type : `Function`
+* Return : `boolean`
+
+### getZIndex
+* Type : `Function`
+* Return : `number`
+
+## Setter Methods
+
+### setBounds
+* Type : `Function`
+* Return : `this`
+* Parameter
+ * bounds : `BoundsLiteral`
+
+### setClickable
+* Type : `Function`
+* Return : `this`
+* Parameter
+ * clickable : `boolean`
+ 
+### setCenter
+ * Type : `Function`
+ * Return : `this`
+ * Parameter
+  * lat : `number`
+  * lng : `number`
+  
+### setCenterPoint
+* Type : `Function`
+* Return : `this`
+* Parameter
+ * x : `number`
+ * y : `number`
+
+### setOptions
+* Type : `Function`
+* Return : `this`
+* Parameter
+ * options : `Object`
+ 
+### setRadius
+* Type : `Function`
+* Return : `this`
+* Parameter
+ * radius : `number` 
+
+### setStyles
+* Type : `Function`
+* Return : `this`
+* Parameter
+ * options : `Object` 
+
+### setVisible
+* Type : `Function`
+* Return : `this`
+* Parameter
+ * visible : `boolean`
+ 
+### setZIndex
+* Type : `Function`
+* Return : `this`
+* Parameter
+ * zIndex : `number` 
 
