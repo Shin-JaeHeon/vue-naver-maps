@@ -24,84 +24,58 @@ mapOptions: {
 `zoomControlOptions`의 `position`은 `TOP_RIGHT`등 기존 JS 라이브러리의 enum 이름을 사용합니다.
 ### 추가 옵션 설정하기
 기존 js 라이브러리와 마찬가지로, map 객체에 `setOptions(options)`를 사용할 수 있습니다. 단, 맵이 로딩 된 후에만 사용이 가능합니다.
-## Methods
-* <a href="#setOptions">setOptions(options)</a>
-* <a href="#setMapType">setMapType(type)</a>
-* <a href="#setZoom">setZoom(level, useEffect)</a>
-* <a href="#setCenter">setCenter(lat, lng)</a>
-* <a href="#fitBounds">fitBounds(lat, lng)</a>
-* <a href="#panTo">panTo(lat, lng)</a>
-* <a href="#panToBounds">panToBounds(lat, lng)</a>
-* <a href="#panBy">panBy(x, y)</a>
+## Setter Methods
+### setOptions
+* Type : `Function`
+* Return : `this`
+* Parameter
+ * options : `Object`
+ 
+### setOptions
+* Type : `Function`
+* Return : `this`
+* Parameter
+ * type : `NORMAL | TERRAIN | SATELLITE | HYBRID`
+ 
+### setOptions
+* Type : `Function`
+* Return : `this`
+* Parameter
+ * level : `number(Int)`
+ * useEffect : `boolean`, default is `false`.
 
-<a name="setOptions"></a>
-  
-### setOptions(options)
+### setCenter
+* Type : `Function`
+* Return : `this`
+* Parameter
+ * lat : `number`
+ * lng : `number`
 
-| 파라미터 | 타입 |
-| --- | --- |
-| options | `Object` |
+### fitBounds
+* Type : `Function`
+* Return : `this`
+* Parameter
+ * bounds : `naver.maps.Bounds(Literal)` | `naver.maps.ArrayOfCoords(Literal)`
+ * margin : `number`
 
-<a name="setMapType"></a>
-
-### setMapType(type)
-
-| 파라미터 | 타입 | Description |
-| --- | --- | --- |
-| type | `string` | NORMAL, TERRAIN, SATELLITE, HYBRID |
-
-<a name="setZoom"></a>
-
-### setZoom(level, useEffect)
-
-| 파라미터 | 타입 | Default | Description |
-| --- | --- | --- | --- |
-| level | `number` |  | must be int |
-| useEffect | `boolean` | `false` |  |
-
-<a name="setCenter"></a>
-
-### setCenter(lat, lng)
-
-| 파라미터 | 타입 |
-| --- | --- |
-| lat | `number` |
-| lng | `number` |
-
-<a name="fitBounds"></a>
-
-### fitBounds(bounds, margin)
-
-| 파라미터 | 타입 |
-| --- | --- |
-| bounds | `naver.maps.Bounds OR naver.maps.BoundsLiteral OR naver.maps.ArrayOfCoords OR naver.maps.ArrayOfCoordsLiteral` |
-| margin | `number` |
-<a name="panTo"></a>
-
-### panTo(coord, transitionOptions)
-
-| 파라미터 | 타입 |
-| --- | --- |
-| coord | `naver.maps.Coord OR naver.maps.CoordLiteral` |
-| transitionOptions | `naver.maps.TransitionOptions` |
-
-
-<a name="panToBounds"></a>
+### panTo
+* Type : `Function`
+* Return : `this`
+* Parameter
+ * coord | `naver.maps.Coord(Literal)`
+ * transitionOptions : `naver.maps.TransitionOptions`
 
 ### panToBounds(bounds, transitionOptions, margin)
+* Type : `Function`
+* Return : `this`
+* Parameter
+ * bounds | `naver.maps.Bounds(Literal)`
+ * transitionOptions : `naver.maps.TransitionOptions
+ * margin : `number`
 
-| 파라미터 | 타입 |
-| --- | --- |
-| bounds | `naver.maps.Bounds OR naver.maps.BoundsLiteral` |
-| transitionOptions | `naver.maps.TransitionOptions` |
-| margin | `number` |
-
-
-<a name="panBy"></a>
-
-### panBy(x, y)
-
-| 파라미터 | 타입 |
-| --- | --- |
-| x | `number` |
-| y | `number` |
+### panBy
+* Type : `Function`
+* Return : `this`
+* Parameter
+ * x : `number`
+ * y : `number`
