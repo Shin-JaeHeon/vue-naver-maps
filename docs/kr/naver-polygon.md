@@ -63,13 +63,13 @@
 * Type : `Function`
 * Return : `number`
 
+## Setter Methods
+
 ### setBounds
 * Type : `Function`
 * Return : `this`
 * Parameter
  * bounds : `BoundsLiteral`
-
-## Setter Methods
 
 ### setClickable
 * Type : `Function`
