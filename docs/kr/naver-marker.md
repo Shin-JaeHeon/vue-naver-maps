@@ -24,84 +24,129 @@ export default {
 </script>
 
 ```
+## General Methods
 
-## Methods
-* draw() => void;
-* getAnimation() => string
-* getClickable() => boolean
-* getCursor() => string
-* getDraggable() => boolean
-* getDrawingRect() => Bounds
-* getIcon() => ImageIcon or SymbolIcon or HtmlIcon
-* getOptions(key?: string) => MarkerOptions
-* getPosition() => Coord
-* getShape() => MarkerShape
-* getTitle() => string
-* getVisible() => boolean
-* getZIndex() => number
+### draw
+* Type : `Function`
+* Return : `void`
 
-### setClickable(clickable) ⇒ `Marker`
+## Getter Methods
 
-| 파라미터 | 타입 |
-| --- | --- |
-| clickable | `boolean` |
+### getAnimation
+* Type : `Function`
+* Return : `string`
 
-### setCursor(cursor) ⇒ `Marker`
+### getClickable
+* Type : `Function`
+* Return : `boolean`
 
-| 파라미터 | 타입 |
-| --- | --- |
-| cursor | `string` |
+### getCursor
+* Type : `Function`
+* Return : `string`
 
-### setDraggable(draggable) ⇒ `Marker`
+### getDraggable
+* Type : `Function`
+* Return : `boolean`
 
-| 파라미터 | 타입 |
-| --- | --- |
-| draggable | `boolean` |
+### getDrawingRect
+* Type : `Function`
+* Return : `naver.maps.Bounds`
 
-### setAnimation(animation) ⇒ `Marker`
+### getIcon
+* Type : `Function`
+* Return : `ImageIcon | SymbolIcon | HtmlIcon`
 
-| 파라미터 | 타입 |
-| --- | --- |
-| animation | `BOUNCE` \| `DROP` |
+### getOptions
+* Type : `Function`
+* Return : `naver.maps.MarkerOptions`
+* Parameter
+ * key : `string`  
 
-### setIcon(icon) ⇒ `Marker`
+### getPosition
+* Type : `Function`
+* Return : `naver.maps.Coord`
 
-| 파라미터 | 타입 |
-| --- | --- |
-| icon | `string` \| `ImageIcon` \| `SymbolIcon` \| `HtmlIcon` |
+### getShape
+* Type : `Function`
+* Return : `naver.maps.MarkerShape`
 
-### setOptions(options) ⇒ `Marker`
+### getTitle
+* Type : `Function`
+* Return : `string`
 
-| 파라미터 | 타입 |
-| --- | --- |
-| options | `MarkerOptions` |
+### getVisible
+* Type : `Function`
+* Return : `boolean`
 
-### setPosition(position) ⇒ `Marker`
+### getZIndex
+* Type : `Function`
+* Return : `number`
 
-| 파라미터 | 타입 |
-| --- | --- |
-| position | `Coord` \| `CoordLiteral` |
+## Setter Methods
 
-### setShape(shape) ⇒ `Marker`
+### setAnimation
+* Type : `Function`
+* Return : `this`
+* Parameter
+ * clickable : `BOUNCE` | `DROP`
 
-| 파라미터 | 타입 |
-| --- | --- |
-| shape | `MarkerShape` |
+### setClickable
+* Type : `Function`
+* Return : `this`
+* Parameter
+ * clickable : `boolean`
+ 
+### setCursor
+* Type : `Function`
+* Return : `this`
+* Parameter
+ * cursor : `string`
 
-### setTitle(title) ⇒ `Marker`
+### setDraggable
+* Type : `Function`
+* Return : `this`
+* Parameter
+ * draggable : `boolean`
 
-| 파라미터 | 타입 |
-| --- | --- |
-| title | `string` |
+### setIcon
+* Type : `Function`
+* Return : `this`
+* Parameter
+ * icon : `string` | `ImageIcon` | `SymbolIcon` | `HtmlIcon`
 
-### setVisible(visible) ⇒ `Marker`
+### setOptions
+* Type : `Function`
+* Return : `this`
+* Parameter
+ * options : `MarkerOptions`
+ 
+### setPosition
+* Type : `Function`
+* Return : `this`
+* Parameter
+ * position : `Coord` | `CoordLiteral`
+ 
+### setShape
+* Type : `Function`
+* Return : `this`
+* Parameter
+ * shape : `MarkerShape`
 
-| 파라미터 | 타입 |
-| --- | --- |
-| visible | `boolean` |
+### setTitle
+* Type : `Function`
+* Return : `this`
+* Parameter
+ * title : `string`
 
-### setZIndex(zIndex) ⇒ `Marker`
+### setVisible
+* Type : `Function`
+* Return : `this`
+* Parameter
+ * visible : `boolean`
+ 
+### setZIndex
+* Type : `Function`
+* Return : `this`
+* Parameter
+ * zIndex : `number` 
 
-| 파라미터 | 타입 |
-| --- | --- |
-| zIndex | `number` |
