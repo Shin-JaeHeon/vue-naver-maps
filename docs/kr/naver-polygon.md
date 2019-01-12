@@ -45,7 +45,7 @@
 * Type : `Function`
 * Return : `naver.maps.ArrayOfCoords` |`naver.maps.KVOArrayOfCoords`
 
-### getPaths()
+### getPaths
 * Type : `Function`
 * Return : `Array<naver.maps.ArrayOfCoords>` | `naver.maps.KVOArray<naver.maps.KVOArrayOfCoords>`
 
