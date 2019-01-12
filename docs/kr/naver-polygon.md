@@ -37,7 +37,7 @@
 
 ### getOptions
 * Type : `Function`
-* Return : `naver.maps.CircleOptions`
+* Return : `naver.maps.PolygonOptions`
 * Parameter
  * key : `string`  
 
@@ -51,7 +51,7 @@
 
 ### getStyles
 * Type :Fucntion
-* Return : `naver.maps.CircleOptions`
+* Return : `naver.maps.PolygonOptions`
 * Parameter
  * key : `string` 
 
@@ -81,7 +81,7 @@
 * Type : `Function`
 * Return : `this`
 * Parameter
- * options : `Object`
+ * options : `PolygonOptions`
 
 ### setPath
 * Type : `Function`
