@@ -14,49 +14,82 @@
 * clickable : `Boolean`
 * visible : `Boolean`
 * zIndex : `Number`
-### Methods
-### getAreaSize() ⇒ <code>number</code>
-### getBounds() ⇒ <code>naver.maps.Bounds</code>
-### getClickable() ⇒ <code>boolean</code>
-### getDrawingRect() ⇒ <code>naver.maps.Bounds</code>
-### getOptions(key) ⇒ <code>naver.maps.CircleOptions</code>
-| 파라미터 | 타입 |
-| --- | --- |
-| key | string |  
-### getRadius() ⇒ <code>number</code>
-### getStyles(key) ⇒ <code>naver.maps.CircleOptions</code>
-| 파라미터 | 타입 |
-| --- | --- |
-| key | string | 
-### getVisible() ⇒ <code>boolean</code>
-### getZIndex() ⇒ <code>number</code>
-### setClickable(clickable) ⇒ <code>this</code>
+## Getter Methods
 
-| 파라미터 | 타입 |
-| --- | --- |
-| clickable | boolean | 
-#### setBounds(bounds)  => <code>this</code>
-| 파라미터 | 타입 |
-| --- | --- |
-| bounds | BoundsLiteral | 
-### setOptions(options) ⇒ <code>this</code>
+### getAreaSize
+* Type : `Function`
+* Return : `number`
 
-| 파라미터 | 타입 |
-| --- | --- |
-| options | Object |
-### setStyles(options) ⇒ <code>this</code>
+### getBounds
+* Type : `Function`
+* Return : `naver.maps.Bounds`
 
-| 파라미터 | 타입 |
-| --- | --- |
-| options | Object | 
-### setVisible(visible) ⇒ <code>this</code>
+### getClickable
+* Type : `Function`
+* Return : `boolean`
 
-| 파라미터 | 타입 |
-| --- | --- |
-| visible | boolean |
-### setZIndex(zIndex) ⇒ <code>this</code>
+### getDrawingRect
+* Type : `Function`
+* Return : `naver.maps.Bounds`
 
-| 파라미터 | 타입 |
-| --- | --- |
-| zIndex | number | 
+### getRadius
+* Type : `Function`
+* Return : `number`
+### getOptions
+* Type : `Function`
+* Return : `naver.maps.EllipseOptions`
+* Parameter
+ * key : `string`  
+
+### getStyles
+* Type : `Function`
+* Return : `naver.maps.EllipseOptions`
+* Parameter
+ * key : `string` 
+
+### getVisible
+* Type : `Function`
+* Return : `boolean`
+
+### getZIndex
+* Type : `Function`
+* Return : `number`
+
+## Setter Methods
+
+### setBounds
+* Type : `Function`
+* Return : `this`
+* Parameter
+ * bounds : `BoundsLiteral`
+
+### setClickable
+* Type : `Function`
+* Return : `this`
+* Parameter
+ * clickable : `boolean`
+
+### setOptions
+* Type : `Function`
+* Return : `this`
+* Parameter
+ * options : `Object`
+ 
+### setStyles
+* Type : `Function`
+* Return : `this`
+* Parameter
+ * options : `Object` 
+
+### setVisible
+* Type : `Function`
+* Return : `this`
+* Parameter
+ * visible : `boolean`
+ 
+### setZIndex
+* Type : `Function`
+* Return : `this`
+* Parameter
+ * zIndex : `number` 
 
