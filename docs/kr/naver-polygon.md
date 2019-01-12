@@ -1,9 +1,9 @@
-# naver-polygon
+# naver-polygon 컴포넌트
 ```vue
 <naver-polygon :paths="[[{lat:37,lng:127},{lat:38,lng:127},{lat:38,lng:129},{lat:37,lng:128}]]"/>
 ```
 ## Props
-* paths: `Array\<Array\>`
+* paths: `Array<Array>`
 ### More Options
 * strokeWeight : `Number`
 * strokeOpacity : `Number`
@@ -16,63 +16,100 @@
 * clickable : `Boolean`
 * visible : `Boolean`
 * zIndex : `Number`
-## Methods
 
-### Methods
-### getAreaSize() ⇒ <code>number</code>
-### getBounds() ⇒ <code>naver.maps.Bounds</code>
-### getClickable() ⇒ <code>boolean</code>
-### getDrawingRect() ⇒ <code>naver.maps.Bounds</code>
-### getOptions(key) ⇒ <code>naver.maps.CircleOptions</code>
-| 파라미터 | 타입 |
-| --- | --- |
-| key | string |  
-### getPath() ⇒ <code>naver.maps.ArrayOfCoords OR naver.maps.KVOArrayOfCoords</code>
-### getPaths() ⇒ <code>Array<naver.maps.ArrayOfCoords> OR naver.maps.KVOArray<naver.maps.KVOArrayOfCoords></code>
-### getStyles(key) ⇒ <code>naver.maps.CircleOptions</code>
-| 파라미터 | 타입 |
-| --- | --- |
-| key | string | 
-### getVisible() ⇒ <code>boolean</code>
-### getZIndex() ⇒ <code>number</code>
-#### setBounds(bounds)  => <code>this</code>
+## Getter Methods
 
-| 파라미터 | 타입 |
-| --- | --- |
-| bounds | BoundsLiteral |
-### setClickable(clickable) ⇒ <code>this</code>
+### getAreaSize
+* Type : `Function`
+* Return : `number`
 
-| 파라미터 | 타입 |
-| --- | --- |
-| clickable | boolean |
-### setOptions(options) ⇒ <code>this</code>
+### getBounds
+* Type : `Function`
+* Return : `naver.maps.Bounds`
 
-| 파라미터 | 타입 |
-| --- | --- |
-| options | Object |
-### setPath(path) ⇒ <code>this</code>
+### getClickable
+* Type : `Function`
+* Return : `boolean`
 
-| 파라미터 | 타입 |
-| --- | --- |
-| path | naver.maps.ArrayOfCoords OR naver.maps.KVOArrayOfCoords |
-### setPaths(paths) ⇒ <code>this</code>
+### getDrawingRect
+* Type : `Function`
+* Return : `naver.maps.Bounds`
 
-| 파라미터 | 타입 |
-| --- | --- |
-| paths | Array<naver.maps.ArrayOfCoords OR naver.maps.KVOArray<naver.maps.KVOArrayOfCoords> OR Array<naver.maps.ArrayOfCoordsLiteral |
-### setStyles(options) ⇒ <code>this</code>
+### getOptions
+* Type : `Function`
+* Return : `naver.maps.CircleOptions`
+* Parameter
+ * key : `string`  
 
-| 파라미터 | 타입 |
-| --- | --- |
-| options | Object | 
-### setVisible(visible) ⇒ <code>this</code>
+### getPath
+* Type : `Function`
+* Return : `naver.maps.ArrayOfCoords` |`naver.maps.KVOArrayOfCoords`
 
-| 파라미터 | 타입 |
-| --- | --- |
-| visible | boolean |
-### setZIndex(zIndex) ⇒ <code>this</code>
+### getPaths()
+* Type :Fucntion
+* Return : `Array<naver.maps.ArrayOfCoords>` | `naver.maps.KVOArray<naver.maps.KVOArrayOfCoords>`
 
-| 파라미터 | 타입 |
-| --- | --- |
-| zIndex | number | 
+### getStyles
+* Type :Fucntion
+* Return : `naver.maps.CircleOptions`
+* Parameter
+ * key : `string` 
+
+### getVisible
+* Type : `Function`
+* Return : `boolean`
+
+### getZIndex
+* Type : `Function`
+* Return : `number`
+
+### setBounds
+* Type : `Function`
+* Return : `this`
+* Parameter
+ * bounds : `BoundsLiteral`
+
+## Setter Methods
+
+### setClickable
+* Type : `Function`
+* Return : `this`
+* Parameter
+ * clickable : `boolean`
+
+### setOptions
+* Type : `Function`
+* Return : `this`
+* Parameter
+ * options : `Object`
+
+### setPath
+* Type : `Function`
+* Return : `this`
+* Parameter
+ * path : `naver.maps.ArrayOfCoords` | `naver.maps.KVOArrayOfCoords`
+
+### setPaths
+* Type : `Function`
+* Return : `this`
+* Parameter
+ * paths : `naver.maps.Array<ArrayOfCoords>` | `naver.maps.KVOArray<KVOArrayOfCoords>` | `naver.maps.Array<ArrayOfCoordsLiteral>`
+
+### setStyles
+* Type : `Function`
+* Return : `this`
+* Parameter
+ * options : `Object` 
+
+### setVisible
+* Type : `Function`
+* Return : `this`
+* Parameter
+ * visible : `boolean`
+ 
+### setZIndex
+* Type : `Function`
+* Return : `this`
+* Parameter
+ * zIndex : `number` 
 
