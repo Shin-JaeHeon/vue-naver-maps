@@ -72,7 +72,7 @@ mapOptions: {
 * Return : `this`
 * Parameter
  * bounds | `naver.maps.Bounds(Literal)`
- * transitionOptions : `naver.maps.TransitionOptions
+ * transitionOptions : `naver.maps.TransitionOptions`
  * margin : `number`
 
 ### panBy
