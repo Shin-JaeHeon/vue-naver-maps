@@ -24,7 +24,9 @@ mapOptions: {
 `zoomControlOptions`의 `position`은 `TOP_RIGHT`등 기존 JS 라이브러리의 enum 이름을 사용합니다.
 ### 추가 옵션 설정하기
 기존 js 라이브러리와 마찬가지로, map 객체에 `setOptions(options)`를 사용할 수 있습니다. 단, 맵이 로딩 된 후에만 사용이 가능합니다.
+
 ## Setter Methods
+
 ### setOptions
 * Type : `Function`
 * Return : `this`
