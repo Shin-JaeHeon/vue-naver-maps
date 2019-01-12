@@ -47,7 +47,7 @@ path: `Array`,
 * Return : `naver.maps.ArrayOfCoords` |`naver.maps.KVOArrayOfCoords`
 
 ### getStyles
-* Type :Fucntion
+* Type : `Function`
 * Return : `naver.maps.PolylineOptions`
 * Parameter
  * key : `string` 

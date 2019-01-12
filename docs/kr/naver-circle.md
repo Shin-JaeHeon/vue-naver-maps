@@ -50,7 +50,7 @@
  * key : `string`  
 
 ### getStyles
-* Type :Fucntion
+* Type : `Function`
 * Return : `naver.maps.CircleOptions`
 * Parameter
  * key : `string` 

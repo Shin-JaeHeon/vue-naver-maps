@@ -46,11 +46,11 @@
 * Return : `naver.maps.ArrayOfCoords` |`naver.maps.KVOArrayOfCoords`
 
 ### getPaths()
-* Type :Fucntion
+* Type : `Function`
 * Return : `Array<naver.maps.ArrayOfCoords>` | `naver.maps.KVOArray<naver.maps.KVOArrayOfCoords>`
 
 ### getStyles
-* Type :Fucntion
+* Type : `Function`
 * Return : `naver.maps.PolygonOptions`
 * Parameter
  * key : `string` 
