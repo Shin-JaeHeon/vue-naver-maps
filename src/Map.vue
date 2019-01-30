@@ -56,7 +56,7 @@
         this.map.fitBounds(new naver.maps.LatLng(bounds, margin));
       },
       /**
-       * @param coord {	naver.maps.Coord | naver.maps.CoordLiteral}
+       * @param coord {naver.maps.Coord | naver.maps.CoordLiteral}
        * @param zoom {number} optional
        * @param transitionOptions {naver.maps.TransitionOptions} optional
        * @returns this
@@ -110,8 +110,8 @@
       },
       /**
        * @returns this
-       * @param coord
-       * @param zoom
+       * @param coord {naver.maps.Coord | naver.maps.CoordLiteral}
+       * @param zoom {number}
        */
       updateBy(coord, zoom) {
         this.map.removePane(name);
@@ -139,6 +139,7 @@
       },
       /**
        * the center coordinates of a map
+       * @returns {naver.maps.Coord}
        */
       getCenter() {
         return this.map.getCenterPoint();
@@ -204,7 +205,7 @@
 
       /* Setter Methods */
       /**
-       * @param {number | naver.maps.LatLng | naver.maps.LatLngLiteral} latOrLatLng,
+       * @param {number | naver.maps.LatLng | naver.maps.LatLngLiteral} latOrLatLng
        * @param {number} lng
        * @returns this
        */
