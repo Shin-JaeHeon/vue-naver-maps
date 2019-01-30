@@ -55,7 +55,18 @@
       fitBounds(bounds, margin) {
         this.map.fitBounds(new naver.maps.LatLng(bounds, margin));
       },
-      morph() {
+      /**
+       * @param coord {	naver.maps.Coord | naver.maps.CoordLiteral}
+       * @param zoom {number} optional
+       * @param transitionOptions {naver.maps.TransitionOptions} optional
+       * @returns this
+       */
+      morph(coord, zoom, transitionOptions) {
+        if (zoom) {
+          if (transitionOptions) this.map.morph(coord, zoom, transitionOptions);
+          else this.map.morph(coord, zoom)
+        } else this.map.morph(coord);
+        return this;
       },
       /**
        * @param {naver.maps.Coord | naver.maps.CoordLiteral} coord
@@ -118,7 +129,7 @@
         return this;
       },
 
-      /* Getter */
+      /* Getter Methods */
 
       /**
        * @returns {naver.maps.Bounds}
@@ -191,7 +202,7 @@
         return this.map.getZoom();
       },
 
-      /* Setter */
+      /* Setter Methods */
       /**
        * @param {number | naver.maps.LatLng | naver.maps.LatLngLiteral} latOrLatLng,
        * @param {number} lng
@@ -247,7 +258,7 @@
 
       },
 
-      /* vue-naver-maps Method */
+      /* vue-naver-maps Methods */
       $render() {
         /**
          * Creating maps.
