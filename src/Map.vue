@@ -12,15 +12,7 @@
       width: Number,
       height: Number,
       mapOptions: {
-        type: Object,
-        zoom: Number,
-        lat: Number,
-        lng: Number,
-        zoomControl: Boolean,
-        zoomControlOptions: {
-          type: Object,
-          position: String
-        }
+        type: Object
       },
       onLoaded: Function,
     },
@@ -30,39 +22,32 @@
           width: `${this.width}px`,
           height: `${this.height}px`,
         },
+        /**
+         * @type {naver.maps.Map}
+         */
         map: null,
       }
     },
     methods: {
+      /* Normal Method */
       /**
-       * @param {Object} options
+       * @param name {string}
+       * @param elementOrZIndex {HTMLElement | number}
        */
-      setOptions(options) {
-        if (map) map.setOptions(options);
-        else throw new Error('setOptions not be available before loaded.');
+      addPane(name, elementOrZIndex) {
+        this.map.addPane(name, elementOrZIndex);
+        return this;
       },
       /**
-       * @param {string} type NORMAL, TERRAIN, SATELLITE, HYBRID
+       * delete this map which includes all event and dom element.
+       * *** Warning! ***
+       *  This method will be delete the map object of this component.
        */
-      setMapType(type) {
-        map.setMapTypeId(naver.maps.Position[type]);
+      destroy() {
+        this.map.destory();
+        this.map = null;
+        this.$destroy();
       },
-      /**
-       * @param {number} level must be int
-       * @param {boolean} useEffect
-       */
-      setZoom(level, useEffect = false) {
-        this.map.setZoom(level, useEffect);
-      },
-
-      /**
-       * @param {number} lat
-       * @param {number} lng
-       */
-      setCenter(lat, lng) {
-        this.map.setCenter(new naver.maps.LatLng(lat, lng));
-      },
-
       /**
        * @param {naver.maps.Bounds | naver.maps.BoundsLiteral | naver.maps.ArrayOfCoords | naver.maps.ArrayOfCoordsLiteral} bounds
        * @param {number} margin
@@ -70,7 +55,8 @@
       fitBounds(bounds, margin) {
         this.map.fitBounds(new naver.maps.LatLng(bounds, margin));
       },
-
+      morph() {
+      },
       /**
        * @param {naver.maps.Coord | naver.maps.CoordLiteral} coord
        * @param {naver.maps.TransitionOptions} transitionOptions
@@ -78,7 +64,6 @@
       panTo(coord, transitionOptions) {
         this.map.panTo(new naver.maps.LatLng(lat, lng));
       },
-
       /**
        * @param {naver.maps.Bounds | naver.maps.BoundsLiteral} bounds
        * @param {naver.maps.TransitionOptions} transitionOptions
@@ -90,9 +75,56 @@
       /**
        * @param {number} x
        * @param {number} y
+       * @returns this
        */
       panBy(x, y) {
         this.map.panBy(new naver.maps.Point(x, y));
+        return this;
+      },
+      /**
+       * @param noEffect {boolean}
+       * @returns this
+       */
+      refresh(noEffect = false) {
+        this.map.refresh(noEffect);
+        return this;
+      },
+      /**
+       * @param name {string}
+       * @returns this
+       */
+      removePane(name) {
+        this.map.removePane(name);
+        return this;
+      },
+      /**
+       * @returns this
+       * @param coord
+       * @param zoom
+       */
+      updateBy(coord, zoom) {
+        this.map.removePane(name);
+        return this;
+      },
+      /**
+       * @returns this
+       * @param deltaZoom {number}
+       * @param zoomOrigin {naver.maps.Coord | naver.maps.CoordLiteral} default is center
+       * @param effect {boolean}
+       */
+      zoomBy(deltaZoom, zoomOrigin = undefined, effect = false) {
+        if (zoomOrigin) this.zoomBy(deltaZoom, zoomOrigin, effect);
+        else this.zoomBy(deltaZoom);
+        return this;
+      },
+
+      /* Getter */
+
+      /**
+       * @returns {naver.maps.Bounds}
+       */
+      getBounds() {
+        return this.map.getBounds();
       },
       /**
        * the center coordinates of a map
@@ -102,10 +134,121 @@
       },
       /**
        * The result of converting the map's center coordinates to the world coordinates.
+       * @returns {naver.maps.Coord}
        */
       getCenterPoint() {
         return this.map.getCenterPoint();
-      }, $render() {
+      },
+      /**
+       * @returns {HTMLElement}
+       */
+      getElement() {
+        return this.map.getElement();
+      },
+      /**
+       * returns type id of this map.
+       * @returns {string}
+       */
+      getMapTypeId() {
+        return this.map.getMapTypeId();
+      },
+      /**
+       * returns options of this map.
+       * @param key {string}
+       * @returns any
+       */
+      getOptions(key = undefined) {
+        return key ? this.map.getOptions(key) : this.map.getOptions();
+      },
+      /**
+       * @returns {naver.maps.MapPanes}
+       */
+      getPanes() {
+        return this.map.getPanes();
+      },
+      /**
+       * @returns {naver.maps.Projection}
+       */
+      getPrimitiveProjection() {
+        return this.map.getPrimitiveProjection();
+      },
+      /**
+       * @returns {naver.maps.MapSystemProjection}
+       */
+      getProjection() {
+        return this.map.getProjection();
+      },
+      /**
+       * @returns {naver.maps.Size}
+       */
+      getSize() {
+        return this.map.getSize();
+      },
+      /**
+       * @returns {number}
+       */
+      getZoom() {
+        return this.map.getZoom();
+      },
+
+      /* Setter */
+      /**
+       * @param {number | naver.maps.LatLng | naver.maps.LatLngLiteral} latOrLatLng,
+       * @param {number} lng
+       * @returns this
+       */
+      setCenter(latOrLatLng, lng = 0) {
+        this.map.setCenter(isNaN(latOrLatLng) ? latOrLatLng : new naver.maps.LatLng(latOrLatLng, lng));
+        return this;
+
+      },
+      /**
+       * @param {naver.maps.Point | naver.maps.PointLiteral} point
+       * @returns this
+       */
+      setCenterPoint(point) {
+        this.map.setCenterPoint(point);
+        return this;
+
+      },
+      /**
+       * @param {string} type NORMAL, TERRAIN, SATELLITE, HYBRID
+       * @returns this
+       */
+      setMapTypeId(type) {
+        map.setMapTypeId(naver.maps.Position[type]);
+        return this;
+      },
+      /**
+       * @param {naver.maps.MapOptions} options
+       * @returns this
+       */
+      setOptions(options) {
+        if (map) map.setOptions(options);
+        else throw new Error('setOptions not be available before loaded.');
+        return this;
+      },
+      /**
+       * @param {naver.maps.Size | naver.maps.SizeLiteral} size
+       * @returns this
+       */
+      setSize(size) {
+        this.map.setSize(size);
+        return this;
+      },
+      /**
+       * @param {number} level must be int
+       * @param {boolean} useEffect
+       * @returns this
+       */
+      setZoom(level, useEffect = false) {
+        this.map.setZoom(level, useEffect);
+        return this;
+
+      },
+
+      /* vue-naver-maps Method */
+      $render() {
         /**
          * Creating maps.
          */
