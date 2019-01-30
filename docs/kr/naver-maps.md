@@ -25,33 +25,20 @@ mapOptions: {
 ### 추가 옵션 설정하기
 기존 js 라이브러리와 마찬가지로, map 객체에 `setOptions(options)`를 사용할 수 있습니다. 단, 맵이 로딩 된 후에만 사용이 가능합니다.
 
-## Setter Methods
+## Normal Methods
 
-### setOptions
+### addPane
 * Type : `Function`
 * Return : `this`
 * Parameter
- * options : `Object`
- 
-### setOptions
-* Type : `Function`
-* Return : `this`
-* Parameter
- * type : `NORMAL | TERRAIN | SATELLITE | HYBRID`
- 
-### setOptions
-* Type : `Function`
-* Return : `this`
-* Parameter
- * level : `number(Int)`
- * useEffect : `boolean`, default is `false`.
+ * name : `string`
+ * elementOrZIndex : `HTMLElement` | `number`
 
-### setCenter
+### destroy
 * Type : `Function`
 * Return : `this`
-* Parameter
- * lat : `number`
- * lng : `number`
+#### Description
+delete this map which includes all event and dom element. This method will be delete the map object of this component.
 
 ### fitBounds
 * Type : `Function`
@@ -60,6 +47,14 @@ mapOptions: {
  * bounds : `naver.maps.Bounds(Literal)` | `naver.maps.ArrayOfCoords(Literal)`
  * margin : `number`
 
+### morph
+* Type : `Function`
+* Return : `this`
+* Parameter
+ * coord : `naver.maps.Coord` | `naver.maps.CoordLiteral`
+ * zoom(optional) :` number`
+ * transitionOptions(optional) : `naver.maps.TransitionOptions`
+
 ### panTo
 * Type : `Function`
 * Return : `this`
@@ -67,7 +62,7 @@ mapOptions: {
  * coord | `naver.maps.Coord(Literal)`
  * transitionOptions : `naver.maps.TransitionOptions`
 
-### panToBounds(bounds, transitionOptions, margin)
+### panToBounds
 * Type : `Function`
 * Return : `this`
 * Parameter
@@ -81,3 +76,122 @@ mapOptions: {
 * Parameter
  * x : `number`
  * y : `number`
+
+### refresh
+* Type : `Function`
+* Return : `this`
+* Parameter
+  * noEffect : `boolean`
+
+### removePane
+* Type : `Function`
+* Return : `this`
+* Parameter
+ * name : `string`
+ 
+### updateBy
+* Type : `Function`
+* Return : `this`
+* Parameter
+ * coord : `naver.maps.Coord` | `naver.maps.CoordLiteral`
+ * zoom :` number`
+
+### zoomBy
+* Type : `Function`
+* Return : `this`
+* Parameter
+  * deltaZoom : `number`
+  * zoomOrigin(optional, default is center) : `naver.maps.Coord` | `naver.maps.CoordLiteral`
+  * effect(optional) : `boolean`, default is `false`
+  
+## Getter Methods
+
+### getBounds
+* Type : `Function`
+* Return :`naver.maps.Bounds`
+
+### getCenter
+* Type : `Function`
+* Return : `naver.maps.Coord`
+
+### getCenterPoint
+* Type : `Function`
+* Return : `naver.maps.Coord`
+#### Description
+The result of converting the map's center coordinates to the world coordinates.
+
+### getElement
+* Type : `Function`
+* Return : `HTMLElement`
+ 
+### getMapTypeId
+* Type : `Function`
+* Return : `any`
+* Parameter
+ * key : `string`
+#### Description
+returns type id of this map.
+
+### getOptions
+* Type : `Function`
+* Return : `this`
+* Parameter
+
+### getPanes
+* Type : `Function`
+* Return : `naver.maps.MapPanes`
+
+### getPrimitiveProjection
+* Type : `Function`
+* Return : `naver.maps.Projection`
+
+### getProjection
+* Type : `Function`
+* Return : `naver.maps.MapSystemProjection`
+
+### getSize
+* Type : `Function`
+* Return : `naver.maps.Size`
+
+### getZoom
+* Type : `Function`
+* Return : `number`
+
+## Setter Methods
+
+### setCenter
+* Type : `Function`
+* Return : `this`
+* Parameter
+  * latOrLatLng : `number` | `naver.maps.LatLng` | `naver.maps.LatLngLiteral`
+  * lng : `number`
+### setCenterPoint
+* Type : `Function`
+* Return : `this`
+* Parameter
+ * point : `naver.maps.Point` | `naver.maps.PointLiteral` 
+
+### setMapTypeId
+* Type : `Function`
+* Return : `this`
+* Parameter
+ * type : `string`
+  * value : `NORMAL` | `TERRAIN` | `SATELLITE` | `HYBRID`
+
+### setOptions
+* Type : `Function`
+* Return : `this`
+* Parameter
+ * options : `naver.maps.MapOptions` 
+
+### setSize
+* Type : `Function`
+* Return : `this`
+* Parameter
+ * size : `naver.maps.Size` | `naver.maps.SizeLiteral`
+### setZoom
+* Type : `Function`
+* Return : `this`
+* Parameter
+  * level(int) : `number`
+  * useEffect : `boolean`
