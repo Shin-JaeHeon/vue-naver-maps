@@ -14,4 +14,4 @@
 
 ## Notice of License
 The license for this project is ***MIT License***. <br>
-이 프로젝트의 라이센스는 ***MIT License***입니다.
+이 프로젝트의 라이센스는 ***MIT License*** 입니다.
