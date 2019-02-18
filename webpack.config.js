@@ -1,7 +1,5 @@
-const webpack = require('webpack');
 const path = require('path');
 const {VueLoaderPlugin} = require('vue-loader');
-
 const baseConfig = {
   entry: [
     path.resolve('./src/index.js')
@@ -24,7 +22,7 @@ const baseConfig = {
   }, plugins: [
     new VueLoaderPlugin(),
   ],
-  mode: process.env.NODE_ENV || 'development'
+  mode: 'production'
 };
 
 const webConfig = {

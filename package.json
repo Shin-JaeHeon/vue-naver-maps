@@ -1,12 +1,12 @@
 {
   "name": "vue-naver-maps",
-  "version": "0.10.16",
+  "version": "0.10.17",
   "description": "NAVER Maps component for vue.js",
   "main": "dist/vue-naver-maps.js",
   "author": {
     "name": "Shin-JaeHeon",
     "email": "shinjaeheon520614@gmail.com",
-    "url": "https://jaeheon.com/"
+    "url": "https://jaeheon.com"
   },
   "scripts": {
     "build": "webpack-cli --config webpack.config.js"
@@ -21,21 +21,18 @@
   },
   "license": "MIT",
   "dependencies": {
-    "vue": "^2.5.21"
+    "vue": "^2.6.6"
   },
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.3",
-    "babel-loader": "^8.0.4",
-    "babel-plugin-minify-dead-code-elimination": "^0.5.0",
-    "babel-plugin-transform-inline-environment-variables": "^0.4.3",
-    "babel-plugin-transform-object-rest-spread": "^6.26.0",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-es2015": "^6.24.1",
-    "babel-preset-stage-2": "^6.24.1",
-    "vue-loader": "^15.4.2",
-    "vue-template-compiler": "^2.5.21",
-    "webpack": "^4.27.1",
-    "webpack-cli": "^3.1.2"
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.3.3",
+    "@babel/preset-env": "^7.3.1",
+    "babel-loader": "^8.0.5",
+    "babel-minify": "^0.5.0",
+    "babel-preset-minify": "^0.5.0",
+    "vue-loader": "^15.6.2",
+    "vue-template-compiler": "^2.6.6",
+    "webpack": "^4.29.4",
+    "webpack-cli": "^3.2.3"
   }
 }
