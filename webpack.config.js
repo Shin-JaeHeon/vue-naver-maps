@@ -22,7 +22,7 @@ const baseConfig = {
   }, plugins: [
     new VueLoaderPlugin(),
   ],
-  mode: 'production'
+  mode: 'development'
 };
 
 const webConfig = {

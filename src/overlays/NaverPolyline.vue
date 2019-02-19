@@ -164,18 +164,20 @@
 
     },
     mounted() {
-      window.$naverMapsCallback.push((map) => {
+      const naver = ((map) => {
         /**
          * {naver.maps.Map} map
          */
         this.map = map;
-        this.polyline = new naver.maps.Polyline(Object.assign({
-          map: map, path: this.path.map(latLng => new naver.maps.LatLng(latLng.lat, latLng.lng)), options: this.options
+        this.polyline = new window.naver.maps.Polyline(Object.assign({
+          map: map, path: this.path.map(latLng => new window.naver.maps.LatLng(latLng.lat, latLng.lng)), options: this.options
         }));
         ['click', 'dblclick', 'mousedown', 'mouseout', 'mouseover', 'mouseup', 'visible_changed', 'zIndex_changed']
           .forEach(name => _.addEvent(this, this.polyline, name));
         this.$emit('load', this);
       });
+      if (!window.$naverMapsLoaded) window.$naverMapsCallback.push(naver);
+      else naver(window.$naverMapsObject);
     }
   }
 </script>

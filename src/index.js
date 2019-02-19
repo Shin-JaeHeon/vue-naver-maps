@@ -21,6 +21,7 @@ const vueNaverMaps = {
     if (process.browser) {
       if (options.clientID) {
         window.$naverMapsCallback = [];
+        window.$naverMapsLoaded = false;
         const URL = `https://openapi.map.naver.com/openapi/v3/maps.js?${options.useOpenAPI ? 'c' : 'ncpC'}lientId=${options.clientID}${(options.subModules ? `&submodules=${options.subModules}` : '')}`;
         const SCRIPT = document.createElement('script');
         if (SCRIPT) {

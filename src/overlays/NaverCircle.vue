@@ -121,7 +121,7 @@
        * @returns {this}
        */
       setCenter(lat, lng) {
-        this.circle.setCenter(new naver.maps.LatLng(lat, lng));
+        this.circle.setCenter(new window.naver.maps.LatLng(lat, lng));
         return this;
       },
 
@@ -132,7 +132,7 @@
        * @returns {this}
        */
       setCenterPoint(x, y) {
-        this.circle.setCenter(new naver.maps.Point(x, y));
+        this.circle.setCenter(new window.naver.maps.Point(x, y));
         return this;
       },
 
@@ -200,14 +200,14 @@
 
     },
     mounted() {
-      window.$naverMapsCallback.push((map) => {
+      const naver = ((map) => {
         /**
          * {naver.maps.Map} map
          */
         this.map = map;
-        this.circle = new naver.maps.Circle(Object.assign({
+        this.circle = new window.naver.maps.Circle(Object.assign({
           map: map,
-          center: new naver.maps.LatLng(this.lat, this.lng),
+          center: new window.naver.maps.LatLng(this.lat, this.lng),
           radius: this.radius
         }, this.moreOptions));
 
@@ -215,6 +215,8 @@
           .forEach(name => _.addEvent(this, this.circle, name));
         this.$emit('load', this);
       });
+      if (!window.$naverMapsLoaded) window.$naverMapsCallback.push(naver);
+      else naver(window.$naverMapsObject);
     }
   }
 </script>

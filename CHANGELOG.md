@@ -1,4 +1,8 @@
 # 체인지 로그
+# 0.10.19
+* 최초 로딩 이후 오브젝트가 추가 되는 경우 로드되지 않는 오류 수정
+* webpack build를 production에서 development로 변경(오류 수집의 효율성을 위해 변경)
+
 # 0.10.18
 * Readme 개선
 * Support for Readme.md in English

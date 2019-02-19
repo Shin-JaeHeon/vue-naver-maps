@@ -30,14 +30,17 @@
     },
     methods: {},
     mounted() {
-      window.$naverMapsCallback.push((map) => {
+      const naver = ((map) => {
         /**
          * {naver.maps.Map} map
          */
         this.map = map;
-        this.infoWindow = new naver.maps.InfoWindow({content: this.$refs.content});
+        this.infoWindow = new window.naver.maps.InfoWindow({content: this.$refs.content});
         this.$emit('load', this);
       });
+      if (!window.$naverMapsLoaded) window.$naverMapsCallback.push(naver);
+      else naver(window.$naverMapsObject);
+
     }
   }
 </script>

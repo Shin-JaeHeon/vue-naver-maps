@@ -53,7 +53,7 @@
        * @param {number} margin
        */
       fitBounds(bounds, margin) {
-        this.map.fitBounds(new naver.maps.LatLng(bounds, margin));
+        this.map.fitBounds(new window.naver.maps.LatLng(bounds, margin));
       },
       /**
        * @param coord {naver.maps.Coord | naver.maps.CoordLiteral}
@@ -73,7 +73,7 @@
        * @param {naver.maps.TransitionOptions} transitionOptions
        */
       panTo(coord, transitionOptions) {
-        this.map.panTo(new naver.maps.LatLng(lat, lng));
+        this.map.panTo(new window.naver.maps.LatLng(lat, lng));
       },
       /**
        * @param {naver.maps.Bounds | naver.maps.BoundsLiteral} bounds
@@ -81,7 +81,7 @@
        * @param {number} margin
        */
       panToBounds(bounds, transitionOptions, margin) {
-        this.map.panToBounds(new naver.maps.LatLng(lat, lng));
+        this.map.panToBounds(new window.naver.maps.LatLng(lat, lng));
       },
       /**
        * @param {number} x
@@ -89,7 +89,7 @@
        * @returns this
        */
       panBy(x, y) {
-        this.map.panBy(new naver.maps.Point(x, y));
+        this.map.panBy(new window.naver.maps.Point(x, y));
         return this;
       },
       /**
@@ -210,7 +210,7 @@
        * @returns this
        */
       setCenter(latOrLatLng, lng = 0) {
-        this.map.setCenter(isNaN(latOrLatLng) ? latOrLatLng : new naver.maps.LatLng(latOrLatLng, lng));
+        this.map.setCenter(isNaN(latOrLatLng) ? latOrLatLng : new window.naver.maps.LatLng(latOrLatLng, lng));
         return this;
 
       },
@@ -260,12 +260,12 @@
       },
 
       /* vue-naver-maps Methods */
-      $render() {
+      loadNaverMapsComponents() {
         /**
          * Creating maps.
          */
-        this.map = new naver.maps.Map('vue-naver-maps', {
-          center: new naver.maps.LatLng(this.mapOptions.lat, this.mapOptions.lng),
+        this.map = new window.naver.maps.Map('vue-naver-maps', {
+          center: new window.naver.maps.LatLng(this.mapOptions.lat, this.mapOptions.lng),
           zoom: this.mapOptions.zoom ? this.mapOptions.zoom : 10,
           zoomControl: !!this.mapOptions.zoomControl
         });
@@ -275,6 +275,8 @@
          */
         window.$naverMapsCallback.forEach(v => v(this.map));
         window.$naverMapsCallback = [];
+        window.$naverMapsLoaded = true;
+        window.$naverMapsObject = this.map;
         this.$emit('load', this);
       }
     },
@@ -286,12 +288,14 @@
         /**
          * When the script already loaded.
          */
-        if (window.naver) this.$render();
+        if (window.naver) this.loadNaverMapsComponents();
         else {
           /**
            * When the script loaded.
            */
-          document.getElementById('naver-map-load').onload = () => this.$render();
+          document.getElementById('naver-map-load').onload = () => {
+            this.loadNaverMapsComponents();
+          }
         }
       } else throw new Error('mapOptions must be included lat and lng.');
     }

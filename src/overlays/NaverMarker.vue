@@ -193,13 +193,13 @@
       },
     },
     mounted() {
-      window.$naverMapsCallback.push((map) => {
+      const naver = ((map) => {
         /**
          * {naver.maps.Map} map
          */
         this.map = map;
-        this.marker = new naver.maps.Marker(Object.assign({
-          position: new naver.maps.LatLng(this.lat, this.lng),
+        this.marker = new window.naver.maps.Marker(Object.assign({
+          position: new window.naver.maps.LatLng(this.lat, this.lng),
           map: map,
         }, this.otherOptions, this.icon ? {icon: this.icon} : {}));
         ['mousedown', 'mouseup', 'click', 'dblclick', 'rightclick', 'mouseover', 'mouseout', 'mousemove', 'dragstart', 'drag', 'dragend',
@@ -207,6 +207,8 @@
           .forEach(name => _.addEvent(this, this.marker, name));
         this.$emit('load', this);
       });
+      if (!window.$naverMapsLoaded) window.$naverMapsCallback.push(naver);
+      else naver(window.$naverMapsObject);
     }
   }
 </script>

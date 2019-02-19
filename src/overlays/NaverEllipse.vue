@@ -161,12 +161,12 @@
 
     },
     mounted() {
-      window.$naverMapsCallback.push((map) => {
+      const naver = ((map) => {
         /**
          * {naver.maps.Map} map
          */
         this.map = map;
-        this.ellipse = new naver.maps.Ellipse(Object.assign({
+        this.ellipse = new window.naver.maps.Ellipse(Object.assign({
           map: map,
           bounds: this.bounds
         }, this.moreOptions));
@@ -175,6 +175,8 @@
           .forEach(name => _.addEvent(this, this.ellipse, name));
         this.$emit('load', this);
       });
+      if (!window.$naverMapsLoaded) window.$naverMapsCallback.push(naver);
+      else naver(window.$naverMapsObject);
     }
   }
 </script>

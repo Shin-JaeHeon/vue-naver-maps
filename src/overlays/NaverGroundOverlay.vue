@@ -55,7 +55,7 @@
       }
     },
     mounted() {
-      window.$naverMapsCallback.push((map) => {
+      const naver = ((map) => {
         /**
          * {naver.maps.Map} map
          */
@@ -63,10 +63,12 @@
         const options = {};
         if (this.clickable) options['clickable'] = this.clickable;
         if (this.opacity) options['opacity'] = this.opacity;
-        this.groundOverlay = new naver.maps.GroundOverlay(this.url, this.bounds, Object.assign({map: this.map}, options));
+        this.groundOverlay = new window.naver.maps.GroundOverlay(this.url, this.bounds, Object.assign({map: this.map}, options));
         ['click', 'dblclick'].forEach(name => _.addEvent(this, this.groundOverlay, name));
         this.$emit('load', this);
       });
+      if (!window.$naverMapsLoaded) window.$naverMapsCallback.push(naver);
+      else naver(window.$naverMapsObject);
     }
   }
 </script>
