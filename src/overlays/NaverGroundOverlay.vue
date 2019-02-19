@@ -69,6 +69,9 @@
       });
       if (!window.$naverMapsLoaded) window.$naverMapsCallback.push(naver);
       else naver(window.$naverMapsObject);
+    },
+    destroyed() {
+      this.groundOverlay.setMap(null);
     }
   }
 </script>

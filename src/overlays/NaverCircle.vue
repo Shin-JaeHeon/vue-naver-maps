@@ -217,6 +217,9 @@
       });
       if (!window.$naverMapsLoaded) window.$naverMapsCallback.push(naver);
       else naver(window.$naverMapsObject);
+    },
+    destroyed() {
+      this.circle.setMap(null);
     }
   }
 </script>
