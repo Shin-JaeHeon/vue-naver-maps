@@ -14,7 +14,6 @@
       mapOptions: {
         type: Object
       },
-      onLoaded: Function,
     },
     data() {
       return {
@@ -264,11 +263,10 @@
         /**
          * Creating maps.
          */
-        this.map = new window.naver.maps.Map('vue-naver-maps', {
+        this.map = new window.naver.maps.Map('vue-naver-maps', Object.assign(this.mapOptions, {
           center: new window.naver.maps.LatLng(this.mapOptions.lat, this.mapOptions.lng),
           zoom: this.mapOptions.zoom ? this.mapOptions.zoom : 10,
-          zoomControl: !!this.mapOptions.zoomControl
-        });
+        }));
         if (this.zoomControlOptions && this.zoomControlOptions.position) this.setOptions({zoomControlOptions: {position: naver.maps.Position[this.zoomControlOptions.position]}});
         /**
          * call callback function
