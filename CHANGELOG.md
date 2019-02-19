@@ -1,4 +1,8 @@
 # 체인지 로그
+# 0.10.18
+* Readme 개선
+* Support for Readme.md in English
+
 # 0.10.17
 * babel7 사용
 * vue 2.6.6 사용
@@ -144,11 +148,11 @@
 # 0.3.0
 * Marker.js 추가
 
-#.0.2.6
+# 0.2.6
 * getCenter()
 * getCenterPosition()
 
-#.0.2.5
+# 0.2.5
 * Readme 및 jsDoc 업데이트
 
 # 0.2.4

@@ -5,13 +5,23 @@
 [![npm](https://img.shields.io/badge/Readme-English-lightgray.svg?style=flat-square)](https://github.com/Shin-JaeHeon/vue-naver-maps/blob/master/docs/en/README.md)
 [![npm](https://img.shields.io/badge/Readme-한국어-blue.svg?style=flat-square)](https://github.com/Shin-JaeHeon/vue-naver-maps/blob/master/README.md)
 
-## Intro
-`vue-naver-maps`는 `Naver Maps JavaScript API v3`을 Vue.js에서 간편하게 이용하게 할 수 있는 라이브러리입니다. <br>
+## 설명
+`vue-naver-maps`는 `Naver Maps JavaScript API v3` 을 Vue.js에서 간편하게 이용하게 할 수 있는 라이브러리입니다. <br>
 라이브러리가 로딩되지 않는 상태라도 이용할 수 있도록, 자바스크립트의 기본 타입만으로도 사용할 수 있도록 제작되었습니다.
 
-## Docs
-[Docs](https://shin-jaeheon.github.io/vue-naver-maps)
+## 문서
+***[Docs](https://shin-jaeheon.github.io/vue-naver-maps)*** 에는 vue-naver-maps의 객체 명세서 및 도움말, 예제가 있습니다.
 
-## Notice of License
-The license for this project is ***MIT License***. <br>
-이 프로젝트의 라이센스는 ***MIT License*** 입니다.
+## 라이선스
+이 프로젝트의 라이선스는 ***MIT License*** 입니다.
+
+## 업데이트 예정
+
+* 문서 개선 
+* 2019년 04월 15일 NaverOpen API의 중단 이후 useOpenAPI 설정 부분 제거 예정
+* ***Vue.js 3.0*** 지원
+* TypeScript 지원
+* 영문 문서 추가
+
+## 업데이트 목록
+***[ChangeLog](https://github.com/Shin-JaeHeon/vue-naver-maps/blob/master/CHANGELOG.md)*** 를 참조하세요.
