@@ -21,6 +21,14 @@
         map: null,
       };
     },
+    watch: {
+      lat() {
+        this.setPosition({lng: this.lng, lat: this.lat});
+      },
+      lng() {
+        this.setPosition({lng: this.lng, lat: this.lat});
+      }
+    },
     methods: {
       /**
        *
