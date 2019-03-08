@@ -1,4 +1,6 @@
 # naver-circle
+`naver-circle`는 원을 배치하는 컴포넌트입니다.
+
 ```vue
  <naver-circle :lat="37" :lng="127" :radius="88600"/>
 ```

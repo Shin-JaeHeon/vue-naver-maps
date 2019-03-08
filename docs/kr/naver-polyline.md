@@ -1,4 +1,5 @@
 # naver-polyline
+`naver-polyline`은 지도에 선을 생성하는 컴포넌트입니다.
 ```vue
 <naver-polyline :path="[{lat:37,lng:127},{lat:38,lng:129}]"/>
 ```

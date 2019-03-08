@@ -1,4 +1,5 @@
 # naver-polygon 컴포넌트
+`naver-polygon`은 지도에 폴리곤을 생성하는 컴포넌트입니다.
 ```vue
 <naver-polygon :paths="[[{lat:37,lng:127},{lat:38,lng:127},{lat:38,lng:129},{lat:37,lng:128}]]"/>
 ```

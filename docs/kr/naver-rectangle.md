@@ -1,4 +1,5 @@
 # naver-rectangle
+`naver-rectangle`은 지도에 사각형을 생성하는 컴포넌트입니다.
 ```vue
 <naver-rectangle :south="36" :north="38" :west="126" :east="128"/>
 ```

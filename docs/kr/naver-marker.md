@@ -1,5 +1,5 @@
 # naver-marker
-지도에 마커를 표시해줍니다.
+`naver-makrer`는 지도에 마커를 생성하는 컴포넌트입니다.
 
 네이버의 이벤트는 @name 으로 접근 가능합니다. 예) @click, @dbclick 등 
 ```vue

@@ -1,8 +1,10 @@
 # naver-maps Component
+`naver-maps`는 지도를 생성하는 컴포넌트입니다. naver-maps 컴포넌트를 사용하지 않고 다른 컴포넌트를 사용할 경우 동작하지 않습니다. <br>
+하지만 `naver-maps`를 생성하지 않더라도 라이브러리는 로딩됩니다.
 `naver-maps`컴포넌트에는 기존의 js 라이브러리가 사용했던 메소드들이 있습니다. 예를 들면 기존에는 `setCenter` 함수를 ` map.setCenter(new naver.maps.LatLng(lat, lng));` 으로 수행해야 합니다.
 하지만 naver-maps 컴포넌트에서는 `this.setCenter(lat,lng)`으로 사용할 수 있습니다.
 
-> `naver-maps` 컴포넌트에 사용가능한 모든 메소드가 포함되어 있지 않습니다. `this.map`으로 직접 접근해야합니다.
+> `naver-maps` 컴포넌트에는 거의 모든 메소드가 포함되어 있습니다. 하지만 특별한 경우에는 `this.map`으로 직접 접근해야 할 수 있습니다.
 ## 설정
 ```vue
 <naver-maps :width="600" :height="400"  :mapOptions="mapOptions"></naver-maps>
