@@ -1,4 +1,5 @@
 # naver-ellipse
+naver-ellipse는 타원 오버레이를 생성합니다.
 ```vue
 <naver-ellipse :bounds="{south:36,north:38,west:126,east:128}"/>
 ```

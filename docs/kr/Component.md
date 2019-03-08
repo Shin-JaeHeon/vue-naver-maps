@@ -15,14 +15,20 @@
 * `vue 객체` : `vue.js` 컴포넌트 객체
 * `naver 객체` : `naver.maps` 객체(`naver.maps.Marker` 등)
 
-`naver-marker` 컴포넌트의 @load 이벤트에 아래와 같은 함수를 등록했습니다.
+아래의 예제에서는 `naver-marker` 컴포넌트의 @load 이벤트에 아래와 같은 함수를 등록했습니다.
 ```javascript
-function onMarkerLoaded(vue) {
-  this.marker = vue.marker;
+function onMarkerLoaded({marker}) {
+  this.marker = marker;
 }
 ```
 
 먼저 `onMarkerLoaded`함수의 vue 인자는 `vue 객체`입니다. <br>
-만약에 `naver.maps.xxx` 대신 기본 타입만을 사용하여 접근하려면, vue 컴포넌트를 통해 접근 해야합니다. <br>
+만약에 `naver.maps.xxx` 대신 기본 타입만을 사용하여 접근하려면, 아래와 같이 vue 컴포넌트를 통해 접근 해야합니다.
+```javascript
+function onMarkerLoaded(vue) {
+  this.marker = vue;
+  this.marker.setClickable(true)
+}
+```
 기존 HTML 소스와의 호환을 원하거나, 직접 접근하는 것을 선호한다면, 위와같이 vue.marker로 접근 해야합니다.
  
