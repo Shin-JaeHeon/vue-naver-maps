@@ -5,7 +5,12 @@
 
 ## 설정
 네이버에서 발급된 지도 API키가 필요합니다. <br>
-기존 오픈 API 사용시에는 useOpenAPI를 `true`값으로 추가해야합니다. <br><br>
+### 사용 유형별 API 설정
+* 구형 Open API : `useOpenAPI: true`
+* 공공 클라우드 : `useGovAPI: true`
+* nCloud는 별도의 설정이 필요가 없습니다.
+
+
 <span class="warn">Nuxt.js에서는 SSR(Server Side Rendering) 옵션을 꺼주십시오.</span>
 ### 예시
 * `main.js`
@@ -13,7 +18,9 @@
   import naver from 'vue-naver-maps';
   Vue.use(naver, {
     clientID: 'Client ID',
-    useOpenAPI: true //OpenAPI 사용
+    useOpenAPI: false, //OpenAPI 사용 (선택)
+    useGovAPI: false, //공공 클라우드 API 사용 (선택)
+    subModules:'' // 서브모듈 (선택)
   });
   ```
 * `.vue`파일
