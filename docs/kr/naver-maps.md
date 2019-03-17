@@ -27,173 +27,172 @@ mapOptions: {
 ### 추가 옵션 설정하기
 기존 js 라이브러리와 마찬가지로, map 객체에 `setOptions(options)`를 사용할 수 있습니다. 단, 맵이 로딩 된 후에만 사용이 가능합니다.
 
-## Normal Methods
+## 일반 메소드
 
 ### addPane
-* Type : `Function`
-* Return : `this`
+* 타입 : `Function`
+* 반환 : `this`
 * Parameter
  * name : `string`
  * elementOrZIndex : `HTMLElement` | `number`
 
 ### destroy
-* Type : `Function`
-* Return : `this`
-#### Description
-delete this map which includes all event and dom element. This method will be delete the map object of this component.
+* 타입 : `Function`
+* 반환 : `this`
+#### 설명
+이 메소드느 모든 이벤트 및 DOM 요소를 포함한 지도를 제거합니다. 또한 이 컴포넌트의 map 오브젝트를 제거합니다. 
 
 ### fitBounds
-* Type : `Function`
-* Return : `this`
+* 타입 : `Function`
+* 반환 : `this`
 * Parameter
  * bounds : `naver.maps.Bounds(Literal)` | `naver.maps.ArrayOfCoords(Literal)`
  * margin : `number`
 
 ### morph
-* Type : `Function`
-* Return : `this`
+* 타입 : `Function`
+* 반환 : `this`
 * Parameter
  * coord : `naver.maps.Coord` | `naver.maps.CoordLiteral`
  * zoom(optional) :` number`
  * transitionOptions(optional) : `naver.maps.TransitionOptions`
 
 ### panTo
-* Type : `Function`
-* Return : `this`
+* 타입 : `Function`
+* 반환 : `this`
 * Parameter
  * coord | `naver.maps.Coord(Literal)`
  * transitionOptions : `naver.maps.TransitionOptions`
 
 ### panToBounds
-* Type : `Function`
-* Return : `this`
+* 타입 : `Function`
+* 반환 : `this`
 * Parameter
  * bounds | `naver.maps.Bounds(Literal)`
  * transitionOptions : `naver.maps.TransitionOptions`
  * margin : `number`
 
 ### panBy
-* Type : `Function`
-* Return : `this`
+* 타입 : `Function`
+* 반환 : `this`
 * Parameter
  * x : `number`
  * y : `number`
 
 ### refresh
-* Type : `Function`
-* Return : `this`
+* 타입 : `Function`
+* 반환 : `this`
 * Parameter
   * noEffect : `boolean`
 
 ### removePane
-* Type : `Function`
-* Return : `this`
+* 타입 : `Function`
+* 반환 : `this`
 * Parameter
  * name : `string`
  
 ### updateBy
-* Type : `Function`
-* Return : `this`
+* 타입 : `Function`
+* 반환 : `this`
 * Parameter
  * coord : `naver.maps.Coord` | `naver.maps.CoordLiteral`
  * zoom :` number`
 
 ### zoomBy
-* Type : `Function`
-* Return : `this`
+* 타입 : `Function`
+* 반환 : `this`
 * Parameter
   * deltaZoom : `number`
   * zoomOrigin(optional, default is center) : `naver.maps.Coord` | `naver.maps.CoordLiteral`
   * effect(optional) : `boolean`, default is `false`
   
-## Getter Methods
+## Getter 메소드
 
 ### getBounds
-* Type : `Function`
-* Return :`naver.maps.Bounds`
+* 타입 : `Function`
+* 반환 :`naver.maps.Bounds`
 
 ### getCenter
-* Type : `Function`
-* Return : `naver.maps.Coord`
+* 타입 : `Function`
+* 반환 : `naver.maps.Coord`
 
 ### getCenterPoint
-* Type : `Function`
-* Return : `naver.maps.Coord`
-#### Description
-The result of converting the map's center coordinates to the world coordinates.
-
+* 타입 : `Function`
+* 반환 : `naver.maps.Coord`
+#### 설명
+지도의 중심 좌표를 세계 좌표로 변환한 결과를 반환합니다.
 ### getElement
-* Type : `Function`
-* Return : `HTMLElement`
+* 타입 : `Function`
+* 반환 : `HTMLElement`
  
 ### getMapTypeId
-* Type : `Function`
-* Return : `any`
-* Parameter
- * key : `string`
-#### Description
-returns type id of this map.
+* 타입 : `Function`
+* 반환 : `string`
+#### 설명
+이 지도의 타입을 반환합니다.
 
 ### getOptions
-* Type : `Function`
-* Return : `this`
+* 타입 : `Function`
+* 반환 : `any`
 * Parameter
+ * key : `string`
 
 ### getPanes
-* Type : `Function`
-* Return : `naver.maps.MapPanes`
+* 타입 : `Function`
+* 반환 : `naver.maps.MapPanes`
 
 ### getPrimitiveProjection
-* Type : `Function`
-* Return : `naver.maps.Projection`
+* 타입 : `Function`
+* 반환 : `naver.maps.Projection`
 
 ### getProjection
-* Type : `Function`
-* Return : `naver.maps.MapSystemProjection`
+* 타입 : `Function`
+* 반환 : `naver.maps.MapSystemProjection`
 
 ### getSize
-* Type : `Function`
-* Return : `naver.maps.Size`
+* 타입 : `Function`
+* 반환 : `naver.maps.Size`
 
 ### getZoom
-* Type : `Function`
-* Return : `number`
+* 타입 : `Function`
+* 반환 : `number`
 
-## Setter Methods
+## Setter 메소드
 
 ### setCenter
-* Type : `Function`
-* Return : `this`
+* 타입 : `Function`
+* 반환 : `this`
 * Parameter
   * latOrLatLng : `number` | `naver.maps.LatLng` | `naver.maps.LatLngLiteral`
   * lng : `number`
 ### setCenterPoint
-* Type : `Function`
-* Return : `this`
+* 타입 : `Function`
+* 반환 : `this`
 * Parameter
  * point : `naver.maps.Point` | `naver.maps.PointLiteral` 
 
 ### setMapTypeId
-* Type : `Function`
-* Return : `this`
+* 타입 : `Function`
+* 반환 : `this`
 * Parameter
  * type : `string`
   * value : `NORMAL` | `TERRAIN` | `SATELLITE` | `HYBRID`
 
 ### setOptions
-* Type : `Function`
-* Return : `this`
+* 타입 : `Function`
+* 반환 : `this`
 * Parameter
  * options : `naver.maps.MapOptions` 
 
 ### setSize
-* Type : `Function`
-* Return : `this`
+* 타입 : `Function`
+* 반환 : `this`
 * Parameter
  * size : `naver.maps.Size` | `naver.maps.SizeLiteral`
+ 
 ### setZoom
-* Type : `Function`
-* Return : `this`
+* 타입 : `Function`
+* 반환 : `this`
 * Parameter
   * level(int) : `number`
   * useEffect : `boolean`
