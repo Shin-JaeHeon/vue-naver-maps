@@ -6,7 +6,6 @@
 ## Settings
 This library requires Naver Maps API KEY issued by Naver.
 
-<br>
 
 !> The legacy Open API will be closed on April 15.
 
