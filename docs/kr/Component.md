@@ -18,7 +18,8 @@
 아래의 예제에서는 `naver-marker` 컴포넌트의 @load 이벤트에 아래와 같은 함수를 등록했습니다.
 ```javascript
 function onMarkerLoaded({marker}) {
-  this.marker = marker;
+  this.marker = marker; //naver.maps.Marker
+  this.marker.setClickable(true);
 }
 ```
 
@@ -27,8 +28,8 @@ function onMarkerLoaded({marker}) {
 ```javascript
 function onMarkerLoaded(vue) {
   this.marker = vue;
-  this.marker.setClickable(true)
+  this.marker.setClickable(true);
 }
 ```
-기존 HTML 소스와의 호환을 원하거나, 직접 접근하는 것을 선호한다면, 위와같이 vue.marker로 접근 해야합니다.
+기존 HTML 소스와의 호환을 원하거나, 직접 접근하는 것을 선호한다면, 위와같이 `vue.marker`로 접근 해야합니다.
  
