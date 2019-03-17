@@ -1,4 +1,4 @@
-* [Intro](/en/Readme)
+* [Intro](/en/)
 * [Start](/en/Start)
 * [Component](/en/Component)
 * [Maps](/en/naver-maps)
