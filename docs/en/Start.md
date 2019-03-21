@@ -17,7 +17,8 @@ This library requires Naver Maps API KEY issued by Naver.
 
 ?> Turn off the Server Side Rendering option on Nuxt.js.</span>
 ### Example
-* `main.js` ```javascript
+* `main.js`
+ ```javascript
   import naver from 'vue-naver-maps';
   Vue.use(naver, {
     clientID: 'Client ID',
