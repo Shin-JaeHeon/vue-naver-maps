@@ -2,7 +2,7 @@
 * [Start](/en/Start)
 * [Component](/en/Component)
 * [Maps](/en/naver-maps)
-* [Maren](/en/naver-marker)
+* [Marker](/en/naver-marker)
 * [Info Window](/en/naver-info-window)
 * [Circle](/en/naver-circle)
 * [Ellipse](/en/naver-ellipse)
