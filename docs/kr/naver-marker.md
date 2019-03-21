@@ -1,7 +1,6 @@
 # naver-marker
 `naver-makrer`는 지도에 마커를 생성하는 컴포넌트입니다.
 
-네이버의 이벤트는 @name 으로 접근 가능합니다. 예) @click, @dbclick 등 
 ```vue
 <naver-maps :width="600" :height="400"  :mapOptions="mapOptions">
     <naver-marker :lat="37" :lng="127" @click="onMarkerClicked" @load="onMarkerLoaded"></naver-marker>
