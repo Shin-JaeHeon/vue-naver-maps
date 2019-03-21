@@ -1,5 +1,5 @@
 # naver-ellipse
-`naver-ellipse`is a component that creates an ellipse on a map.
+`naver-ellipse` is a component that creates an ellipse on a map.
 ```vue
 <naver-ellipse :bounds="{south:36,north:38,west:126,east:128}"/>
 ```

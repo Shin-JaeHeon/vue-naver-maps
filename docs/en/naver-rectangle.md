@@ -1,5 +1,5 @@
 # naver-rectangle
-`naver-rectangle`is the component that creates a square on a map.
+`naver-rectangle` is the component that creates a square on a map.
 ```vue
 <naver-rectangle :south="36" :north="38" :west="126" :east="128"/>
 ```

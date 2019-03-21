@@ -1,5 +1,5 @@
 # naver-ground-overlay
-`naver-ground-overlay`is a component that creates an image overlay on a map.
+`naver-ground-overlay` is a component that creates an image overlay on a map.
 ```vue
 <naver-ground-overlay
         :url="'//logoproject.naver.com/img/img_about.gif'"
