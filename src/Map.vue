@@ -59,7 +59,8 @@
        * @param {number} margin
        */
       fitBounds(bounds, margin) {
-        this.map.fitBounds(new window.naver.maps.LatLng(bounds, margin));
+        this.map.fitBounds(bounds, margin);
+        return this;
       },
       /**
        * @param coord {naver.maps.Coord | naver.maps.CoordLiteral}
@@ -79,7 +80,7 @@
        * @param {naver.maps.TransitionOptions} transitionOptions
        */
       panTo(coord, transitionOptions) {
-        this.map.panTo(new window.naver.maps.LatLng(lat, lng));
+        this.map.panTo(coord, transitionOptions);
       },
       /**
        * @param {naver.maps.Bounds | naver.maps.BoundsLiteral} bounds
@@ -87,7 +88,7 @@
        * @param {number} margin
        */
       panToBounds(bounds, transitionOptions, margin) {
-        this.map.panToBounds(new window.naver.maps.LatLng(lat, lng));
+        this.map.panToBounds(bounds,transitionOptions,margin);
       },
       /**
        * @param {number} x
