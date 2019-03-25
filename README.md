@@ -15,12 +15,8 @@
 이 프로젝트의 라이선스는 ***MIT License*** 입니다.
 
 ## 업데이트 예정
-
-* 문서 개선 
-* 2019년 04월 15일 NaverOpen API의 중단 이후 useOpenAPI 설정 부분 제거 예정
 * ***Vue.js 3.0*** 지원
 * TypeScript 지원
-* 영문 문서 추가
 
 ## 업데이트 목록
 ***[ChangeLog](https://github.com/Shin-JaeHeon/vue-naver-maps/blob/master/CHANGELOG.md)*** 를 참조하세요.
