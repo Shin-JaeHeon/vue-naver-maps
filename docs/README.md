@@ -25,7 +25,7 @@
     <naver-maps
       :height="400"
       :width="600"
-      :mapOptions="{lat:37,lng:127,zoom:2}"
+      :mapOptions="mapOptions"
       @load="onLoad">
       <naver-info-window
         class="info-window"
@@ -56,7 +56,12 @@
       return {
         info: false,
         marker: null,
-        count: 1
+        count: 1,
+        mapOptions:{
+          lat:37,
+          lng:127,
+          zoom:2
+        }
       }
     },
     computed: {

@@ -3,6 +3,10 @@
 However, libraries will be loaded even if you do not create `naver-maps`.
 
 ## Settings
+
+
+!> If `mapOptions` is used as an inline object, an error may occur. Please write `mapOptions` in a **non-inline**, as shown in the example.
+
 ```vue
 <naver-maps :width="600" :height="400"  :mapOptions="mapOptions"></naver-maps>
 ```

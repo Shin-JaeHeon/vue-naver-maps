@@ -88,7 +88,7 @@
        * @param {number} margin
        */
       panToBounds(bounds, transitionOptions, margin) {
-        this.map.panToBounds(bounds,transitionOptions,margin);
+        this.map.panToBounds(bounds, transitionOptions, margin);
       },
       /**
        * @param {number} x
@@ -271,11 +271,12 @@
         /**
          * Creating maps.
          */
-
-        this.map = new window.naver.maps.Map('vue-naver-maps', Object.assign(this.mapOptions, {
+        const settings = {
           center: new window.naver.maps.LatLng(this.mapOptions.lat, this.mapOptions.lng),
-          zoom: this.mapOptions.zoom ? this.mapOptions.zoom : 10,
-        }));
+          maxZoom : 20,
+          minZoom:0,
+        };
+        this.map = new window.naver.maps.Map('vue-naver-maps', Object.assign(settings, this.mapOptions));
         if (this.zoomControlOptions && this.zoomControlOptions.position) this.setOptions({zoomControlOptions: {position: naver.maps.Position[this.zoomControlOptions.position]}});
         /**
          * call callback function

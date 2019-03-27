@@ -2,6 +2,9 @@
 `naver-maps`는 지도를 생성하는 컴포넌트입니다. naver-maps 컴포넌트를 사용하지 않고 다른 컴포넌트를 사용할 경우 동작하지 않습니다. <br>
 하지만 `naver-maps`를 생성하지 않더라도 라이브러리는 로딩됩니다.
 ## 설정
+
+!> `mapOptions`을 인라인으로 작성하는 경우에는 오류가 발생할 수 있으니, **반드시** 예제와 같이 인라인을 제외한 방식으로 `mapOptions`을 작성해주시기 바랍니다.
+
 ```vue
 <naver-maps :width="600" :height="400"  :mapOptions="mapOptions"></naver-maps>
 ```
