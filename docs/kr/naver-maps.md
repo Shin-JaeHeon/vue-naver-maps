@@ -1,12 +1,33 @@
 # naver-maps Component
 `naver-maps`는 지도를 생성하는 컴포넌트입니다. naver-maps 컴포넌트를 사용하지 않고 다른 컴포넌트를 사용할 경우 동작하지 않습니다. <br>
 하지만 `naver-maps`를 생성하지 않더라도 라이브러리는 로딩됩니다.
+## Props
+
+?> `width` 및 `height`, `mapOptions`는  필수입니다.
+ 
+### width
+지도의 넓이를 입력합니다 (px)
+
+### height
+지도의 높이를 입력합니다. (px)
+
+### mapOptions
+지도를 설정하는 객체입니다.
+
+### useStyleMap
+스타일 지도를 사용하려면 값을 true로 설정하십시오.
+
+### initLayers
+기본 레이어를 설정합니다. 반드시 대문자로 입력해야하며, 올바르지 않은 이름을 입력하면 지도를 로딩하지 않고 오류를 콘솔에 띄웁니다.
+```vue
+<naver-maps :initLayers="['BACKGROUND', 'BACKGROUND_DETAIL', 'BYCYCLE', 'CADASTRAL', 'CTT', 'HIKING_TRAIL', 'PANORAMA', 'POI_KOREAN', 'TRANSIT']"></naver-maps>
+```
 ## 설정
 
 !> `mapOptions`을 인라인으로 작성하는 경우에는 오류가 발생할 수 있으니, **반드시** 예제와 같이 인라인을 제외한 방식으로 `mapOptions`을 작성해주시기 바랍니다.
 
 ```vue
-<naver-maps :width="600" :height="400"  :mapOptions="mapOptions"></naver-maps>
+<naver-maps :width="600" :height="400" :mapOptions="mapOptions"></naver-maps>
 ```
 > lat(위도)과 lng(경도)는 필수 입니다.
 
@@ -19,7 +40,7 @@ mapOptions: {
   zoomControl?: Boolean,
   zoomControlOptions?: {
     position: String
-  }
+  },
 }
 ```
 `zoomControlOptions`의 `position`은 `TOP_RIGHT`등 기존 JS 라이브러리의 enum 이름을 사용합니다.

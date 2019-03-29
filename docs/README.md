@@ -23,9 +23,11 @@
 <template>
   <div>
     <naver-maps
-      :height="400"
-      :width="600"
+      :height="800"
+      :width="800"
       :mapOptions="mapOptions"
+      :useStyleMap="true"
+      :initLayers="['BACKGROUND', 'BACKGROUND_DETAIL', 'BYCYCLE', 'CADASTRAL', 'CTT', 'HIKING_TRAIL', 'PANORAMA', 'POI_KOREAN', 'TRANSIT']"
       @load="onLoad">
       <naver-info-window
         class="info-window"
@@ -57,11 +59,15 @@
         info: false,
         marker: null,
         count: 1,
-        mapOptions:{
-          lat:37,
-          lng:127,
-          zoom:2
-        }
+        map: null,
+        mapOptions: {
+          lat: 37,
+          lng: 127,
+          zoom: 10,
+          zoomControl: true,
+          zoomControlOptions: {position: 'TOP_RIGHT'},
+          mapTypeControl: true,
+        },
       }
     },
     computed: {
