@@ -1,8 +1,10 @@
 # 체인지 로그
 # 0.11.1
 * styleMap관련 문서 개선
+
 # 0.11.0
 * styleMap 추가
+
 # 0.10.25
 * `fitBounds`, `panTo`, `panToBounds`가 정상적으로 동작하지 않는 오류 수정
 
