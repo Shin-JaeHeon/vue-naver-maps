@@ -14,6 +14,8 @@
       mapOptions: {
         type: Object
       },
+      initLayers: Array,
+      useStyleMap: Boolean,
     },
     data() {
       return {
@@ -25,17 +27,34 @@
          * @type {naver.maps.Map}
          */
         map: null,
+        styleMapLoaded: false,
       }
     },
     watch: {
       mapOptions: {
         handler(newValue) {
           this.map.setOptions(newValue);
-        }, deep: true,
+        },
       }
     },
     methods: {
       /* Normal Method */
+      /**
+       * @param layerName {string}
+       * @returns this
+       */
+      addLayer(layerName) {
+        // this.map.(window.naver.maps.StyleMapLayerId[layerName]);
+        return this;
+      },
+      /**
+       * @param layerName {string}
+       * @returns this
+       */
+      removeLayer(layerName) {
+        this.map.mapTypes.removeLayer(layerName);
+        return this
+      },
       /**
        * @param name {string}
        * @param elementOrZIndex {HTMLElement | number}
@@ -235,16 +254,19 @@
        * @returns this
        */
       setMapTypeId(type) {
-        map.setMapTypeId(naver.maps.Position[type]);
+        this.map.setMapTypeId(naver.maps.Position[type]);
         return this;
       },
       /**
-       * @param {naver.maps.MapOptions} options
+       * @param {naver.maps.MapOptions | string} optionsOrKey
+       * @param {naver.maps.MapOptions} value optional
        * @returns this
        */
-      setOptions(options) {
-        if (map) map.setOptions(options);
-        else throw new Error('setOptions not be available before loaded.');
+      setOptions(optionsOrKey, value = null) {
+        if (this.map) {
+          if (value) this.map.setOptions(optionsOrKey, value);
+          else this.map.setOptions(optionsOrKey);
+        } else throw new Error('setOptions not be available before loaded.');
         return this;
       },
       /**
@@ -266,26 +288,56 @@
 
       },
 
-      /* vue-naver-maps Methods */
+      /**
+       * @description load naver maps
+       */
       loadNaverMapsComponents() {
-        /**
-         * Creating maps.
-         */
-        const settings = {
-          center: new window.naver.maps.LatLng(this.mapOptions.lat, this.mapOptions.lng),
-          maxZoom : 20,
-          minZoom:0,
-        };
-        this.map = new window.naver.maps.Map('vue-naver-maps', Object.assign(settings, this.mapOptions));
-        if (this.zoomControlOptions && this.zoomControlOptions.position) this.setOptions({zoomControlOptions: {position: naver.maps.Position[this.zoomControlOptions.position]}});
-        /**
-         * call callback function
-         */
-        window.$naverMapsCallback.forEach(v => v(this.map));
-        window.$naverMapsCallback = [];
-        window.$naverMapsLoaded = true;
-        window.$naverMapsObject = this.map;
-        this.$emit('load', this);
+        new Promise(resolve => {
+          /**
+           * settings
+           */
+          const settings = {
+            center: new window.naver.maps.LatLng(this.mapOptions.lat, this.mapOptions.lng),
+            maxZoom: 20,
+            minZoom: 0,
+          };
+          /**
+           * use style map
+           */
+          if (this.useStyleMap) {
+            const layers = {
+              BACKGROUND: 'bg', BACKGROUND_DETAIL: 'ol', BYCYCLE: 'br', CADASTRAL: 'lp', CTT: 'ctt', HIKING_TRAIL: 'ar', PANORAMA: 'ps',
+              POI_KOREAN: 'lko', TRANSIT: 'ts'
+            };
+            const keys = Object.keys(layers);
+            if (this.initLayers.map(v => keys.includes(v)).includes(false)) throw '[vue-naver-maps] Invalid StyledMap layer name in initLayers!';
+            settings.mapTypes = window.naver.maps.StyleMapTypeOption.getMapTypes({initLayers: this.initLayers.map(v => layers[v])});
+            settings.mapTypeId = window.naver.maps.StyleMapTypeId.NORMAL;
+            resolve(settings);
+            /**
+             * if script unloaded
+             */
+          } else resolve(settings);
+        }).then(settings => {
+          /**
+           * Creating map
+           */
+          this.map = new window.naver.maps.Map('vue-naver-maps', Object.assign(settings, this.mapOptions));
+
+          /**
+           * zoomControl options
+           */
+          if (this.zoomControlOptions && this.zoomControlOptions.position) this.setOptions({zoomControlOptions: {position: naver.maps.Position[this.zoomControlOptions.position]}});
+
+          /**
+           * call callback function
+           */
+          window.$naverMapsCallback.forEach(v => v(this.map));
+          window.$naverMapsCallback = [];
+          window.$naverMapsLoaded = true;
+          window.$naverMapsObject = this.map;
+          this.$emit('load', this);
+        }).catch(console.error);
       }
     },
     mounted() {
@@ -302,7 +354,11 @@
            * When the script loaded.
            */
           document.getElementById('naver-map-load').onload = () => {
-            this.loadNaverMapsComponents();
+            if (this.useStyleMap) {
+              document.querySelector('script[src="https://openapi.map.naver.com/openapi/v3/maps-stylemap.js"]').onload = () => {
+                setTimeout(() => this.loadNaverMapsComponents(), 100);
+              }
+            } else window.naver.maps.onJSContentLoaded = this.loadNaverMapsComponents;
           }
         }
       } else throw new Error('mapOptions must be included lat and lng.');
