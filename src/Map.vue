@@ -140,7 +140,7 @@
        * @param zoom {number}
        */
       updateBy(coord, zoom) {
-        this.map.removePane(name);
+        this.map.updateBy(name);
         return this;
       },
       /**
