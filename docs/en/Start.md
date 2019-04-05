@@ -16,6 +16,7 @@ This library requires Naver Maps API KEY issued by Naver.
 
 
 ?> Turn off the Server Side Rendering option on Nuxt.js.</span>
+
 ### Example
 * `main.js`
   ```javascript
@@ -27,10 +28,3 @@ This library requires Naver Maps API KEY issued by Naver.
     subModules:'' // subModules, Optionals
   });
   ```
-* `.vue` file
-  ```html
-  <template>
-    <naver-maps :width="600" :height="400"></naver-maps>
-  </template>
-  ```
-Run this example to create a map in a size 600x400.

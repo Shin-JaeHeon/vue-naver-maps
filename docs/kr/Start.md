@@ -27,10 +27,3 @@
     subModules:'' // 서브모듈 (선택)
   });
   ```
-* `.vue`파일
-  ```html
-  <template>
-    <naver-maps :width="600" :height="400"></naver-maps>
-  </template>
-  ```
-이 예제를 실행하면 600x400 사이즈의 지도를 생성합니다.
