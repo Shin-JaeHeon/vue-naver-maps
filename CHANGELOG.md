@@ -1,6 +1,10 @@
 # 체인지 로그
+# 0.11.3
+* `naver-maps`에 신규 스타일 지도 레이어 추가/제거 메소드 추가(`addStyleLayer`,`removeStyleLayer`)
+
 # 0.11.2
 * `naver-map`컴포넌트의 `updateBy`이 정상적으로 동작하지 않는 오류 수정
+
 # 0.11.1
 * styleMap관련 문서 개선
 

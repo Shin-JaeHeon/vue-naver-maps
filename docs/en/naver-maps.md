@@ -4,7 +4,6 @@ However, libraries will be loaded even if you do not create `naver-maps`.
 
 ## Settings
 
-
 !> If `mapOptions` is used as an inline object, an error may occur. Please write `mapOptions` in a **non-inline**, as shown in the example.
 
 ```vue
@@ -27,6 +26,14 @@ mapOptions: {
 `position` in `zoomControlOptions` uses enum names in JavaScript libraries such as 'TOP_RIGHT'.
 
 ## General Methods
+
+### addStyleLayer
+* Type : `Function`
+* Return : `this`
+* Parameter
+ * layerName : `string`
+
+add StyleLayer.
 
 ### addPane
 * Type : `Function`
@@ -83,6 +90,14 @@ delete this map which includes all event and dom element. This method will be de
 * Return : `this`
 * Parameter
   * noEffect : `boolean`
+
+### removeStyleLayer
+* Type : `Function`
+* Return : `this`
+* Parameter
+ * layerName : `string`
+
+remove StyleLayer.
 
 ### removePane
 * Type : `Function`

@@ -43,8 +43,17 @@
        * @param layerName {string}
        * @returns this
        */
-      addLayer(layerName) {
-        // this.map.(window.naver.maps.StyleMapLayerId[layerName]);
+      addStyleLayer(layerName) {
+        this.map.mapTypes.selectedMapType.addLayer(window.naver.maps.StyleMapLayerId[layerName]);
+        this.map.refresh();
+        return this;
+      },
+      /**
+       *
+       */
+      removeStyleLayer(layerName) {
+        this.map.mapTypes.selectedMapType.removeLayer(window.naver.maps.StyleMapLayerId[layerName]);
+        this.map.refresh();
         return this;
       },
       /**

@@ -49,6 +49,14 @@ mapOptions: {
 
 ## 일반 메소드
 
+### addStyleLayer
+* 타입 : `Function`
+* 반환 : `this`
+* Parameter
+ * layerName : `string`
+
+StyleLayer를 추가합니다.
+
 ### addPane
 * 타입 : `Function`
 * 반환 : `this`
@@ -104,6 +112,14 @@ mapOptions: {
 * 반환 : `this`
 * Parameter
   * noEffect : `boolean`
+  
+### removeStyleLayer
+* 타입 : `Function`
+* 반환 : `this`
+* Parameter
+ * layerName : `string`
+
+StyleLayer를 제거합니다.
 
 ### removePane
 * 타입 : `Function`

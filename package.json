@@ -1,12 +1,12 @@
 {
   "name": "vue-naver-maps",
-  "version": "0.11.2",
+  "version": "0.11.3",
   "description": "NAVER Maps component for vue.js",
   "main": "dist/vue-naver-maps.js",
   "author": {
     "name": "Shin-JaeHeon",
     "email": "shinjaeheon520614@gmail.com",
-    "url": "https://jaeheon.kr"
+    "url": "https://shin-jaeheon.github.io/vue-naver-maps"
   },
   "scripts": {
     "build": "webpack-cli --config webpack.config.js"
