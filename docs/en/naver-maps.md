@@ -45,7 +45,7 @@ add StyleLayer.
 ### destroy
 * Type : `Function`
 * Return : `this`
-#### Description
+
 delete this map which includes all event and dom element. This method will be delete the map object of this component.
 
 ### fitBounds
@@ -133,7 +133,7 @@ remove StyleLayer.
 ### getCenterPoint
 * Type : `Function`
 * Return : `naver.maps.Coord`
-#### Description
+
 The result of converting the map's center coordinates to the world coordinates.
 
 ### getElement
@@ -145,7 +145,7 @@ The result of converting the map's center coordinates to the world coordinates.
 * Return : `any`
 * Parameter
  * key : `string`
-#### Description
+
 returns type id of this map.
 
 ### getOptions
@@ -181,6 +181,7 @@ returns type id of this map.
 * Parameter
   * latOrLatLng : `number` | `naver.maps.LatLng` | `naver.maps.LatLngLiteral`
   * lng : `number`
+ 
 ### setCenterPoint
 * Type : `Function`
 * Return : `this`

@@ -67,8 +67,8 @@ StyleLayer를 추가합니다.
 ### destroy
 * 타입 : `Function`
 * 반환 : `this`
-#### 설명
-이 메소드느 모든 이벤트 및 DOM 요소를 포함한 지도를 제거합니다. 또한 이 컴포넌트의 map 오브젝트를 제거합니다. 
+
+이 메소드는 모든 이벤트 및 DOM 요소를 포함한 지도를 제거합니다. 또한 이 컴포넌트의 map 오브젝트를 제거합니다. 
 
 ### fitBounds
 * 타입 : `Function`
@@ -155,8 +155,9 @@ StyleLayer를 제거합니다.
 ### getCenterPoint
 * 타입 : `Function`
 * 반환 : `naver.maps.Coord`
-#### 설명
+
 지도의 중심 좌표를 세계 좌표로 변환한 결과를 반환합니다.
+
 ### getElement
 * 타입 : `Function`
 * 반환 : `HTMLElement`
@@ -164,7 +165,7 @@ StyleLayer를 제거합니다.
 ### getMapTypeId
 * 타입 : `Function`
 * 반환 : `string`
-#### 설명
+
 이 지도의 타입을 반환합니다.
 
 ### getOptions
