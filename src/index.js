@@ -13,7 +13,6 @@ const vueNaverMaps = {
    * @param Vue
    * @param {
    * { clientID:string
-   *  useOpenAPI?:boolean
    *  useGovAPI?:boolean
    *  subModules:string}
    * } options
@@ -23,7 +22,7 @@ const vueNaverMaps = {
       if (options.clientID) {
         window.$naverMapsCallback = [];
         window.$naverMapsLoaded = false;
-        const apiType = options.useOpenAPI ? 'c' : options.useGovAPI ? 'govC' : 'ncpC';
+        const apiType = options.useGovAPI ? 'govC' : 'ncpC';
         const URL = `https://openapi.map.naver.com/openapi/v3/maps.js?${apiType}lientId=${options.clientID}${(options.subModules ? `&submodules=${options.subModules}` : '')}`;
         const SCRIPT = document.createElement('script');
         if (SCRIPT) {

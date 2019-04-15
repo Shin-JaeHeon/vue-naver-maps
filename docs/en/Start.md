@@ -6,11 +6,7 @@
 ## Settings
 This library requires Naver Maps API KEY issued by Naver.
 
-
-!> The legacy Open API will be closed on April 15.
-
 ### Settings by Usage Type
-* Legacy Open API : `useOpenAPI: true`
 * Government : `useGovAPI: true`
 * nCloud does not require settings.
 
