@@ -2,11 +2,11 @@ import Map from './Map.vue';
 import InfoWindow from './InfoWindow.vue';
 import Marker from './overlays/NaverMarker.vue';
 import NaverCircle from './overlays/NaverCircle.vue';
-import NaverRectangle from "./overlays/NaverRectangle.vue";
-import NaverEllipse from "./overlays/NaverEllipse.vue";
-import NaverGroundOverlay from "./overlays/NaverGroundOverlay.vue";
-import NaverPolygon from "./overlays/NaverPolygon.vue";
-import NaverPolyline from "./overlays/NaverPolyline.vue";
+import NaverRectangle from './overlays/NaverRectangle.vue';
+import NaverEllipse from './overlays/NaverEllipse.vue';
+import NaverGroundOverlay from './overlays/NaverGroundOverlay.vue';
+import NaverPolygon from './overlays/NaverPolygon.vue';
+import NaverPolyline from './overlays/NaverPolyline.vue';
 
 const vueNaverMaps = {
   /**
@@ -24,13 +24,13 @@ const vueNaverMaps = {
         window.$naverMapsLoaded = false;
         const apiType = options.useGovAPI ? 'govC' : 'ncpC';
         const URL = `https://openapi.map.naver.com/openapi/v3/maps.js?${apiType}lientId=${options.clientID}${(options.subModules ? `&submodules=${options.subModules}` : '')}`;
-        const SCRIPT = document.createElement('script');
-        if (SCRIPT) {
-          SCRIPT.setAttribute('src', URL);
-          SCRIPT.id = 'naver-map-load';
-          SCRIPT.setAttribute('async', '');
-          SCRIPT.setAttribute('defer', '');
-          document.head.appendChild(SCRIPT);
+        const script = document.createElement('script');
+        if (script) {
+          script.setAttribute('src', URL);
+          script.id = 'naver-map-load';
+          script.setAttribute('async', '');
+          script.setAttribute('defer', '');
+          document.head.appendChild(script);
         } else throw new Error('api can\'t loaded');
       } else throw new Error('options must be included clientID');
       Vue.component('naver-maps', Map);

@@ -14,9 +14,9 @@
 ## 라이선스
 이 프로젝트의 라이선스는 ***MIT License*** 입니다.
 
-## 업데이트 예정
-* ***Vue.js 3.0*** 지원
-* TypeScript 지원
+## 업데이트
+* ~~***Vue.js 3.0*** 지원~~
+* ~~TypeScript 지원(Vue.js 3.0 지원과 연동)~~ 
 
 ## 업데이트 목록
 ***[ChangeLog](https://github.com/Shin-JaeHeon/vue-naver-maps/blob/master/CHANGELOG.md)*** 를 참조하세요.
