@@ -36,7 +36,6 @@
     },
     methods: {
       /**
-       *
        * @returns {number}
        */
       getAreaSize() {
@@ -44,14 +43,12 @@
       },
 
       /**
-       *
        * @returns {naver.maps.Bounds}
        */
       getBounds() {
         return this.polygon.getBounds();
       },
       /**
-       *
        * @returns {boolean}
        */
       getClickable() {
@@ -59,7 +56,6 @@
       },
 
       /**
-       *
        * @returns {naver.maps.Bounds}
        */
       getDrawingRect() {
@@ -67,7 +63,6 @@
       },
 
       /**
-       *
        * @param key
        * @returns {naver.maps.CircleOptions}
        */
@@ -87,7 +82,6 @@
         return this.polygon.getPaths();
       },
       /**
-       *
        * @param key
        * @returns {naver.maps.CircleOptions}
        */
@@ -96,7 +90,6 @@
       },
 
       /**
-       *
        * @returns {boolean}
        */
       getVisible() {
@@ -104,7 +97,6 @@
       },
 
       /**
-       *
        * @returns {number}
        */
       getZIndex() {
@@ -120,7 +112,6 @@
       },
 
       /**
-       *
        * @param clickable
        * @returns {this}
        */
@@ -130,7 +121,6 @@
       },
 
       /**
-       *
        * @param options
        * @returns {this}
        */
@@ -154,7 +144,6 @@
         return this;
       },
       /**
-       *
        * @param options
        * @returns {this}
        */
@@ -165,7 +154,6 @@
       },
 
       /**
-       *
        * @param visible
        * @returns {this}
        */

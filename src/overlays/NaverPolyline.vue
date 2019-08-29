@@ -37,14 +37,12 @@
     },
     methods: {
       /**
-       *
        * @returns {naver.maps.Bounds}
        */
       getBounds() {
         return this.polyline.getBounds();
       },
       /**
-       *
        * @returns {boolean}
        */
       getClickable() {
@@ -52,7 +50,6 @@
       },
 
       /**
-       *
        * @returns {number}
        */
       getDistance() {
@@ -60,7 +57,6 @@
       },
 
       /**
-       *
        * @param key
        * @returns {naver.maps.CircleOptions}
        */
@@ -74,7 +70,6 @@
         return this.polyline.getPath();
       },
       /**
-       *
        * @param key
        * @returns {naver.maps.CircleOptions}
        */
@@ -83,7 +78,6 @@
       },
 
       /**
-       *
        * @returns {boolean}
        */
       getVisible() {
@@ -91,7 +85,6 @@
       },
 
       /**
-       *
        * @returns {number}
        */
       getZIndex() {
@@ -107,7 +100,6 @@
       },
 
       /**
-       *
        * @param clickable
        * @returns {this}
        */
@@ -117,7 +109,6 @@
       },
 
       /**
-       *
        * @param options
        * @returns {this}
        */
@@ -144,7 +135,6 @@
       },
 
       /**
-       *
        * @param visible
        * @returns {this}
        */

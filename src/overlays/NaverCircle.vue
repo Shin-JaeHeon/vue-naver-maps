@@ -33,7 +33,6 @@
     },
     methods: {
       /**
-       *
        * @returns {number}
        */
       getAreaSize() {
@@ -41,7 +40,6 @@
       },
 
       /**
-       *
        * @returns {naver.maps.Bounds}
        */
       getBounds() {
@@ -49,7 +47,6 @@
       },
 
       /**
-       *
        * @returns {naver.maps.Coord}
        */
       getCenter() {
@@ -57,7 +54,6 @@
       },
 
       /**
-       *
        * @returns {boolean}
        */
       getClickable() {
@@ -65,7 +61,6 @@
       },
 
       /**
-       *
        * @returns {naver.maps.Bounds}
        */
       getDrawingRect() {
@@ -73,7 +68,6 @@
       },
 
       /**
-       *
        * @param key
        * @returns {naver.maps.CircleOptions}
        */
@@ -82,7 +76,6 @@
       },
 
       /**
-       *
        * @returns {number}
        */
       getRadius() {
@@ -90,7 +83,6 @@
       },
 
       /**
-       *
        * @param key
        * @returns {naver.maps.CircleOptions}
        */
@@ -99,7 +91,6 @@
       },
 
       /**
-       *
        * @returns {boolean}
        */
       getVisible() {
@@ -107,7 +98,6 @@
       },
 
       /**
-       *
        * @returns {number}
        */
       getZIndex() {
@@ -115,7 +105,6 @@
       },
 
       /**
-       *
        * @param lat
        * @param lng
        * @returns {this}
@@ -126,7 +115,6 @@
       },
 
       /**
-       *
        * @param x
        * @param y
        * @returns {this}
@@ -137,7 +125,6 @@
       },
 
       /**
-       *
        * @param clickable
        * @returns {this}
        */
@@ -147,7 +134,6 @@
       },
 
       /**
-       *
        * @param options
        * @returns {this}
        */
@@ -158,7 +144,6 @@
       },
 
       /**
-       *
        * @param radius
        * @returns {this}
        */
@@ -168,7 +153,6 @@
       },
 
       /**
-       *
        * @param options
        * @returns {this}
        */
@@ -179,7 +163,6 @@
       },
 
       /**
-       *
        * @param visible
        * @returns {this}
        */
@@ -189,7 +172,6 @@
       },
 
       /**
-       *
        * @param zIndex
        * @returns {this}
        */

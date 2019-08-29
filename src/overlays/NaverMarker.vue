@@ -31,7 +31,6 @@
     },
     methods: {
       /**
-       *
        * @param {boolean} clickable
        * @returns {Marker}
        */
@@ -41,7 +40,6 @@
       },
 
       /**
-       *
        * @param {string} cursor
        * @returns {Marker}
        */
@@ -51,7 +49,6 @@
       },
 
       /**
-       *
        * @param {boolean} draggable
        * @returns {Marker}
        */
@@ -121,7 +118,6 @@
       },
 
       /**
-       *
        * @param {'BOUNCE' | 'DROP'} animation
        * @returns {Marker}
        */
@@ -131,7 +127,6 @@
       },
 
       /**
-       *
        * @param { string | ImageIcon | SymbolIcon | HtmlIcon} icon
        * @returns {Marker}
        */
@@ -141,7 +136,6 @@
       },
 
       /**
-       *
        * @param {MarkerOptions} options
        * @returns {Marker}
        */
@@ -151,7 +145,6 @@
       },
 
       /**
-       *
        * @param {Coord | CoordLiteral} position
        * @returns {Marker}
        */
@@ -161,7 +154,6 @@
       },
 
       /**
-       *
        * @param {MarkerShape} shape
        * @returns {Marker}
        */
@@ -171,7 +163,6 @@
       },
 
       /**
-       *
        * @param {string} title
        * @returns {Marker}
        */
@@ -181,7 +172,6 @@
       },
 
       /**
-       *
        * @param {boolean} visible
        * @returns {Marker}
        */
@@ -191,7 +181,6 @@
       },
 
       /**
-       *
        * @param {number} zIndex
        * @returns {Marker}
        */

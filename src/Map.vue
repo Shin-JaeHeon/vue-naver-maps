@@ -49,7 +49,8 @@
         return this;
       },
       /**
-       *
+       * @param layerName {string}
+       * @returns this
        */
       removeStyleLayer(layerName) {
         this.map.mapTypes.selectedMapType.removeLayer(window.naver.maps.StyleMapLayerId[layerName]);
