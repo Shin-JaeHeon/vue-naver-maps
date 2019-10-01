@@ -174,7 +174,3 @@
     }
   }
 </script>
-
-<style scoped>
-
-</style>
