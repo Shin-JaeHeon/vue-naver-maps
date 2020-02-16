@@ -12,7 +12,8 @@
       width: Number,
       height: Number,
       mapOptions: {
-        type: Object
+        type: Object,
+        required: true,
       },
       initLayers: Array,
       useStyleMap: Boolean,
@@ -366,7 +367,7 @@
           document.getElementById('naver-map-load').onload = () => {
             if (this.useStyleMap) {
               document.querySelector('script[src="https://openapi.map.naver.com/openapi/v3/maps-stylemap.js"]').onload = () => {
-                setTimeout(() => this.loadNaverMapsComponents(), 100);
+                setTimeout(() => this.loadNaverMapsComponents(), 150);
               }
             } else window.naver.maps.onJSContentLoaded = this.loadNaverMapsComponents;
           }

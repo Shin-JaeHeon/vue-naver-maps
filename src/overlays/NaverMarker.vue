@@ -11,8 +11,14 @@
     name: "NaverMarker",
     props: {
       otherOptions: Object,
-      lat: Number,
-      lng: Number,
+      lat: {
+        type: Number,
+        required: true
+      },
+      lng: {
+        type: Number,
+        required: true
+      },
       icon: String
     },
     data() {

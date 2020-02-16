@@ -1,4 +1,7 @@
 # 체인지 로그
+# 0.11.11
+* 일부 컴포넌트의 props에 required 옵션 추가
+
 # 0.11.10
 * 의존성 업그레이드
 * `package-lock.json` 및 `yarn.lock` 추가
