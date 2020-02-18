@@ -49,13 +49,13 @@ mapOptions: {
 
 ## 일반 메소드
 
-### addStyleLayer
+### setLayerTypeId
 * 타입 : `Function`
 * 반환 : `this`
 * Parameter
- * layerName : `string`
+ * typeId : `string`
 
-StyleLayer를 추가합니다.
+Layer를 추가합니다.
 
 ### addPane
 * 타입 : `Function`

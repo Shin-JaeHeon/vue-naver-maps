@@ -16,7 +16,6 @@
         required: true,
       },
       initLayers: Array,
-      useStyleMap: Boolean,
     },
     data() {
       return {
@@ -41,30 +40,13 @@
     methods: {
       /* Normal Method */
       /**
-       * @param layerName {string}
+       * @param typeId {string}
        * @returns this
        */
-      addStyleLayer(layerName) {
-        this.map.mapTypes.selectedMapType.addLayer(window.naver.maps.StyleMapLayerId[layerName]);
+      setLayerTypeId(typeId) {
+        this.map.mapTypes.setLayerTypeId(typeId);
         this.map.refresh();
         return this;
-      },
-      /**
-       * @param layerName {string}
-       * @returns this
-       */
-      removeStyleLayer(layerName) {
-        this.map.mapTypes.selectedMapType.removeLayer(window.naver.maps.StyleMapLayerId[layerName]);
-        this.map.refresh();
-        return this;
-      },
-      /**
-       * @param layerName {string}
-       * @returns this
-       */
-      removeLayer(layerName) {
-        this.map.mapTypes.removeLayer(layerName);
-        return this
       },
       /**
        * @param name {string}
@@ -298,80 +280,39 @@
         return this;
 
       },
-
       /**
        * @description load naver maps
        */
       loadNaverMapsComponents() {
-        new Promise(resolve => {
-          /**
-           * settings
-           */
-          const settings = {
-            center: new window.naver.maps.LatLng(this.mapOptions.lat, this.mapOptions.lng),
-            maxZoom: 20,
-            minZoom: 0,
-          };
-          /**
-           * use style map
-           */
-          if (this.useStyleMap) {
-            const layers = {
-              BACKGROUND: 'bg', BACKGROUND_DETAIL: 'ol', BYCYCLE: 'br', CADASTRAL: 'lp', CTT: 'ctt', HIKING_TRAIL: 'ar', PANORAMA: 'ps',
-              POI_KOREAN: 'lko', TRANSIT: 'ts'
-            };
-            const keys = Object.keys(layers);
-            if (this.initLayers.map(v => keys.includes(v)).includes(false)) throw '[vue-naver-maps] Invalid StyledMap layer name in initLayers!';
-            settings.mapTypes = window.naver.maps.StyleMapTypeOption.getMapTypes({initLayers: this.initLayers.map(v => layers[v])});
-            settings.mapTypeId = window.naver.maps.StyleMapTypeId.NORMAL;
-            resolve(settings);
-            /**
-             * if script unloaded
-             */
-          } else resolve(settings);
-        }).then(settings => {
-          /**
-           * Creating map
-           */
-          this.map = new window.naver.maps.Map('vue-naver-maps', Object.assign(settings, this.mapOptions));
-
-          /**
-           * zoomControl options
-           */
-          if (this.zoomControlOptions && this.zoomControlOptions.position) this.setOptions({zoomControlOptions: {position: naver.maps.Position[this.zoomControlOptions.position]}});
-
-          /**
-           * call callback function
-           */
-          window.$naverMapsCallback.forEach(v => v(this.map));
-          window.$naverMapsCallback = [];
-          window.$naverMapsLoaded = true;
-          window.$naverMapsObject = this.map;
-          this.$emit('load', this);
-        }).catch(console.error);
+        const settings = {
+          center: new window.naver.maps.LatLng(this.mapOptions.lat, this.mapOptions.lng),
+          maxZoom: 21,
+          minZoom: 0,
+        };
+        const layers = {
+          BACKGROUND: 'bg', BACKGROUND_DETAIL: 'ol', BICYCLE: 'br', CADASTRAL: 'lp', CTT: 'ctt', HIKING_TRAIL: 'ar', PANORAMA: 'pr',
+          POI_KOREAN: 'lko', TRANSIT: 'ts', KOREAN: 'lko', ENGLISH: 'len', CHINESE: 'lzh', JAPANESE: 'lja'
+        };
+        settings.mapTypes = new window.naver.maps.MapTypeRegistry({
+          'normal': window.naver.maps.NaverStyleMapTypeOption.getNormalMap(
+            {
+              overlayType: this.initLayers.map(layer => layers[layer]).join('.'),
+            }
+          )
+        })
+        this.map = new window.naver.maps.Map('vue-naver-maps', {...settings, ...this.mapOptions});
+        if (this.zoomControlOptions && this.zoomControlOptions.position) this.setOptions({zoomControlOptions: {position: naver.maps.Position[this.zoomControlOptions.position]}});
+        window.$naverMapsCallback.forEach(v => v(this.map));
+        window.$naverMapsCallback = [];
+        window.$naverMapsLoaded = true;
+        window.$naverMapsObject = this.map;
+        this.$emit('load', this);
       }
     },
     mounted() {
-      /**
-       * Checking to exist Map options which is must be included.
-       */
       if (this.mapOptions.lat && this.mapOptions.lng) {
-        /**
-         * When the script already loaded.
-         */
         if (window.naver) this.loadNaverMapsComponents();
-        else {
-          /**
-           * When the script loaded.
-           */
-          document.getElementById('naver-map-load').onload = () => {
-            if (this.useStyleMap) {
-              document.querySelector('script[src="https://openapi.map.naver.com/openapi/v3/maps-stylemap.js"]').onload = () => {
-                setTimeout(() => this.loadNaverMapsComponents(), 150);
-              }
-            } else window.naver.maps.onJSContentLoaded = this.loadNaverMapsComponents;
-          }
-        }
+        else document.getElementById('naver-map-load').onload = () => window.naver.maps.onJSContentLoaded = this.loadNaverMapsComponents;
       } else throw new Error('mapOptions must be included lat and lng.');
     }
   }

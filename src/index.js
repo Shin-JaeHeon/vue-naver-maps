@@ -22,8 +22,8 @@ const vueNaverMaps = {
       if (options.clientID) {
         window.$naverMapsCallback = [];
         window.$naverMapsLoaded = false;
-        const apiType = options.useGovAPI ? 'govC' : 'ncpC';
-        const URL = `https://openapi.map.naver.com/openapi/v3/maps.js?${apiType}lientId=${options.clientID}${(options.subModules ? `&submodules=${options.subModules}` : '')}`;
+        const apiType = options.useGovAPI ? 'gov' : 'ncp';
+        const URL = `https://openapi.map.naver.com/openapi/v3/maps.js?${apiType}ClientId=${options.clientID}${(options.subModules ? `&submodules=${options.subModules}` : '')}`;
         const script = document.createElement('script');
         if (script) {
           script.setAttribute('src', URL);
