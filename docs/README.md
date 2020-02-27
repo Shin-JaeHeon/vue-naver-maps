@@ -23,11 +23,10 @@
 <template>
   <div>
     <naver-maps
-      :height="800"
-      :width="800"
+      :height="height"
+      :width="width"
       :mapOptions="mapOptions"
-      :useStyleMap="true"
-      :initLayers="['BACKGROUND', 'BACKGROUND_DETAIL', 'BYCYCLE', 'CADASTRAL', 'CTT', 'HIKING_TRAIL', 'PANORAMA', 'POI_KOREAN', 'TRANSIT']"
+      :initLayers="initLayers"
       @load="onLoad">
       <naver-info-window
         class="info-window"
@@ -56,10 +55,13 @@
     name: 'HelloWorld',
     data() {
       return {
+        width: 800,
+        height: 800,
         info: false,
         marker: null,
         count: 1,
         map: null,
+        isCTT: false,
         mapOptions: {
           lat: 37,
           lng: 127,
@@ -68,6 +70,7 @@
           zoomControlOptions: {position: 'TOP_RIGHT'},
           mapTypeControl: true,
         },
+        initLayers: ['BACKGROUND', 'BACKGROUND_DETAIL', 'POI_KOREAN', 'TRANSIT', 'ENGLISH', 'CHINESE', 'JAPANESE']
       }
     },
     computed: {
@@ -76,7 +79,9 @@
       }
     },
     methods: {
-      onLoad(vue) {
+      onLoad(vue)
+ {
+        this.map = vue;
       },
       onWindowLoad(that) {
       },
