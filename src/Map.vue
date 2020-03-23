@@ -299,7 +299,7 @@
               overlayType: this.initLayers.map(layer => layers[layer]).join('.'),
             }
           )
-        })
+        });
         this.map = new window.naver.maps.Map('vue-naver-maps', {...settings, ...this.mapOptions});
         if (this.zoomControlOptions && this.zoomControlOptions.position) this.setOptions({zoomControlOptions: {position: naver.maps.Position[this.zoomControlOptions.position]}});
         window.$naverMapsCallback.forEach(v => v(this.map));
@@ -314,6 +314,9 @@
         if (window.naver) this.loadNaverMapsComponents();
         else document.getElementById('naver-map-load').onload = () => window.naver.maps.onJSContentLoaded = this.loadNaverMapsComponents;
       } else throw new Error('mapOptions must be included lat and lng.');
+    },
+    destroyed() {
+      window.$naverMapsLoaded = false;
     }
   }
 </script>
