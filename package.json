@@ -1,6 +1,6 @@
 {
   "name": "vue-naver-maps",
-  "version": "0.13.0",
+  "version": "0.13.1",
   "description": "NAVER Maps component for vue.js",
   "main": "dist/vue-naver-maps.js",
   "author": {
