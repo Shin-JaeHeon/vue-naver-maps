@@ -1,4 +1,10 @@
 # 체인지 로그
+# 0.13.0
+* 의존성 업그레이드
+* Add events of naver.maps.Map #20 by graup
+* Fix wrong assignment of polyline options #21 by graup
+* [Marker] slot 내에 Element가 있을 경우 HtmlIcon으로 set #23 by hojinzs
+
 # 0.12.1
 * 페이지 이동 후 지도가 정상 작동하지 않는 오류 수정 #19
 
@@ -10,7 +16,7 @@
 * 한국어, 영어, 중국어, 일본어 지원 추가 (layers 옵션을 통해 사용가능)
 * 기타 버그 수정 등
 
-# 0.11.11
+# 0.11.11   
 * 일부 컴포넌트의 props에 required 옵션 추가
 
 # 0.11.10
