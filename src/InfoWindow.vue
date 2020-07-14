@@ -14,6 +14,7 @@
     props: {
       marker: Marker,
       isOpen: Boolean,
+      moreOptions: Object,
     },
     watch: {
       isOpen(newValue) {
@@ -28,6 +29,14 @@
         map: null,
       };
     },
+    watch: {
+      moreOptions: {
+        deep: true,
+        handler(newValue) {
+          this.infoWindow.setOptions(newValue);
+        }
+      }
+    },
     methods: {},
     mounted() {
       const naver = ((map) => {
@@ -35,7 +44,7 @@
          * {naver.maps.Map} map
          */
         this.map = map;
-        this.infoWindow = new window.naver.maps.InfoWindow({content: this.$refs.content});
+        this.infoWindow = new window.naver.maps.InfoWindow(Object.assign({content: this.$refs.content}, this.moreOptions));
         this.$emit('load', this);
       });
       if (!window.$naverMapsLoaded) window.$naverMapsCallback.push(naver);

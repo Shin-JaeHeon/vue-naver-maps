@@ -24,6 +24,14 @@
         map: null,
       };
     },
+    watch: {
+      moreOptions: {
+        deep: true,
+        handler(newValue) {
+          this.setOptions(newValue);
+        }
+      }
+    },
     methods: {
       /**
        * @returns {naver.maps.Bounds}

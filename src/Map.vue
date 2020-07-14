@@ -34,9 +34,28 @@
     },
     watch: {
       mapOptions: {
+        deep: true,
         handler(newValue) {
           this.map.setOptions(newValue);
         },
+      },
+      initLayers: {
+        deep: true,
+        handler(newValue) {
+          const settings = {};
+          const layers = {
+            BACKGROUND: 'bg', BACKGROUND_DETAIL: 'ol', BICYCLE: 'br', CADASTRAL: 'lp', CTT: 'ctt', HIKING_TRAIL: 'ar', PANORAMA: 'pr',
+            POI_KOREAN: 'lko', TRANSIT: 'ts', KOREAN: 'lko', ENGLISH: 'len', CHINESE: 'lzh', JAPANESE: 'lja'
+          };
+          settings.mapTypes = new window.naver.maps.MapTypeRegistry({
+            'normal': window.naver.maps.NaverStyleMapTypeOption.getNormalMap(
+              {
+                overlayType: newValue.map(layer => layers[layer]).join('.'),
+              }
+            )
+          });
+          this.setOptions('mapTypes', settings.mapTypes);
+        }
       }
     },
     methods: {
@@ -145,8 +164,8 @@
        * @param effect {boolean}
        */
       zoomBy(deltaZoom, zoomOrigin = undefined, effect = false) {
-        if (zoomOrigin) this.zoomBy(deltaZoom, zoomOrigin, effect);
-        else this.zoomBy(deltaZoom);
+        if (zoomOrigin) this.map.zoomBy(deltaZoom, zoomOrigin, effect);
+        else this.map.zoomBy(deltaZoom);
         return this;
       },
 

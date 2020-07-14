@@ -1,4 +1,10 @@
 # 체인지 로그
+
+# 0.14.0
+* fix Make components react to prop changes #22
+* moreOptions 프롭에 반응하도록 변경
+* initLayers가 반응되도록 변경
+* InfoWindow에 moreOptions 추가 
 # 0.13.1
 * 빌드파일 미포함 오류 수정
 

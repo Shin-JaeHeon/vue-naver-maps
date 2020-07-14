@@ -22,9 +22,11 @@
       icon: String,
       HtmlIcon: {
         type: Object,
-        default: {
-          size: {width: 0, height: 0},
-          anchor: {x: 0, y: 0},
+        default() {
+          return {
+            size: {width: 0, height: 0},
+            anchor: {x: 0, y: 0},
+          }
         }
       },
     },
@@ -40,6 +42,12 @@
       },
       lng() {
         this.setPosition({lng: this.lng, lat: this.lat});
+      },
+      otherOptions: {
+        deep: true,
+        handler(newValue) {
+          this.setOptions(newValue);
+        }
       }
     },
     methods: {
@@ -206,20 +214,20 @@
       const naver = ((map) => {
 
         let icon = {}
-        if(this.icon){
+        if (this.icon) {
           // set marker icon String type
           icon = {icon: this.icon}
-        } else if(typeof this.$slots.default !== 'undefined'){
+        } else if (typeof this.$slots.default !== 'undefined') {
           // set marker icon HtmlIcon type
           icon = {
             icon: {
               content: this.$el,
               size: new window.naver.maps.Size(
-                      this.HtmlIcon.size.width || 0,
-                      this.HtmlIcon.size.height || 0),
+                this.HtmlIcon.size.width || 0,
+                this.HtmlIcon.size.height || 0),
               anchor: new window.naver.maps.Point(
-                      this.HtmlIcon.anchor.x || 0
-                      ,this.HtmlIcon.anchor.y ||0),
+                this.HtmlIcon.anchor.x || 0
+                , this.HtmlIcon.anchor.y || 0),
             }
           }
         }
@@ -230,7 +238,7 @@
         this.marker = new window.naver.maps.Marker(Object.assign({
           position: new window.naver.maps.LatLng(this.lat, this.lng),
           map: map,
-        }, this.otherOptions, icon ));
+        }, this.otherOptions, icon));
         ['mousedown', 'mouseup', 'click', 'dblclick', 'rightclick', 'mouseover', 'mouseout', 'mousemove', 'dragstart', 'drag', 'dragend',
           'touchstart', 'touchmove', 'touchend', 'pinchstart', 'pinch', 'pinchend', 'tap', 'longtap', 'twofingertap', 'doubletap']
           .forEach(name => _.addEvent(this, this.marker, name));

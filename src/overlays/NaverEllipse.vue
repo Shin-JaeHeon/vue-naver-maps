@@ -23,6 +23,14 @@
         zIndex: Number
       },
     },
+    watch: {
+      moreOptions: {
+        deep: true,
+        handler(newValue) {
+          this.setOptions(newValue);
+        }
+      }
+    },
     data() {
       return {
         /**
