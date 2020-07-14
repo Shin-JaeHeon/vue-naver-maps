@@ -160,8 +160,9 @@
          */
         this.map = map;
         this.polyline = new window.naver.maps.Polyline(Object.assign({
-          map: map, path: this.path.map(latLng => new window.naver.maps.LatLng(latLng.lat, latLng.lng)), options: this.options
-        }));
+          map: map,
+          path: this.path.map(latLng => new window.naver.maps.LatLng(latLng.lat, latLng.lng)),
+        }, this.options));
         ['click', 'dblclick', 'mousedown', 'mouseout', 'mouseover', 'mouseup', 'visible_changed', 'zIndex_changed']
           .forEach(name => _.addEvent(this, this.polyline, name));
         this.$emit('load', this);
