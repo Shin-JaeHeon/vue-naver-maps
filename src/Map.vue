@@ -6,6 +6,8 @@
 </template>
 
 <script>
+  import * as _ from '../lib';
+
   export default {
     name: 'Map',
     props: {
@@ -306,6 +308,13 @@
         window.$naverMapsCallback = [];
         window.$naverMapsLoaded = true;
         window.$naverMapsObject = this.map;
+        [
+          'addLayer', 'bounds_changed', 'center_changed', 'centerPoint_changed', 'click', 'dblclick', 'doubletap',
+          'drag', 'dragend', 'dragstart', 'idle', 'init_stylemap', 'keydown', 'keyup', 'longtap', 'mapType_changed',
+          'mapTypeId_changed', 'mousedown', 'mousemove', 'mouseout', 'mouseover', 'mouseup', 'panning', 'pinch',
+          'pinchend', 'pinchstart', 'projection_changed', 'removeLayer', 'resize', 'rightclick', 'size_changed', 'tap',
+          'tilesloaded', 'touchend', 'touchmove', 'touchstart', 'twofingertap', 'zoom_changed', 'zooming',
+        ].forEach(name => _.addEvent(this, this.map, name));
         this.$emit('load', this);
       }
     },
