@@ -13,6 +13,8 @@
 ```
 ## Props
 ### marker
-마커를 지정합니다.
+Set the marker
 ### isOpen
-창의 열림/닫힘 값
+Window Opened
+### MoreOptions
+Set options to infoWindow.
