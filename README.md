@@ -7,6 +7,10 @@
 ## 설명
 `vue-naver-maps`는 `Naver Maps JavaScript API v3` 을 Vue.js에서 간편하게 이용하게 할 수 있는 라이브러리입니다. <br>
 라이브러리가 로딩되지 않는 상태라도 이용할 수 있도록 제작되었습니다.
+
+> 어떤한 케이스에서라도, 정상적으로 동작하지 않는 오류가 발생하는 경우에는 아래의 해결책을 시도해보세요.
+> 먼저, onload이벤트로 map 객체를 받으세요.
+> 그 다음, map 객체에 직접 접근하여 명령을 실행하시면 가능합니다.   
   
 ## 문서
 ***[Docs](https://shin-jaeheon.github.io/vue-naver-maps)*** 에는 vue-naver-maps의 객체 명세서 및 도움말, 예제가 있습니다.
