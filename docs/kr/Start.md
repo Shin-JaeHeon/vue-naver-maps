@@ -12,6 +12,7 @@
 
 
 ?> Nuxt.js에서는 SSR(Server Side Rendering) 옵션을 꺼주십시오.</span>
+
 ### 예시
 * `main.js`
   ```javascript
