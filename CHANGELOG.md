@@ -1,4 +1,7 @@
 # 체인지 로그
+# 0.13.1
+* 빌드파일 미포함 오류 수정
+
 # 0.13.0
 * 의존성 업그레이드
 * Add events of naver.maps.Map #20 by graup
