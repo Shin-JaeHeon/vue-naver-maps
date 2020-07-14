@@ -19,7 +19,14 @@
         type: Number,
         required: true
       },
-      icon: String
+      icon: String,
+      HtmlIcon: {
+        type: Object,
+        default: {
+          size: {width: 0, height: 0},
+          anchor: {x: 0, y: 0},
+        }
+      },
     },
     data() {
       return {
@@ -197,6 +204,25 @@
     },
     mounted() {
       const naver = ((map) => {
+
+        let icon = {}
+        if(this.icon){
+          // set marker icon String type
+          icon = {icon: this.icon}
+        } else if(typeof this.$slots.default !== 'undefined'){
+          // set marker icon HtmlIcon type
+          icon = {
+            icon: {
+              content: this.$el,
+              size: new window.naver.maps.Size(
+                      this.HtmlIcon.size.width || 0,
+                      this.HtmlIcon.size.height || 0),
+              anchor: new window.naver.maps.Point(
+                      this.HtmlIcon.anchor.x || 0
+                      ,this.HtmlIcon.anchor.y ||0),
+            }
+          }
+        }
         /**
          * {naver.maps.Map} map
          */
@@ -204,7 +230,7 @@
         this.marker = new window.naver.maps.Marker(Object.assign({
           position: new window.naver.maps.LatLng(this.lat, this.lng),
           map: map,
-        }, this.otherOptions, this.icon ? {icon: this.icon} : {}));
+        }, this.otherOptions, icon ));
         ['mousedown', 'mouseup', 'click', 'dblclick', 'rightclick', 'mouseover', 'mouseout', 'mousemove', 'dragstart', 'drag', 'dragend',
           'touchstart', 'touchmove', 'touchend', 'pinchstart', 'pinch', 'pinchend', 'tap', 'longtap', 'twofingertap', 'doubletap']
           .forEach(name => _.addEvent(this, this.marker, name));
