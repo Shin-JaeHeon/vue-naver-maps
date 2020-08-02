@@ -21,6 +21,12 @@
         if (newValue) this.infoWindow.open(this.map, this.marker);
         else this.infoWindow.close();
         this.$emit(newValue ? 'open' : 'close', this);
+      },
+      moreOptions: {
+        deep: true,
+        handler(newValue) {
+          this.infoWindow.setOptions(newValue);
+        }
       }
     },
     data() {
@@ -28,14 +34,6 @@
         infoWindow: null,
         map: null,
       };
-    },
-    watch: {
-      moreOptions: {
-        deep: true,
-        handler(newValue) {
-          this.infoWindow.setOptions(newValue);
-        }
-      }
     },
     methods: {},
     mounted() {

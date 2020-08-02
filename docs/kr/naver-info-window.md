@@ -5,6 +5,7 @@
         class="info-window"
         @load="onWindowLoad"
         :isOpen="info"
+        :moreOptions="options"
         :marker="marker">
         <div class="info-window-container">
           <h1>{{hello}}</h1>

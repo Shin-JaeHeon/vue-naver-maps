@@ -15,7 +15,7 @@
 * clickable : `Boolean`
 * visible : `Boolean`
 * zIndex : `Number`
-## Getter Methods
+## Gsetter Methods
 
 ### getAreaSize
 * Type : `Function`
