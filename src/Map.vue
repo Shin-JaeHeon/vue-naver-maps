@@ -67,8 +67,8 @@ export default {
             return this;
         },
         /**
-         * delete this map which includes all event and dom element.
-         * *** Warning! ***
+         * delete this map which includes all event and dom element <br/>
+         * *** Warning! ***<br/>
          *  This method will be delete the map object of this component.
          */
         destroy() {
