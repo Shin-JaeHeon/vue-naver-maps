@@ -42,18 +42,7 @@
       initLayers: {
         deep: true,
         handler(newValue) {
-          const settings = {};
-          const layers = {
-            BACKGROUND: 'bg', BACKGROUND_DETAIL: 'ol', BICYCLE: 'br', CADASTRAL: 'lp', CTT: 'ctt', HIKING_TRAIL: 'ar', PANORAMA: 'pr',
-            POI_KOREAN: 'lko', TRANSIT: 'ts', KOREAN: 'lko', ENGLISH: 'len', CHINESE: 'lzh', JAPANESE: 'lja'
-          };
-          settings.mapTypes = new window.naver.maps.MapTypeRegistry({
-            'normal': window.naver.maps.NaverStyleMapTypeOption.getNormalMap(
-              {
-                overlayType: newValue.map(layer => layers[layer]).join('.'),
-              }
-            )
-          });
+          const settings = _.mapLayers({}, newValue)
           this.setOptions('mapTypes', settings.mapTypes);
         }
       }
@@ -305,22 +294,7 @@
        * @description load naver maps
        */
       loadNaverMapsComponents() {
-        const settings = {
-          center: new window.naver.maps.LatLng(this.mapOptions.lat, this.mapOptions.lng),
-          maxZoom: 21,
-          minZoom: 0,
-        };
-        const layers = {
-          BACKGROUND: 'bg', BACKGROUND_DETAIL: 'ol', BICYCLE: 'br', CADASTRAL: 'lp', CTT: 'ctt', HIKING_TRAIL: 'ar', PANORAMA: 'pr',
-          POI_KOREAN: 'lko', TRANSIT: 'ts', KOREAN: 'lko', ENGLISH: 'len', CHINESE: 'lzh', JAPANESE: 'lja'
-        };
-        settings.mapTypes = new window.naver.maps.MapTypeRegistry({
-          'normal': window.naver.maps.NaverStyleMapTypeOption.getNormalMap(
-            {
-              overlayType: this.initLayers.map(layer => layers[layer]).join('.'),
-            }
-          )
-        });
+        const settings = _.mapSettings(this.mapOptions, this.initLayers)
         this.map = new window.naver.maps.Map('vue-naver-maps', {...settings, ...this.mapOptions});
         if (this.zoomControlOptions && this.zoomControlOptions.position) this.setOptions({zoomControlOptions: {position: naver.maps.Position[this.zoomControlOptions.position]}});
         window.$naverMapsCallback.forEach(v => v(this.map));
@@ -338,10 +312,8 @@
       }
     },
     mounted() {
-      if (this.mapOptions.lat && this.mapOptions.lng) {
-        if (window.naver) this.loadNaverMapsComponents();
-        else document.getElementById('naver-map-load').onload = () => window.naver.maps.onJSContentLoaded = this.loadNaverMapsComponents;
-      } else throw new Error('mapOptions must be included lat and lng.');
+      if (window.naver) this.loadNaverMapsComponents();
+      else document.getElementById('naver-map-load').onload = () => window.naver.maps.onJSContentLoaded = this.loadNaverMapsComponents;
     },
     destroyed() {
       window.$naverMapsLoaded = false;
