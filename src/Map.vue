@@ -72,7 +72,7 @@
        *  This method will be delete the map object of this component.
        */
       destroy() {
-        this.map.destory();
+        this.map.destroy();
         this.map = null;
         this.$destroy();
       },
