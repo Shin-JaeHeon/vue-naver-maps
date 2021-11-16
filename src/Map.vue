@@ -257,7 +257,7 @@ export default {
          * @returns this
          */
         setMapTypeId(type) {
-            this.map.setMapTypeId(naver.maps.Position[type]);
+            this.map.setMapTypeId(naver.maps.MapTypeId[type]);
             return this;
         },
         /**
