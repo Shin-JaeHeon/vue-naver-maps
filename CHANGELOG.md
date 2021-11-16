@@ -1,5 +1,14 @@
 # 체인지 로그
 
+# 0.14.3
+* setMapTypeId가 잘못 동작하는 오류 수정
+
+# 0.14.2
+* updateBy 및 panToBounds 안되던 문제 수정
+
+# 0.14.1
+`naver-info-window`의 예저 코드 오류 수정
+
 # 0.14.0
 * fix Make components react to prop changes #22
 * moreOptions 프롭에 반응하도록 변경
