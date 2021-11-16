@@ -1,24 +1,28 @@
 const path = require('path');
 const {VueLoaderPlugin} = require('vue-loader');
 const baseConfig = {
+  resolve: {
+    alias: {
+      vue: '@vue/compat'
+    }
+  },
   entry: [
-    path.resolve('./src/index.js')
+    path.resolve('./src/index.ts')
   ],
   module: {
     rules: [
       {
         test: /\.vue$/,
         loader: 'vue-loader',
-        options: {target: 'node'}
-      },
-      {
-        test: /\.js$/,
-        loader: 'babel-loader',
-        exclude: [
-          /node_modules/,
-        ]
+        options: {
+          compilerOptions: {
+            compatConfig: {
+              MODE: 2
+            }
+          }
+        }
       }
-    ],
+    ]
   }, plugins: [
     new VueLoaderPlugin(),
   ],
