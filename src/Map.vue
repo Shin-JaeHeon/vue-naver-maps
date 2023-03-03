@@ -303,7 +303,7 @@ export default {
             window.$naverMapsObject = this.map;
             [
                 'addLayer', 'bounds_changed', 'center_changed', 'centerPoint_changed', 'click', 'dblclick', 'doubletap',
-                'drag', 'dragend', 'dragstart', 'idle', 'init_stylemap', 'keydown', 'keyup', 'longtap', 'mapType_changed',
+                'drag', 'dragend', 'dragstart', 'idle','init', 'init_stylemap', 'keydown', 'keyup', 'longtap', 'mapType_changed',
                 'mapTypeId_changed', 'mousedown', 'mousemove', 'mouseout', 'mouseover', 'mouseup', 'panning', 'pinch',
                 'pinchend', 'pinchstart', 'projection_changed', 'removeLayer', 'resize', 'rightclick', 'size_changed', 'tap',
                 'tilesloaded', 'touchend', 'touchmove', 'touchstart', 'twofingertap', 'zoom_changed', 'zooming',
