@@ -18,7 +18,7 @@ const vueNaverMaps = {
    * } options
    */
   install(Vue, options) {
-    if (process.browser) {
+    if (typeof window === "undefined") {
       if (options.clientID) {
         window.$naverMapsCallback = [];
         window.$naverMapsLoaded = false;
