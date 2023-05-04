@@ -1,5 +1,9 @@
 # 체인지 로그
 
+# 0.14.6
+* #53 browsers 지원 로직 오류 수정 by @ssshow16
+* babel 및 webpack 의존성 버전 업그레이드
+
 # 0.14.5
 * Node.js 폴리필 관련 문제 수정
 
