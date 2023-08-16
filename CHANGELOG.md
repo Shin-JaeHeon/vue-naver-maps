@@ -1,4 +1,6 @@
 # 체인지 로그
+# 0.15.0
+* #54 NaverMap SDK URL [호스트 변경 공지](https://www.ncloud.com/support/notice/all/1570)에 따른 대응
 
 # 0.14.6
 * #53 browsers 지원 로직 오류 수정 by @ssshow16
