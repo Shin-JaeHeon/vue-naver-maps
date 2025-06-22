@@ -1,4 +1,8 @@
 # 체인지 로그
+
+# 1.0.0
+* #57 네이버 지도 API 변경사항 대응  [AI NAVER API는 무료 제공 중지](https://www.ncloud.com/support/notice/all/1965) by @armadillo-dev
+
 # 0.15.0
 * #54 NaverMap SDK URL [호스트 변경 공지](https://www.ncloud.com/support/notice/all/1570)에 따른 대응
 
